@@ -1,0 +1,60 @@
+[
+  {
+    "solid":[
+      {
+        "title": "Color Set",
+        "codes": [
+          "#FD7869",
+          "#F5AE54",
+          "#F6E7FC",
+          "#DFC1F3",
+          "#A376BB",
+          "#F5AE54"
+        ]
+      },
+      {
+        "title": "Color Set",
+        "codes": [
+          "#FD7869",
+          "#F5AE54",
+          "#F6E7FC",
+          "#DFC1F3",
+          "#A376BB"
+        ]
+      },
+      {
+        "title": "Color Set",
+        "codes": [
+          "#FD7869",
+          "#F5AE54",
+          "#F6E7FC",
+          "#DFC1F3",
+          "#A376BB",
+          "#DFC1F3"
+        ]
+      },
+      {
+        "title": "Color Set",
+        "codes": [
+          "#FD7869",
+          "#F5AE54",
+          "#F5AE54",
+          "#A376BB"
+        ]
+      }
+    ]
+  },
+  {
+    "gradient":[
+      {
+        "title": "Color Set",
+        "codes": [
+          "#FD7869",
+          "#F5AE54",
+          "#F5AE54",
+          "#A376BB"
+        ]
+      }
+    ]
+  }
+]
