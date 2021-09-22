@@ -45,12 +45,18 @@
   [
     {
       "title": "Color Set",
-      "codes": [
-        "#FD7869",
-        "#F5AE54",
-        "#F5AE54",
-        "#A376BB"
-      ]
+      "codeOne": "#A376BB",
+      "codeTwo": "#F5AE54"
+    },
+    {
+      "title": "Color Set",
+      "codeOne": "#FD7869",
+      "codeTwo": "#A376BB"
+    },
+    {
+      "title": "Color Set",
+      "codeOne": "#F6E7FC",
+      "codeTwo": "#A376BB"
     }
   ]
 ]
