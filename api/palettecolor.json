@@ -29,6 +29,28 @@
         "#F7F8FA",
         "#000000"
       ]
+    },
+    {
+      "title": "Color Set",
+      "colors": [
+        "#FD7869",
+        "#F5AE54",
+        "#F6E7FC",
+        "#DFC1F3",
+        "#A376BB",
+        "#F5AE54"
+      ]
+    },
+    {
+      "title": "Color Set",
+      "colors": [
+        "#FD7869",
+        "#F5AE54",
+        "#F6E7FC",
+        "#DFC1F3",
+        "#A376BB",
+        "#F5AE54"
+      ]
     }
   ],
   [
@@ -46,6 +68,16 @@
       "title": "Color Set",
       "colorOne": "#F6E7FC",
       "colorTwo": "#A376BB"
+    },
+    {
+      "title": "Color Set",
+      "colorOne": "#A376BB",
+      "colorTwo": "#F5AE54"
+    },
+    {
+      "title": "Color Set",
+      "colorOne": "#A376BB",
+      "colorTwo": "#F5AE54"
     }
   ]
 ]
