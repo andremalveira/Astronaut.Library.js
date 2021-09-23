@@ -51,6 +51,42 @@
         "#A376BB",
         "#F5AE54"
       ]
+    },
+    {
+      "title": "Color Set",
+      "colors": [
+        "#FCA6AF",
+        "#FFC593",
+        "#6FBAFD",
+        "#FFE292"
+      ]
+    },
+    {
+      "title": "Color Set",
+      "colors": [
+        "#FCA6AF",
+        "#FFC593",
+        "#6FBAFD",
+        "#FFE292"
+      ]
+    },
+    {
+      "title": "Color Set",
+      "colors": [
+        "#FCA6AF",
+        "#FFC593",
+        "#6FBAFD",
+        "#FFE292"
+      ]
+    },
+    {
+      "title": "Color Set",
+      "colors": [
+        "#FCA6AF",
+        "#FFC593",
+        "#6FBAFD",
+        "#FFE292"
+      ]
     }
   ],
   [
@@ -75,6 +111,18 @@
       "colorTwo": "#F5AE54"
     },
     {
+      "title": "Color Set",
+      "colorOne": "#A376BB",
+      "colorTwo": "#F5AE54"
+    },    {
+      "title": "Color Set",
+      "colorOne": "#A376BB",
+      "colorTwo": "#F5AE54"
+    },    {
+      "title": "Color Set",
+      "colorOne": "#A376BB",
+      "colorTwo": "#F5AE54"
+    },    {
       "title": "Color Set",
       "colorOne": "#A376BB",
       "colorTwo": "#F5AE54"
