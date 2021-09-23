@@ -2,7 +2,7 @@
   [
     {
       "title": "Color Set",
-      "codes": [
+      "colors": [
         "#FD7869",
         "#F5AE54",
         "#F6E7FC",
@@ -10,53 +10,23 @@
         "#A376BB",
         "#F5AE54"
       ]
-    },
-    {
-      "title": "Color Set",
-      "codes": [
-        "#FD7869",
-        "#F5AE54",
-        "#F6E7FC",
-        "#DFC1F3",
-        "#A376BB"
-      ]
-    },
-    {
-      "title": "Color Set",
-      "codes": [
-        "#FD7869",
-        "#F5AE54",
-        "#F6E7FC",
-        "#DFC1F3",
-        "#A376BB",
-        "#DFC1F3"
-      ]
-    },
-    {
-      "title": "Color Set",
-      "codes": [
-        "#FD7869",
-        "#F5AE54",
-        "#F5AE54",
-        "#A376BB"
-      ]
     }
   ],
   [
     {
       "title": "Color Set",
-      "codeOne": "#A376BB",
-      "codeTwo": "#F5AE54"
+      "colorOne": "#A376BB",
+      "colorTwo": "#F5AE54"
     },
     {
       "title": "Color Set",
-      "codeOne": "#FD7869",
-      "codeTwo": "#A376BB"
+      "colorOne": "#FD7869",
+      "colorTwo": "#A376BB"
     },
     {
       "title": "Color Set",
-      "codeOne": "#F6E7FC",
-      "codeTwo": "#A376BB"
+      "colorOne": "#F6E7FC",
+      "colorTwo": "#A376BB"
     }
   ]
 ]
