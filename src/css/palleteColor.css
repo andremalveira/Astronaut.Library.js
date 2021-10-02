@@ -1,0 +1,25 @@
+[themecolor="github"] {
+  --bg-primary: #22272e;
+  --bg-primary-transparent: #373e4791;
+  --bg-second: #2d333b;
+  --border:  #768390;
+
+  --font-primary: #adbac7;
+  --font-second: #768390;
+  --font-third: #e5534b;
+
+  --btn-primary:  #373e47;
+  --btn-primary-hover: #444c56;
+  --btn-second:  #347d39;
+  --btn-second-hover: #46954a;
+  --btn-second-border-hover: #57ab5a;
+  --btn-third:  #c93c37;
+  --btn-third-border:  #e5534b;
+
+  --link-primary: #539bf5;
+
+  --bg-warn: #ae7c1426;
+  --bg-warn-border: #ae7c1466;
+  --bg-info: linear-gradient(#4184e426, #4184e426);;
+  --bg-info-border: #4184e466;
+}

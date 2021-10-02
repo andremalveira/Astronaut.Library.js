@@ -1,0 +1,1085 @@
+[astronaut] body #overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+}
+[astronaut] body .container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  z-index: 1;
+}
+[astronaut] body .container.columns {
+  height: 100%;
+  grid-template-columns: auto 1fr;
+}
+[astronaut] body .container #status-bar {
+  overflow: hidden;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-primary-transparent);
+  color: var(--font-second);
+  height: 0rem;
+  padding: 0.0rem 0.5rem;
+  font-size: 0.8rem;
+  position: relative;
+  align-items: center;
+  transition: ease 0.2s;
+  z-index: 2;
+}
+[astronaut] body .container #status-bar.show {
+  height: 1.1rem;
+  padding: 0.2rem 0.5rem;
+}
+[astronaut] body .container #status-bar .left {
+  display: flex;
+  justify-content: start;
+}
+
+[astronaut] body .container #status-bar .right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[astronaut] body .container nav {
+  width: 3rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+[astronaut] body .container nav .menu  { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-top: 2.1em;
+}
+[astronaut] body .container nav .menu:last-child  { 
+  margin-bottom: 1.5em;
+}
+[astronaut] body .container nav .menu .icons { 
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease 0.1s;
+  position: relative;
+}
+[astronaut] body .container nav .menu .icons.active::before,
+[astronaut] body .container nav .menu .icons.active-modal::before { 
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0.2rem;
+  left: 0;
+}
+[themecolor="github"] body .container nav .menu .icons.active.fixed::before { 
+  background: #539bf5;
+}
+[astronaut] body .container nav .menu .icons.active:not(.fixed)::before,
+[astronaut] body .container nav .menu .icons.active-modal::before { 
+  background: #27C93F;
+}
+[astronaut] body .container nav .menu .icons.active:not(.minimized)#palettecolor::before { 
+  background: linear-gradient(180deg, rgba(242,90,69,1) 3%, rgba(254,212,56,1) 34%, rgba(115,191,82,1) 53%, rgba(82,154,212,1) 89%, rgba(87,82,162,1) 100%);
+}
+[astronaut] body .container nav .menu .icons.active.minimized::before { 
+  background: #FFBD2E;
+}
+
+[astronaut] body .container nav .menu span[hr] { 
+  width: 90%;
+  height: 1px;
+  background: var(--bg-primary);
+}
+[astronaut] body .container [status="disabled"] {
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+[astronaut] body .container #content {
+  position: relative;
+}
+[astronaut] body .container main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+}
+[astronaut] body .container main .container-list {
+  width: 0rem;
+  position: relative;
+  transition: ease 0.2s;
+  overflow: hidden;
+}
+[astronaut] body .container main.view-list-ocult .container-list {
+  width: 18rem;
+}
+[astronaut] body .container main.view-list-ocult #preview {
+  box-shadow: rgba(0, 0, 0, 0.48) 0px 0px 15px 0px;
+  border-left: none;
+  border-radius: 1rem 1rem 0px 0rem;
+  overflow: hidden;
+}
+[astronaut] body .container main .container-list .list{
+  width: 16rem;
+  padding: 1rem;
+  padding-right: 1rem;
+}
+[astronaut] body .container main .container-list .root {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  cursor: default;
+  padding: 0.4rem 0rem;
+  user-select: none;
+  margin-bottom: 1rem;
+}
+[astronaut] body .container main .container-list .root .for-home {
+  cursor: pointer;
+  position: relative;
+}
+[astronaut] body .container main .container-list .root .for-home::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  left: 50%;
+  bottom: -3px;
+  border-bottom: solid 2px var(--link-primary);
+  transform: translate(-52%, 50%);
+  transition: ease 0.2s;
+  opacity: 0;
+}
+[astronaut] body .container main .container-list .root .for-home:hover::before {
+  width: 80%;
+  opacity: 1;
+}
+[astronaut] body .container main .container-list .root .dir {
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[astronaut] body .container main .container-list #list-items {
+  margin-left: 1.2rem;
+  user-select: none;
+}
+[astronaut] body .container main .container-list #list-items .item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.1rem 0;
+  border-radius: 0.3rem;
+  position: relative;
+}
+[astronaut] body .container main .container-list #list-items .item::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: -8px;
+}
+[astronaut] body .container main .container-list #list-items [break] {
+  margin: 1rem 0;
+  display: flex;
+}
+[astronaut] body .container main .container-list #list-items .item a{
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+}
+[astronaut] body .container main .container-list #list-items .item.active::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 0.2rem;
+  transform: rotate(45deg) translate(0.5rem, -0.5rem);
+  display: none;
+}
+
+[astronaut] body .container main .container-list #list-items .item i, .root i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+[astronaut] body .container main .container-list #list-items .item a span{
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[astronaut] body .container main .container-list #list-items .item .more,
+[astronaut] body .container main .container-list .root .close-list {
+  opacity: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: ease 0.2s;
+  cursor: pointer;
+}
+[astronaut] body .container main .container-list .root .close-list {
+  opacity: 1;
+}
+[astronaut] body .container main .container-list #list-items .item:hover .more {
+  opacity: 1;
+}
+[astronaut] body .container main .container-list #list-items .item #more-modal {
+  position: absolute;
+  left: 320px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 2px 15px 1px #00000047;
+  z-index: 2;
+}
+[astronaut] body .container main .container-list #list-items .item #more-modal div {
+  padding: 0.1rem 0.8rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: ease 0.2s;
+}
+[astronaut] body .container main .container-list #list-items .item #more-modal span[hr] {
+  width: 90%;
+  height: 1px;
+  margin: 0.2rem 0;
+  display: flex;
+  margin: 0.4rem auto;
+}
+[astronaut] body .container main .container-list #list-items .item #more-modal .fa-caret-left {
+  position: absolute;
+  left: -15px;
+  font-size: 2.5rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+[astronaut] body .container main .container-list #list-items .item #more-modal .fa-times-circle {
+  position: absolute;
+  font-size: 1.3rem;
+  right: -18px;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  transform: translate(0, -50%);
+  transition: ease 0.2s;
+}
+[astronaut] body .container main #layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[astronaut] body .container main #layout[layout="double"] {
+  gap: 2rem;
+  padding: 0 2rem;
+}
+[astronaut] body .container main #layout #preview,
+[astronaut] body .container main #layout .preview-mobile {
+  user-select: none;
+  display: grid;
+  grid-template-rows: auto 100%;
+  transition: ease 0.2s;
+  width: 100%;
+  height: 100vh;
+}
+/* [astronaut] body .container main #layout[layout="mobile"] #preview,
+[astronaut] body .container main #layout[layout="double"] .preview-mobile {
+  grid-template-rows: auto auto 1fr auto;
+} */
+[astronaut] body .container main #layout .preview-mobile {
+  animation-duration: 0.2s;
+  animation-name: previewMobileShow;
+}
+@keyframes previewMobileShow {
+  0% {
+    width: 0;
+    min-width: 0;
+  }
+  100% {
+    width: 25rem;
+    min-width: 25rem;
+  }
+}
+
+[astronaut] body .container main #layout[layout="double"] #preview {
+  height: 90%;
+  border-radius: 1rem;
+  box-shadow: rgb(0 0 0 / 48%) 0px 0px 15px 0px;
+  overflow: hidden;
+  border-top: 0!important;
+}
+[astronaut] body .container main #layout[layout="mobile"] #preview,
+[astronaut] body .container main #layout[layout="double"] .preview-mobile {
+  width: 25rem;
+  min-width: 25rem;
+  height: 90%;
+  border-radius: 1rem;
+  box-shadow: rgb(0 0 0 / 48%) 0px 0px 15px 0px;
+  overflow: hidden;
+  border-top: 0;
+}
+[astronaut] body .container main #layout #preview[model],
+[astronaut] body .container main #layout .preview-mobile[model] {
+  width: auto;
+  min-width: max-content;
+  height: auto;
+}
+
+[astronaut] body .container main #layout .status-bar {
+  height: 1rem;
+  padding: 0.1rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  font-size: 0.7rem;
+}
+[astronaut] body .container main #layout .status-bar .clock {
+  padding: 0 0.4rem;
+}
+[astronaut] body .container main #layout .status-bar .model {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0 0.4rem;
+  opacity: 0.2;
+}
+
+[astronaut] body .container main #layout .navigation-bar {
+  align-items: center;
+  height: 2.4rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1.4rem;
+}
+[astronaut] body .container main #layout .navigation-bar svg:first-child {
+  transform: rotate(30deg);
+}
+[astronaut] body .container #content #layout[layout="mobile"]  .navbar .bar-search {
+  padding: 0;
+  width: 0;
+  overflow: hidden;
+}
+[astronaut] body .container #content .navbar {
+  padding: 0.4rem 0.8rem;
+  height: 1.5rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 0.8rem;
+}
+[astronaut] body .container #content .navbar .window-control {
+  gap: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+[astronaut] body .container #content .navbar .window-control i {
+  display: flex;
+}
+[astronaut] body .container #content .navbar .window-control svg {
+  cursor: pointer;
+}
+[astronaut] body .container #content .navbar .bar-search {
+  text-align: center;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: ease 0.2s;
+}
+[astronaut] body .container #content .navbar .bar-search .search {
+  font-family: system-ui;
+  border-radius: 0.2rem;
+  height: 100%;
+  transition: ease 0.1s;
+  transform: translateX(-10px);
+  opacity: 0;
+  outline: none;
+  padding: 0rem 0.3rem 0.2rem 0.3rem;
+  width: 100%;
+  text-align: left;
+  border: solid 1px transparent;
+}
+[astronaut] body .container #content .navbar .bar-search input::placeholder {
+  opacity: 0.4;
+  color: var(--font-primary);
+}
+[astronaut] body .container #content .navbar .bar-search .search.focus {
+  color: var(--font-primary);
+  border: solid 1px var(--btn-primary-hover);
+}
+[astronaut] body .container #content .navbar .bar-search .search.fadeonleft {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+[astronaut] body .container #content .navbar .options {
+  gap: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[astronaut] body .container #content .navbar .options span[separator] {
+  opacity: 0.5;
+}
+[astronaut] body .container #content .navbar .options .icon {
+  position: relative;
+  cursor: pointer;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+  transition: ease 0.2s;
+}
+
+[astronaut] body .container #content .navbar .options [option="devices"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[astronaut] body .container #content .navbar .options i {
+  padding: 3px;
+}
+[astronaut] body .container #content .navbar .options #contextMenu {
+  right: 0;
+  bottom: 0;
+  top: 2rem;
+  z-index: 9;
+}
+[astronaut] body .container #content .navbar .options #contextMenu .contextMenuCustom {
+  position: relative;
+}
+[astronaut] body .container #content .navbar .options #contextMenu .caret {
+  position: absolute;
+  top: -12px;
+  right: 3px;
+}
+[astronaut] body .container #content .navbar .options #contextMenu .caret.before {
+  top: -11px;
+  z-index: 1;
+}
+[astronaut] body .container #content .navbar .options .separator {
+  width: 0.1rem;
+  background: var(--btn-primary-hover);
+  height: 1rem;
+}
+[astronaut] body .container #content .navbar .options [option="advance"] {
+  transform: rotate(180deg);
+}
+[astronaut] body .container #content .navbar .options [option="refresh"] svg {
+  animation-duration: 0.5s;
+  margin-top: 2px;
+}
+@keyframes refresh {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+[astronaut] body .container #content .navbar .options [option="liveserver"] .icon-liveServer {
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+[astronaut] body .container #content .navbar .options [option="liveserver"][enabled] .icon-liveServer {
+  color: #8e44ad;
+  filter: inherit;
+  opacity: 1;
+}
+[astronaut] body .container #content .navbar .options [option="liveserver"][enabled] #contextMenu .caret {
+  color: #8e44ad;
+}
+[astronaut] body .container #content .navbar .options [option="liveserver"][enabled] #contextMenu .contextMenuCustom {
+  border: 0.01rem solid #8e44ad;
+}
+
+[astronaut] body .container main #layout #preview .display,
+[astronaut] body .container main .preview-mobile .display {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+[astronaut] body .container main #layout[layout="mobile"] #preview .display,
+[astronaut] body .container main #layout[layout="double"] .preview-mobile .display {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+[astronaut] body .container main #layout #preview .display iframe,
+[astronaut] body .container main #layout .preview-mobile .display iframe {
+  width: 100%;
+  border: 0;
+  height: 100%;
+  z-index: 1;
+  transition: ease 0.2s;
+}
+[astronaut] body .container main #layout[layout="mobile"] #preview .display iframe,
+[astronaut] body .container main #layout[layout="double"] .preview-mobile .display iframe {
+  width: 400px;
+/*   height: 789px; */
+  height: 100%;
+}
+
+
+ .astronaut {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+ .astronaut img {
+  width: 30%;
+  height: 30%;
+}
+ .astronaut .jumping {
+  transition: all 0.2s linear;
+  animation: fall 0.8s cubic-bezier(0.75, -0.5, 0, 1.75), jumping 4s infinite ease;
+}
+@keyframes jumping {
+  0% {
+      transform: translatey(0px);
+  }
+  50% {
+      transform: translatey(-20px);
+  }
+  100% {
+      transform: translatey(0px);
+  }
+}
+.astronaut_spin {
+  animation: spin 20s infinite linear;
+}
+.astronaut_wandering {
+  animation: wandering 100s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes wandering {
+  0% {
+    transform: translate(6rem, -3rem);
+  }
+  35% {
+    transform: translate(-55rem, 30rem);
+  }
+  40% {
+    transform: translate(-55rem, 44rem);
+  }
+  45% {
+    transform: translate(20rem, 44rem);
+  }
+  75% {
+    transform: translate(20rem, -25rem);
+  }
+  100% {
+    transform: translate(6rem, -3rem);
+  }
+}
+
+[astronaut] body .container #content .new-tab {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transform: scale(0.5);
+  transition: ease 0.2s;
+  opacity: 0;
+}
+[astronaut] body .container #content .new-tab.maximized {
+  transform: scale(1);
+  opacity: 1;
+}
+[astronaut] body .container #content .new-tab.minimized {
+  transform: translate(-100%, 0rem);
+  opacity: 0;
+}
+[astronaut] body .container #content .new-tab .display {
+  position: relative;
+}
+[astronaut] body .container #content .new-tab .display iframe {
+  width: 100%;
+  border: 0;
+  height: 100%;
+  user-select: none;
+}
+[astronaut] body .container main #layout .display #new-page {
+  height: 100%;
+  overflow: hidden;
+}
+[astronaut] body .container #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/*===========================new Modal=======================*/
+[astronaut] body .container #content #new-modal {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[astronaut] body .container #content #new-modal .window-modal {
+  z-index: 9;
+  width: fit-content;
+  min-width: 20%;
+  height: 100%;
+  max-height: 60%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  transition: ease 0.1s;
+  transform: scale(0.5);
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.41) 0px 2px 7px -2px;
+  border-radius: 0.8rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-top: 0;
+}
+
+[astronaut] body .container #content #new-modal.displayed .window-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+[astronaut] body .container #content #new-modal .content-modal {
+  position: relative;
+  overflow: overlay;
+  padding: 2rem;
+  background: #2d333b3d;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  row-gap: 1rem;
+}
+[astronaut] body .container #content #new-modal .content-modal .form {
+  overflow: overlay;
+  row-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+[astronaut] body .container #content #new-modal .content-modal .select-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+[astronaut] body .container #content #new-modal .content-modal label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+[astronaut] body .container #content #new-modal .content-modal label span.moreinfo {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.2s;
+  border-radius: 0.3rem;
+  opacity: 0.6;
+}
+
+[astronaut] body .container #content #new-modal .content-modal .row {
+  display: flex;
+  padding: 0.3rem;
+  gap: 0.7rem;
+}
+[astronaut] body .container #content #new-modal .content-modal .row.col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+[astronaut] body .container #content #new-modal .content-modal .row.col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.col-span-2 {
+  grid-column: span 2;
+}
+.row-span-2 {
+  grid-row: span 2;
+}
+[astronaut] body .container #content #new-modal .content-modal .row.column {
+  flex-direction: column;
+}
+[astronaut] body .container #content #new-modal .content-modal .row.jfy-center {
+  justify-content: center;
+}
+[astronaut] body .container #content #new-modal .content-modal .row .column {
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+[astronaut] body .row .column.w_25 {
+  width: 25%;
+}
+[astronaut] body .row .column.w_50 {
+  width: 50%;
+}
+[astronaut] body .container #content #new-modal .content-modal .row .input {
+  position: relative;
+}
+[astronaut] body .container #content #new-modal .content-modal .row .input.select #contextMenu {
+  transform: translateY(0.5rem);
+  width: 100%;
+  top: 100%;
+  animation: contextMenuTop 0.1s;
+  opacity: 1;
+}
+@keyframes contextMenuTop {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    transform: translateY(0.5rem);
+    opacity: 1;
+  }
+}
+[astronaut] body .container #content #new-modal .content-modal .row .input.select .contextMenuCustom {
+  border: 0;
+  width: 100%;
+  position: absolute;
+}
+[astronaut] body .container #content #new-modal .content-modal .row .input.select .caret {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+}
+[astronaut] body .container #content #new-modal .content-modal .row .input.select input {
+  cursor: pointer;
+  padding-right: 2rem;
+}
+
+[astronaut] body .container #content #new-modal .content-modal .row .input.select::after {
+	border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	content: '';
+	height: 0.45em;
+	position: absolute;
+	top: 45%;
+  right: 5px;
+  transform: translate(-50%, -50%) rotate(135deg);
+	vertical-align: top;
+	width: 0.45em;
+  color: currentColor;
+  z-index: -1;
+}
+[astronaut] body .container #content #new-modal .content-modal .row input {
+  width: 100%;
+  height: 2rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  transition: ease 0.2s;
+  box-sizing: border-box;
+}
+[astronaut] body .container #content #new-modal .content-modal .row input::placeholder {
+  opacity: 0.4;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification {
+  padding: 1rem;
+  min-height: 1.5rem;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  transition: ease 0.09s;
+  transform: scale(0.9);
+  opacity: 0;
+  display: none;
+  position: relative;
+  z-index: 1;
+  font-family: system-ui;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification a {
+  cursor: pointer;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification div {
+  width: fit-content;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification i.notify-btn-close {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: ease 0.2s;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification.show {
+  transform: scale(1);
+  opacity: 1;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification a:hover {
+  text-decoration: underline;
+}
+[astronaut] body .container #content #new-modal .content-modal #notification div img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+[astronaut] body .container #content button.btn-form {
+  padding: 0.6rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: ease 0.2s;
+}
+[astronaut] body .container #content button.btn-form[disabled],
+[astronaut] body .container #content button.btn-form.green[status="disabled"],
+[astronaut] body .container #content button.btn-form.red[status="disabled"] {
+  filter: grayscale(1);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+[astronaut] body .container #content button.btn-form-green:active {
+  transform: scale(0.95);
+}
+[astronaut] body .container #content button.btn-form.red {
+  background: transparent;
+  border: solid 1px transparent;
+  font-weight: bold;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+[astronaut] body #content #new-modal #overlay {
+  transition: ease 0.2s;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  background: #22272e9e;
+}
+
+[astronaut] body #content #new-modal.displayed #overlay {
+  opacity: 1;
+}
+[astronaut] body #content #new-modal .bar-search .search {
+  user-select: none;
+}
+/*==========================FINAL new Modal==========================*/
+
+
+/*==========================profile-author==========================*/
+[astronaut] body .container #content #new-modal .profile-author {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+[astronaut] body .container #content #new-modal .profile-author .header,
+[astronaut] body .container #content #new-modal .profile-author .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+[astronaut] body .container #content #new-modal .profile-author .header .avatar {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+[astronaut] body .container #content #new-modal .profile-author .header .avatar::before {
+  content: '';
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  top: 50%!important;
+  left: 50%!important;
+
+  border-radius: 50%;
+  width: 99%;
+  height: 99%;
+}
+[astronaut] body .container #content #new-modal .profile-author .header .avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+[astronaut] body .container #content #new-modal .profile-author .header .name  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-primary);
+  user-select: none;
+}
+[astronaut] body .container #content #new-modal .profile-author .header .name span:last-child {
+  font-size: 0.7rem;
+  opacity: 0.4;
+}
+[astronaut] body .container #content #new-modal .profile-author .main div,
+[astronaut] body .container #content #new-modal .donate-pix {
+  color: var(--font-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+[astronaut] body .container #content #new-modal .profile-author .main {
+  flex-direction: row;
+}
+[astronaut] body .container #content #new-modal .profile-author .main div.button {
+  padding: 0.3rem 0.7rem;
+  gap: 0.2rem;
+  border-radius: 0.3rem;
+  transition: ease 0.2s;
+  user-select: none;
+}
+[astronaut] body .container #content #new-modal .profile-author .main div.button i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[astronaut] body .container #content #new-modal .profile-author .main div.button i svg {
+  width: 16;
+  height: 16;
+}
+[astronaut] body .container #content #new-modal .donate-pix {
+  opacity: 0.5;
+  flex-wrap: wrap;
+}
+[astronaut] body .container #content #new-modal .donate-pix i {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  user-select: none;
+}
+
+/*==========================FINAL profile-author==========================*/
+
+[astronaut] body .container #content #new-modal .warningXFrameHTML {
+  overflow: overlay;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML,
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step {
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step-gif {
+  display: flex;
+  width: max-content;
+  margin: auto;
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step-gif img {
+  border: solid 0.3rem var(--bg-primary-transparent);
+  border-radius: 0.4rem;
+  width: 100%;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step-gif .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00000066;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step-gif i.play {
+  cursor: pointer;
+  background: #252a31c4;
+  border-radius: 0.5rem;
+  transition: ease 0.1s;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step-gif i.play:hover {
+  cursor: pointer;
+  background: #252a31;
+  border-radius: 0.5rem;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML .step-gif i.play svg {
+  width: 5rem;
+  height: 4rem;
+}
+[astronaut] body .container #content #new-modal .warningXFrameHTML bgc {
+  background: #0000003b;
+  padding: 0 0.3rem;
+}
+
+/*localhostdefault*/
+[default] body { 
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  row-gap: 3rem;
+}
+[default] body .container {
+  display: none;
+}
+[default] body table, 
+[default] body address {
+  display: inherit!important;
+}
+
+
+
+
