@@ -944,7 +944,7 @@ window.addEventListener('load', () => {
             varParam[id]({selector, theme: theme.actual(), lang:langText})
 
            
-            setUrlBar(nameParam,id)
+            if(id != 'home'){setUrlBar(nameParam,id)}
             if(changeUrl){
               urlparams.change(nameParam, id)
             } else {
@@ -984,7 +984,7 @@ window.addEventListener('load', () => {
           window.history.pushState(null, null, `?${name}=` + value);
         },
         clear() {
-          window.history.pushState(null, null, '/');
+          window.history.pushState(null, null, location.pathname);
         }
       }
       const _HOME = () => {
