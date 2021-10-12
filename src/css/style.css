@@ -72,6 +72,9 @@
   transition: ease 0.1s;
   position: relative;
 }
+[astronaut] body .container nav .menu .icons i { 
+  display: flex;
+}
 [astronaut] body .container nav .menu .icons svg { 
   width: 23px;
   height: 23px;
@@ -197,7 +200,7 @@
   margin: 0.3rem 0;
   display: flex;
 }
-[astronaut] body .container main .container-list #list-items .item a{
+[astronaut] body .container main .container-list #list-items .item a {
   cursor: pointer;
   padding: 0.3rem 0.6rem;
 }
@@ -641,6 +644,7 @@
 [astronaut] body .container main #layout .display #new-page {
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 [astronaut] body .container #particles-js {
   position: absolute;

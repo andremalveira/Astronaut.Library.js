@@ -159,12 +159,11 @@
 
 
   const titleTab = {
-    change(favicon, title) {
-      document.title = title
-      HEAD.get('link[rel="shortcut icon"]').href = favicon
+    change(title) {
+      document.title = TITLE_DEFAULT + ` - ${title.capitalize()}`
     },
     default(){
-      HEAD.insertAdjacentHTML('beforeend', `<link rel="shortcut icon" href="src/img/favicon.svg" type="image/x-icon">`)
+      document.title = TITLE_DEFAULT 
     }
   }
 

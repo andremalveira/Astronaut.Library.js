@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
 
   //initial changes
   theme.check()
-
+  document.title = TITLE_DEFAULT
   //insert new html structure 
   BODY.insertAdjacentHTML('afterbegin', structure) //STRUCTURE IN INDEX.HTML
   
@@ -1035,7 +1035,7 @@ window.addEventListener('load', () => {
             settings.start(btnId.value, btn)
           } else {
             var funcs;
-            if(btnId.value == 'donate'){
+            if(btnId.value == 'author'){
               function funcs() {
                 var avatar = content.get('#new-modal .profile-author .avatar')
                 loading.auto(avatar, {time: 600, style:{bg:'border-radius: 50%', spinner:'width: 30px;height: 30px;opacity:0.4;'}})

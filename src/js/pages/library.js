@@ -68,7 +68,7 @@
         if(!head.querySelector('style#home-css')){
           head.appendChild(style) //INSERT CSS
         }
-
+        titleTab.default()
         selector.innerHTML=homeContentHTML //INSERT HTML
 
 
@@ -117,7 +117,7 @@
       if(!head.get(`style#${namePage}-css`)){
         head.appendChild(style) //INSERT CSS
       }
-
+      titleTab.change(namePage)
       selector.innerHTML=pageContentHTML //INSERT HTML
 
 
@@ -139,26 +139,115 @@
           //<div class=""></div>
           var pageContentHTML = `
             <div class="${namePage}-body">
-            <div class="${namePage}-container">
-              <h1>About</h1>
-              <p>Astronaut Library .js</p>
+              <div class="${namePage}-container">
+                <h1>${langText.aboutText.p0}</h1>
+                <p>${langText.aboutText.p1}</p>
+                <p>${langText.aboutText.p2}</p>
+                <p>${langText.aboutText.p3}</p>
+                <p>${langText.aboutText.p4}</p>
+                <h3>${langText.aboutText.p5}</h3>
+                <div tab>${langText.aboutText.ps6}</div>
+                <div break></div>
+                <h1>${langText.aboutText.p7}</h1>
+                <p>${langText.aboutText.p8}</p>
+                <h3>${langText.aboutText.p9}</h3>
+                <div tab>${langText.aboutText.ps10}</div>
+              </div>
+
+              <div class="video-preview">
+                <h1 class="text-vertical">Extension Preview</h1>
+                <div class="video">
+                  <video src="./src/video/astronaut-preview.mp4" loop="true"></video>
+                  <div class="controls">${icons.play}</div>                
+                </div>
+              </div>
             </div>
-            </div>
+    
           `;
     
           //======================== CSS =======================//
           var css = `
             .${namePage}-body {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
+              overflow: scroll;
               width: 100%;
               height: 100%;
+              position: relative;
+            }
+            .${namePage}-body .video-preview {
+              display: flex;
+              justify-items: center;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+            }
+            .${namePage}-body .video-preview .text-vertical {
+              writing-mode: vertical-lr;
+              transform: scale(-1);
+            }
+            .${namePage}-body .video {
+              position: relative;
+              width: 86rem;
+              display: flex;
+              box-shadow: 0px 0px 10px 3px var(--bg-primary);
+              border-radius: 0.4rem;
+            }
+            .${namePage}-body .video .controls {
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: #0000004d;
+              border-radius: 0.4rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .${namePage}-body .video .controls svg {
+              width: 5rem;
+              height: 5rem;
+              background: var(--bg-second);
+              border-radius: 0.5rem;
+              cursor: pointer;
+              transition: ease 0.2s
+            }
+            .${namePage}-body .video .controls svg:hover {
+              background: var(--bg-primary);
+            }
+            .${namePage}-body .video .controls.play {
+              background: transparent;
+              cursor: pointer;
+            }
+            .${namePage}-body .video .controls.play svg{
+              opacity: 0
+            }
+            .${namePage}-body video {
+              width: 100%;
+              height: 100%;
+              border-radius: 0.4rem;
             }
             .${namePage}-container {
-              max-width: 30rem;
+              margin: 2rem 0 6rem 4rem;
+              max-width: 70rem;
             }   
+            .${namePage}-container a[author],
+            .${namePage}-container a[opendoc] {
+              cursor: pointer;
+            }   
+            .${namePage}-container [tab] {
+              margin-left: 1rem;
+            }   
+            .${namePage}-container [break] {
+              height: 1px;
+              background: var(--bg-primary);
+              margin: 2rem 0px;
+            }  
+            .${namePage}-container i[dot] {
+              color: var(--bg-info-border);
+            }  
+            .${namePage}-container h3 {
+              font-weight: normal;
+              color: var(--link-primary);
+            } 
             
           `;
     
@@ -168,14 +257,33 @@
           if(!head.get(`style#${namePage}-css`)){
             head.appendChild(style) //INSERT CSS
           }
-    
+          titleTab.change(namePage)
           selector.innerHTML=pageContentHTML //INSERT HTML
-    
     
           //===================== FUNCTIONS ======================//
     
           //===================== SCRIPTS ======================//
-          
+          selector.querySelector('#new-page a[author]').addEventListener('click', () => {
+            document.querySelector('nav .icons#author').click()
+          })
+          selector.querySelectorAll('#new-page a[opendoc]').forEach(e => {
+            e.addEventListener('click', () => {
+              var doc = e.getAttribute('opendoc')
+              document.querySelector(`#list-items .item [data-id='${doc}']`).click()
+            })
+          });
+          var play = false;
+          selector.querySelector('#new-page .video-preview .controls').addEventListener('click', () => {
+            if(!play){
+              selector.querySelector('#new-page .video-preview video').play()
+              selector.querySelector('#new-page .video-preview .controls').classList.add('play')
+              play = true
+            } else {
+              selector.querySelector('#new-page .video-preview video').pause()
+              selector.querySelector('#new-page .video-preview .controls').classList.remove('play')
+              play = false
+            }
+          })
       
     },
     download(params){
@@ -216,7 +324,7 @@
           if(!head.get(`style#${namePage}-css`)){
             head.appendChild(style) //INSERT CSS
           }
-    
+          titleTab.change(namePage)
           selector.innerHTML=pageContentHTML //INSERT HTML
     
     

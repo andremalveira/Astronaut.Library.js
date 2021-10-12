@@ -36,7 +36,7 @@ const docs = {
       if(!head.get(`style#${namePage}-css`)){
         head.appendChild(style) //INSERT CSS
       }
-
+      titleTab.change(namePage)
       selector.innerHTML=pageContentHTML //INSERT HTML
 
 
@@ -46,6 +46,4 @@ const docs = {
       
   
     }
-    
-
 }

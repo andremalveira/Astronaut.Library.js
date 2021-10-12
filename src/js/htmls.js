@@ -23,7 +23,7 @@ const htmls = {
       src="https://andremalveira.github.io/astronaut/src/img/gif-information-typegraphy.gif"
     >
   `,
-  donate() { return`
+  author() { return`
   <div class="profile-author">
     <div class="header">
       <a href="https://github.com/andremalveira" target="_blank"><div class="avatar"><img loading="lazy" src="

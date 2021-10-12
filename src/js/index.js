@@ -29,7 +29,7 @@ var structure = `
       </div>
       <div class="menu">
         <div id="credits" class="icons" title="${langText.credit}"><i class="icon-star">${icons.star}</i></div>
-        <div id="donate" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
+        <div id="author" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
         <div id="settings" class="icons" title="${langText.settings}">${icons.gear}</div>
       </div>
     </nav>
