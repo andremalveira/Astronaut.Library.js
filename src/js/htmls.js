@@ -41,5 +41,43 @@ const htmls = {
     </div>
   </div>
   <div class="donate-pix"><i>${icons.pix}pix:</i>donatefor.andremalveira@gmail.com</div>
-  `}
+  `},
+  credits(connection){ return `
+  <style>
+    #new-modal .credits .container-item {
+      margin: 1rem 0;
+    }
+    #new-modal .credits .item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 5px 0;
+    }
+    #new-modal .credits .item a {
+      color: var(--font-primary) ;
+    }
+    #new-modal .credits .item i svg {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+  <div class="credits">
+    <span> ${langText.credit}</span>
+    <div class="container-item">
+      <div class="item">
+        <i style="color:#7952B3">${icons.dot}</i>
+        <a href="https://icons.getbootstrap.com" target="_blank"><span>Bootstrap Icons</span></a>
+      </div>
+      <div class="item">
+        <i style="color:#339AF0">${icons.dot}</i>
+        <a href="https://fontawesome.com/v5.15/icons" target="_blank"><span>Font Awesome</span></a>
+      </div>
+      <div class="item">
+        <i style="color:#FF55A3">${icons.dot}</i>
+        <a href="https://www.freepik.com/catalyststuff" target="_blank"><span>Catalyststuff</span></a>
+      </div>
+    </div>
+  </div>
+  `
+  }
 }

@@ -16,7 +16,7 @@ function notFound(params) {
         <div class="error-body space">
           <div class="astronaut">
             <div class="home-stars"><div class="small"></div><div class="medium"></div><div class="big"></div></div>
-            <div class="astronaut_wandering"><img class="home-astronaut astronaut_spin" src="./src/img/astronaut-lost.svg"></div>
+            <div class="astronaut_wandering"><img class="home-astronaut astronaut_spin" src="./src/img/svg/astronaut-lost.svg"></div>
             <div class="error-number">${errorNumber}</div>
             <div class="error-text">${errorText}</div>
             <div class="svg bg home-background"></div>

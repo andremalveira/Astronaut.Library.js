@@ -24,13 +24,11 @@ var structure = `
   <div class="container columns" >
     <nav>
       <div class="menu">
-        <div id="localhost" class="icons" title="Documentation">${icons.files}</div>
-        <div id="database" src="/phpmyadmin/" class="icons" title="${langText.database}">${icons.server}</div>
+        <div id="localhost" class="icons" title="Documentation">${icons.list}</div>
         <span hr></span>
-        <div id="palettecolor" page class="icons" title="${langText.palettecolor}">${icons.palette}</div>
-        <div id="typography" page class="icons" title="${langText.typography}">${icons.typography}</div>
       </div>
       <div class="menu">
+        <div id="credits" class="icons" title="${langText.credit}"><i class="icon-star">${icons.star}</i></div>
         <div id="donate" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
         <div id="settings" class="icons" title="${langText.settings}">${icons.gear}</div>
       </div>
@@ -47,6 +45,8 @@ var structure = `
               <div class="close-list">${icons.close}</div>
             </div>
             <div id="list-items">
+              <div class="item"><a flex data-type="library" data-id="extension"><span>Extension</span></a></div>
+              <div break></div>
               <div class="item"><a flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
               <div break></div>
               <div class="item"><a flex data-type="library" data-id="about"><span>About</span></a></div>
@@ -59,7 +59,7 @@ var structure = `
           <div window id="preview" ${SSPhoneModel_model} >
             <div class="navbar">
               <div class="window-control">
-                <i title="${langText.close}" >${icons.windowControl.close}</i>
+                <i>${icons.windowControl.close}</i>
                 <i title="${langText.fullscreenExit}" option="fullscreenexit">${icons.windowControl.minimize}</i>
                 <i title="${langText.fullscreen}" option="fullscreen">${icons.windowControl.maximize}</i>
               </div>

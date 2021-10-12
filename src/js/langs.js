@@ -7,6 +7,7 @@ const lang = (lang) => {
     typography: 'Tipografia',
     settings:'Configurações',
     coffee: 'Me compra um Café? ❤☕',
+    credit: 'Créditos',
     currency: 'BRL',
     copy: 'Copy',
     close:'Fechar',
@@ -41,6 +42,10 @@ const lang = (lang) => {
     openNewTab: 'Abrir em nova Guia',
     openInVscode: 'Abrir no VSCode',
     pageNotFound: 'Página não Encontrada!',
+
+    //Menu Pages
+    extension: 'Extensão',
+    about: 'Sobre',
 
     //cnect
     cnectOnline: 'Você está Online!',
@@ -86,6 +91,7 @@ const lang = (lang) => {
     typography: 'Typography',
     settings:'Settings',
     coffee: 'Buy me a Coffee? ❤☕',
+    credit: 'Credits',
     currency: 'USD',
     copy: 'Copy',
     close:'Close',
@@ -120,6 +126,10 @@ const lang = (lang) => {
     openNewTab: 'Open in New Tab',
     openInVscode: 'Open in VSCode',
     pageNotFound: 'Page not Found!',
+
+    //Menu Pages
+    extension: 'Extension',
+    about: 'About',
 
     //cnect
     cnectOnline: 'You are Online!',

@@ -170,8 +170,9 @@ window.addEventListener('load', () => {
         },
         check() {
           var listIsDisplayedStorage = storageLocal.get('listIsDisplayed');
+
           if(listIsDisplayedStorage === false){
-            viewList.close()
+             viewList.open()
           } else {
             viewList.open()
           }
@@ -914,7 +915,7 @@ window.addEventListener('load', () => {
           return selector.get('#new-page')
         }
         const setUrlBar = (param, id) => {
-          if(barSearchURL.classList.contains('fadeonleft')){barSearchURL.classList.remove('fadeonleft')}
+          param = param ?? ''
           barSearchURL.value=`${DOMINIO_NAME_FAKE}/${param}${((id) ? '/'+id : '')}`
           setTimeout(() => {
             barSearchURL.classList.add('fadeonleft')
@@ -944,7 +945,7 @@ window.addEventListener('load', () => {
             varParam[id]({selector, theme: theme.actual(), lang:langText})
 
            
-            if(id != 'home'){setUrlBar(nameParam,id)}
+            setUrlBar((id != 'home') ? (nameParam,id) : '')
             if(changeUrl){
               urlparams.change(nameParam, id)
             } else {
@@ -970,6 +971,9 @@ window.addEventListener('load', () => {
           if(params.get('docs')){
             docId = params.get('docs')
             newPage({listItems,id:docId, selector: preview, varParam:docs, nameParam:'docs'})
+          } else if(params.get('library')){
+            libraryId = params.get('library')
+            newPage({listItems,id:libraryId, selector: preview, varParam:library, nameParam:'library'})
           } else if(isSearchParams === -1){
             _HOME()
           }
@@ -1029,18 +1033,20 @@ window.addEventListener('load', () => {
             viewList.init()
           } else if(btnId.value == 'settings') {
             settings.start(btnId.value, btn)
-          } else if(btnId.value == 'donate') {
-            function loadAvatar() {
-              var avatar = content.get('#new-modal .profile-author .avatar')
-              loading.auto(avatar, {time: 600, style:{bg:'border-radius: 50%', spinner:'width: 30px;height: 30px;opacity:0.4;'}})
+          } else {
+            var funcs;
+            if(btnId.value == 'donate'){
+              function funcs() {
+                var avatar = content.get('#new-modal .profile-author .avatar')
+                loading.auto(avatar, {time: 600, style:{bg:'border-radius: 50%', spinner:'width: 30px;height: 30px;opacity:0.4;'}})
+              }
             }
-            
 
             setTimeout(() => {
               newModal.start({
-                contentModal: htmls[btnId.value](),
+                contentModal: htmls[btnId.value](STATUS_CONNECTION),
                 btn, id: btnId.value, style:'width:30%;',
-                func:loadAvatar
+                func:funcs
               })
             }, 100);
 
@@ -1079,16 +1085,27 @@ window.addEventListener('load', () => {
           
           listItems.insertAdjacentHTML('beforeend',itemHTML)
       }); */
+     
+     
+     
       //LIST ITEMS/PROJECTS [event listener ]
-      var menuDocs = listItems.getAll('.item a[data-type="docs"]');               
+      var menuDocs = listItems.getAll('.item a[data-type="docs"]'), 
+         menuLibrary = listItems.getAll('.item a[data-type="library"]');                       
       menuDocs.forEach(a => {
         a.addEventListener('click', e => {
           newPage({listItems, id:a.dataset.id, selector: preview, varParam:docs, nameParam:'docs'})
         })
       })
+      menuLibrary.forEach(a => {
+        a.addEventListener('click', e => {
+          newPage({listItems, id:a.dataset.id, selector: preview, varParam:library, nameParam:'library'})
+        })
+      })
       containerList.get('.root .for-home').addEventListener('click', () => {
         _HOME()
       })
+
+      
       //BUTTON CLOSE LIST-ITEM/PROJECTS
       containerList.get('.close-list').addEventListener('click', () => {
         viewList.init()

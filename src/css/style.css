@@ -72,6 +72,10 @@
   transition: ease 0.1s;
   position: relative;
 }
+[astronaut] body .container nav .menu .icons svg { 
+  width: 23px;
+  height: 23px;
+}
 [astronaut] body .container nav .menu .icons.active::before,
 [astronaut] body .container nav .menu .icons.active-modal::before { 
   content: '';
@@ -86,6 +90,12 @@
 [astronaut] body .container nav .menu .icons.active:not(.fixed)::before,
 [astronaut] body .container nav .menu .icons.active-modal::before { 
   background: #27C93F;
+}
+[astronaut] body .container nav .menu .icons.active-modal#credits::before { 
+  background: #f1e44b;
+}
+[astronaut] body .container nav .menu .icons.active-modal#credits i { 
+  color: #f1e44b;
 }
 [astronaut] body .container nav .menu .icons.active:not(.minimized)#palettecolor::before { 
   background: linear-gradient(180deg, rgba(242,90,69,1) 3%, rgba(254,212,56,1) 34%, rgba(115,191,82,1) 53%, rgba(82,154,212,1) 89%, rgba(87,82,162,1) 100%);
@@ -184,7 +194,7 @@
   left: -8px;
 }
 [astronaut] body .container main .container-list #list-items [break] {
-  margin: 1rem 0;
+  margin: 0.3rem 0;
   display: flex;
 }
 [astronaut] body .container main .container-list #list-items .item a{
