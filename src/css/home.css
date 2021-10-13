@@ -1,3 +1,4 @@
+
 .space .astronaut {
   flex-direction: column;
 }
@@ -8,7 +9,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  color: var(--bg-primary);
+  color: #adbac7;
 }
 .space .svg {
   position: absolute;

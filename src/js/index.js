@@ -24,7 +24,7 @@ var structure = `
   <div class="container columns" >
     <nav>
       <div class="menu">
-        <div id="localhost" class="icons" title="Documentation">${icons.list}</div>
+        <div id="localhost" class="icons" title="Menu">${icons.list}</div>
         <span hr></span>
       </div>
       <div class="menu">
@@ -45,11 +45,11 @@ var structure = `
               <div class="close-list">${icons.close}</div>
             </div>
             <div id="list-items">
-              <div class="item"><a flex data-type="library" data-id="extension"><span>Extension</span></a></div>
+              <div class="item"><a flex data-type="docs" data-id="extension"><span>${langText.extension}</span></a></div>
               <div break></div>
               <div class="item"><a flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
               <div break></div>
-              <div class="item"><a flex data-type="library" data-id="about"><span>About</span></a></div>
+              <div class="item"><a flex data-type="library" data-id="about"><span>${langText.about}</span></a></div>
               <div class="item"><a flex data-type="library" data-id="download"><span>Download</span></a></div>
             </div>
 

@@ -181,6 +181,16 @@ function clipboard(textToCopy) {
       });
   }
 }
+const copy = (value) => {
+  clipboard(value)
+    .then(() => {
+      oldnotify(langText.pcCopySuccess, {type:'success'})
+    })
+    .catch(err => {
+      oldnotify(langText.pcCopyError, {type:'error'})
+      console.error(err)
+    })
+}
 function oldnotify(text, settings) {
   let body = document.body ?? document.documentElement;
   settings = settings ?? {};
@@ -348,16 +358,7 @@ function newContextMenu(params) {
 function getRandom() {
   return Math.random();
 }
-const copy = (value) => {
-  clipboard(value)
-    .then(() => {
-      notify(langText.pcCopySuccess, {type:'success'})
-    })
-    .catch(err => {
-      notify(langText.pcCopyError, {type:'error'})
-      console.error(err)
-    })
-}
+
 function disableContextMenuDefault(){
   if (document.addEventListener) {
     document.addEventListener('contextmenu', function(e) {

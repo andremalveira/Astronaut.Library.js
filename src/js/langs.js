@@ -9,7 +9,7 @@ const lang = (lang) => {
     coffee: 'Me compra um Café? ❤☕',
     credit: 'Créditos',
     currency: 'BRL',
-    copy: 'Copy',
+    copy: 'Copiar',
     close:'Fechar',
     enabled: 'Habilitado',
     enable: 'Habilitar',
@@ -224,6 +224,7 @@ const lang = (lang) => {
 let langText = {}
 if(localStorage.getItem(LOCALSTORAGE_NAME)){
   var storedSettings = JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME));
+ 
   if(storedSettings.language) {
     langText = lang(storedSettings.language)
   } else {

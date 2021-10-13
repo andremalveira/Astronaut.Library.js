@@ -914,9 +914,12 @@ window.addEventListener('load', () => {
           selector.get('.display').insertAdjacentHTML('beforeend', `<div id="new-page" page="${id}"></div>`);
           return selector.get('#new-page')
         }
+
+
         const setUrlBar = (param, id) => {
+
           param = param ?? ''
-          barSearchURL.value=`${DOMINIO_NAME_FAKE}/${param}${((id) ? '/'+id : '')}`
+          barSearchURL.value=`${DOMINIO_NAME_FAKE}/${(nameParam) == 'docs' ? 'documentation/'+param : param}${((id) ? '/'+id : '')}`
           setTimeout(() => {
             barSearchURL.classList.add('fadeonleft')
           }, 100);
@@ -956,7 +959,7 @@ window.addEventListener('load', () => {
             error(`✖ Error: Page not found!`)
             selector = createNewPageTag(selector)
             notFound({error:{number:404,text:langText.pageNotFound}, selector, theme: theme.actual(), lang:langText})
-            barSearchURL.value=`astronaut.library/error.404_pageNotFound!`
+            barSearchURL.value=`${DOMINIO_NAME_FAKE}/error.404_pageNotFound!`
             setUrlBar(`error.404_page["${id}"].NotFound!`)
             urlparams.change(nameParam, id)
           }

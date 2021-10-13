@@ -57,17 +57,16 @@
             transition: all 5s linear;
             animation: fall 10s cubic-bezier(0.75, -0.5, 0, 1.75), jumping 10s infinite ease;
           }
-        }
 
-          
+        }
         `;
 
         //=============== INITIAL EXECUTABLES ===============//
         style.id='home-css'
         style.textContent = css;
-        if(!head.querySelector('style#home-css')){
+/*         if(!head.querySelector('style#home-css')){
           head.appendChild(style) //INSERT CSS
-        }
+        } */
         titleTab.default()
         selector.innerHTML=homeContentHTML //INSERT HTML
 
@@ -75,57 +74,6 @@
         //===================== FUNCTIONS ======================//
 
         //===================== SCRIPTS ======================//
-    },
-    extension(params){
-      var theme = (params.theme) ? params.theme : '', 
-      langText = (params.lang) ? params.lang : '', 
-      selector = params.selector ?? false,
-      head = document.head,
-      style = document.createElement('style'),
-      namePage = 'extension';
-
-      //======================= HTML ========================// 
-      //<div class=""></div>
-      var pageContentHTML = `
-        <div class="${namePage}-body">
-        <div class="${namePage}-container">
-          <h1>extension</h1>
-          <p>Astronaut Library .js</p>
-        </div>
-        </div>
-      `;
-
-      //======================== CSS =======================//
-      var css = `
-        .${namePage}-body {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-        }
-        .${namePage}-container {
-          max-width: 30rem;
-        }   
-        
-      `;
-
-      //=============== INITIAL EXECUTABLES ===============//
-      style.id=`${namePage}-css`
-      style.textContent = css;
-      if(!head.get(`style#${namePage}-css`)){
-        head.appendChild(style) //INSERT CSS
-      }
-      titleTab.change(namePage)
-      selector.innerHTML=pageContentHTML //INSERT HTML
-
-
-      //===================== FUNCTIONS ======================//
-
-      //===================== SCRIPTS ======================//
-      
-  
     },
     about(params){
       var theme = (params.theme) ? params.theme : '', 
@@ -298,7 +246,39 @@
           //<div class=""></div>
           var pageContentHTML = `
             <div class="${namePage}-body space">
-            download
+              <div class="${namePage}-container extension">
+                <i>${icons.box}</i>
+                <h3>Astronaut Extension</h3>
+                <a class="btn">Download</a>
+                <div class="footer">    
+                  <div class="compatibilities">
+                    <i yes>${icons.chrome}</i>
+                    <i yes>${icons.opera}</i>
+                    <i yes>${icons.edge}</i>
+                    <i not>${icons.firefox}</i>
+                  </div>      
+                </div>
+              </div>
+              <div class="${namePage}-container library">
+                <i>${icons.braces}</i>
+                <h3>Astronaut Library.js</h3>
+                <a class="btn">Download Zip</a>
+                <div class="footer">
+                  <div class="links">
+                    <div data-copy="https://github.com/andremalveira/cdnjs">${icons.link} ${langText.copy} Link</div>
+                    <div data-copy="<script src='https://github.com/andremalveira/cdnjs'></script>">${icons.slash} ${langText.copy} Script Tag</div>
+                  </div>
+                </div>
+              </div>
+            
+     
+              <div class="astronaut">
+                <div class="home-stars"><div class="small"></div><div class="medium"></div><div class="big"></div></div>
+                <img class="home-astronaut jumping" style="position: absolute;top: 4rem;" 
+                src="./src/img/svg/astronaut-coffe.svg">
+                <div class="svg bg home-background"></div>
+                <div class="svg bg home-planet"></div>
+              </div>
             </div>
           `;
     
@@ -306,13 +286,116 @@
           var css = `
             .${namePage}-body {
               display: flex;
-              flex-direction: column;
               justify-content: center;
               align-items: center;
+              gap: 5rem;
               width: 100%;
               height: 100%;
             }
-            
+            .${namePage}-container {
+              display: flex;
+              gap: 1rem;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 1rem;
+              height: 22rem;
+              width: 20rem;
+              border-radius: 0.5rem;
+              background: var(--btn-primary);
+              box-shadow: 0px 0px 20px -7px var(--bg-primary);
+              transition: ease 0.3s;
+              margin-top: 10rem;
+              position: relative;
+            } 
+            .${namePage}-container .footer {
+              height: 3rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            } 
+
+            .${namePage}-container i svg {
+              width: 5rem;
+              height: 5rem;
+            } 
+            .${namePage}-container h3 {
+              font-weight: normal;
+              color: var(--link-primary);
+            } 
+            .${namePage}-container a.btn {
+              padding: 0.4rem 1.5rem;
+              border-radius: 0.3rem;
+              background: var(--btn-second-hover);
+              color: var(--font-primary);
+              border: solid 0.01rem var(--btn-second-border-hover);
+              cursor: pointer;
+              transition: ease 0.2s;
+            } 
+            .${namePage}-container a.btn:hover {
+              background: var(--btn-second);
+            } 
+            .${namePage}-container .links {
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              align-items: center;
+            } 
+            .${namePage}-container .compatibilities  {
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              align-items: center;
+            } 
+            .${namePage}-container .compatibilities i {
+              display: flex;
+              position: relative;
+              font-style: normal;
+            } 
+            .${namePage}-container .compatibilities i[not]::before {
+              content: '✖';
+              color: var(--btn-third-border);
+            } 
+            .${namePage}-container .compatibilities i[yes]::before {
+              content: '✔';
+              color: var(--btn-second-border-hover);
+            } 
+            .${namePage}-container .compatibilities i[not]::before,
+            .${namePage}-container .compatibilities i[yes]::before  {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              font-size: 1.3rem;
+              font-size: 1rem;
+              right: -15px;
+              bottom: -5px;
+            } 
+            .${namePage}-container .compatibilities i svg {
+              width: 1.3rem;
+              height: 1.3rem;
+            } 
+            .${namePage}-container .links div {
+              display: flex;
+              gap: 0.3rem;
+              justify-content: center;
+              align-items: center;
+              padding: 0.3rem 0.6rem;
+              background: var(--btn-primary);
+              border: solid 1px var(--btn-primary-hover);
+              border-radius: 0.2rem;
+              font-size: 0.8rem;
+              cursor: pointer;
+              transition: ease 0.2s;
+            } 
+            .${namePage}-container .links div:hover {
+              background: var(--btn-primary-hover);
+              border: solid 1px var(--btn-primary);
+            } 
+            .${namePage}-container .links svg {
+              width: 1.1rem;
+              height: 1.1rem;
+            } 
           }
     
             
@@ -329,10 +412,15 @@
     
     
           //===================== FUNCTIONS ======================//
-    
+
           //===================== SCRIPTS ======================//
+          selector.querySelectorAll('#new-page [data-copy]').forEach(e => {
+            e.addEventListener('click', () => {
+              var copyValue = e.dataset.copy
+              copy(copyValue)
+            })
+          })
           
-      
     }   
 
   }
