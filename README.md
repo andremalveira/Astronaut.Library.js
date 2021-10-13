@@ -1,4 +1,4 @@
- [Astronaut Page](andremalveira.github.io/astronaut) |  [Extension Preview](https://andremalveira.github.io/astronaut/?library=about#extension-preview) |  [Download](https://andremalveira.github.io/astronaut/?library=download) 
+ [Astronaut Page](https://andremalveira.github.io/astronaut) |  [Extension Preview](https://andremalveira.github.io/astronaut/?library=about#extension-preview) |  [Download](https://andremalveira.github.io/astronaut/?library=download) 
 
 # About
 ## The Extension

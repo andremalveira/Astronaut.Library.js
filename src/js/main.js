@@ -981,13 +981,25 @@ window.addEventListener('load', () => {
             _HOME()
           }
           this.popstate()
+          this.hash()
         },
         popstate() {
           window.addEventListener('popstate', (event) => {
             this.check()
           });
         },
+        hash(){
+          if(location.hash.length > 0) {
+            var hash = document.querySelector(`${location.hash}`),
+                hashTo = hash.offsetTop, hashParent = hash.offsetParent;
+                
+            hashParent.scroll( 0, hashTo );
+          }
+        },
         change(name, value) {
+          if(location.hash.length > 0) {
+            value += location.hash
+          }
           window.history.pushState(null, null, `?${name}=` + value);
         },
         clear() {
