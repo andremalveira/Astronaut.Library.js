@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./src/img/png/astronaut-hi.png" alt="Sublime's custom image"/>
+  <img src="./src/img/png/astronaut-hi.png" alt="Hi!!"/>
 </p>
 <p align="center">
-  <img src="./src/img/png/astronaut-name.png" alt="Sublime's custom image"/>
+  <img src="./src/img/png/astronaut-name.png" alt="Astronaut Library.js"/>
 </p>
 <p align="center">
   <a href="https://andremalveira.github.io/astronaut">Astronaut Page</a> |
