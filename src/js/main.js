@@ -904,26 +904,30 @@ window.addEventListener('load', () => {
           e.get('#contextMenu').remove()
         })
       }
+      const setUrlBar = (param, id, hash) => {
+        var barSearchURL = preview.get('.bar-search #url');
+        param = param ?? ''
+        if(!hash){
+          barSearchURL.value=`${DOMINIO_NAME_FAKE}/${(param) == 'docs' ? 'docs/' : ''}${((id) ? id : '')}`
+          setTimeout(() => {
+            barSearchURL.classList.add('fadeonleft')
+          }, 100);
+        } else {
+          barSearchURL.value += hash
+        }
+
+      }
       const newPage = (params) => {
         var id = params.id ?? false, selector = params.selector ?? false, changeUrl = params.changeUrl ?? true,
             ok = true, newPageCheck = false, listItems = params.listItems ?? false, 
-            varParam = params.varParam ?? '', nameParam = params.nameParam ?? '',
-            barSearchURL = preview.get('.bar-search #url');
+            varParam = params.varParam ?? '', nameParam = params.nameParam ?? '';
+            
 
         const createNewPageTag = (selector) => {
           selector.get('.display').insertAdjacentHTML('beforeend', `<div id="new-page" page="${id}"></div>`);
           return selector.get('#new-page')
         }
 
-
-        const setUrlBar = (param, id) => {
-
-          param = param ?? ''
-          barSearchURL.value=`${DOMINIO_NAME_FAKE}/${(nameParam) == 'docs' ? 'documentation/'+param : param}${((id) ? '/'+id : '')}`
-          setTimeout(() => {
-            barSearchURL.classList.add('fadeonleft')
-          }, 100);
-        }
         if(selector.get('#new-page')){
           newPageCheck = true
           if(selector.get('#new-page').attributes['page'].value == id){
@@ -947,8 +951,13 @@ window.addEventListener('load', () => {
             selector = createNewPageTag(selector)
             varParam[id]({selector, theme: theme.actual(), lang:langText})
 
-           
-            setUrlBar((id != 'home') ? (nameParam,id) : '')
+            if(id != 'home'){
+              setUrlBar(nameParam, id)
+            } else {
+              setUrlBar()
+            }
+
+
             if(changeUrl){
               urlparams.change(nameParam, id)
             } else {
@@ -959,7 +968,6 @@ window.addEventListener('load', () => {
             error(`✖ Error: Page not found!`)
             selector = createNewPageTag(selector)
             notFound({error:{number:404,text:langText.pageNotFound}, selector, theme: theme.actual(), lang:langText})
-            barSearchURL.value=`${DOMINIO_NAME_FAKE}/error.404_pageNotFound!`
             setUrlBar(`error.404_page["${id}"].NotFound!`)
             urlparams.change(nameParam, id)
           }
@@ -990,10 +998,12 @@ window.addEventListener('load', () => {
         },
         hash(){
           if(location.hash.length > 0) {
-            var hash = document.querySelector(`${location.hash}`),
-                hashTo = hash.offsetTop, hashParent = hash.offsetParent;
-                
-            hashParent.scroll( 0, hashTo );
+            var hash = location.hash, hashSelector = document.querySelector(`${location.hash}`);
+            if(hashSelector){
+              var hashTo = hashSelector.offsetTop, hashParent = hashSelector.offsetParent;
+              hashParent.scroll( 0, hashTo );
+              setUrlBar(false, false, hash)
+            }
           }
         },
         change(name, value) {
