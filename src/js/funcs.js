@@ -184,7 +184,7 @@ function clipboard(textToCopy) {
 const copy = (value) => {
   clipboard(value)
     .then(() => {
-      oldnotify(langText.pcCopySuccess, {type:'success'})
+      oldnotify(langText.pcCopySuccess, {type:'info'})
     })
     .catch(err => {
       oldnotify(langText.pcCopyError, {type:'error'})

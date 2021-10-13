@@ -117,6 +117,7 @@
           var css = `
             .${namePage}-body {
               overflow: scroll;
+              overflow-x: hidden;
               width: 100%;
               height: 100%;
               position: relative;
@@ -252,10 +253,10 @@
                 <a class="btn">Download</a>
                 <div class="footer">    
                   <div class="compatibilities">
-                    <i yes>${icons.chrome}</i>
-                    <i yes>${icons.opera}</i>
-                    <i yes>${icons.edge}</i>
-                    <i not>${icons.firefox}</i>
+                    <i yes title="Google Chrome">${icons.chrome}</i>
+                    <i yes title="Opera">${icons.opera}</i>
+                    <i yes title="Microsoft Edge">${icons.edge}</i>
+                    <i not title="Mozilla Firefox">${icons.firefox}</i>
                   </div>      
                 </div>
               </div>
@@ -328,7 +329,7 @@
               padding: 0.4rem 1.5rem;
               border-radius: 0.3rem;
               background: var(--btn-second-hover);
-              color: var(--font-primary);
+              color: #cad7e5;
               border: solid 0.01rem var(--btn-second-border-hover);
               cursor: pointer;
               transition: ease 0.2s;
