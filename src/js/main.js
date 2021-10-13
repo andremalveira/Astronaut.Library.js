@@ -913,7 +913,8 @@ window.addEventListener('load', () => {
             barSearchURL.classList.add('fadeonleft')
           }, 100);
         } else {
-          barSearchURL.value += hash
+          var newbarSearchURL = barSearchURL.value.split('#')[0]
+          barSearchURL.value = newbarSearchURL+hash
         }
 
       }
@@ -989,7 +990,7 @@ window.addEventListener('load', () => {
             _HOME()
           }
           this.popstate()
-          this.hash()
+
         },
         popstate() {
           window.addEventListener('popstate', (event) => {
@@ -1003,12 +1004,13 @@ window.addEventListener('load', () => {
               var hashTo = hashSelector.offsetTop, hashParent = hashSelector.offsetParent;
               hashParent.scroll( 0, hashTo );
               setUrlBar(false, false, hash)
+              return true
             }
           }
         },
         change(name, value) {
-          if(location.hash.length > 0) {
-            value += location.hash
+          if(this.hash()) {
+              value += location.hash
           }
           window.history.pushState(null, null, `?${name}=` + value);
         },
