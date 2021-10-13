@@ -20,6 +20,8 @@
 
   --bg-warn: #ae7c1426;
   --bg-warn-border: #ae7c1466;
-  --bg-info: linear-gradient(#4184e426, #4184e426);;
+  --bg-info: linear-gradient(#4184e426, #4184e426);
   --bg-info-border: #4184e466;
+  --bg-success: #46954a26;
+  --bg-success-border: #347d39;
 }
