@@ -1,4 +1,15 @@
- [Astronaut Page](https://andremalveira.github.io/astronaut) |  [Extension Preview](https://andremalveira.github.io/astronaut/?library=about#extension-preview) |  [Download](https://andremalveira.github.io/astronaut/?library=download) 
+<p align="center">
+  <img src="./src/img/png/astronaut-hi.png" alt="Sublime's custom image"/>
+</p>
+<p align="center">
+  <img src="./src/img/png/astronaut-name.png" alt="Sublime's custom image"/>
+</p>
+<p align="center">
+  <a href="https://andremalveira.github.io/astronaut">Astronaut Page</a> |
+  <a href="https://andremalveira.github.io/astronaut/?library=about#extension-preview">Extension Preview</a> |
+  <a href="https://andremalveira.github.io/astronaut/?library=download">Download</a>
+</p>
+
 
 # About
 ## The Extension
