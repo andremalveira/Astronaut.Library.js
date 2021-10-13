@@ -102,7 +102,7 @@
                 <div tab>${langText.aboutText.ps10}</div>
               </div>
 
-              <div class="video-preview">
+              <div id="extension-preview" class="video-preview">
                 <h1 class="text-vertical">Extension Preview</h1>
                 <div class="video">
                   <video src="./src/video/astronaut-preview.mp4" loop="true"></video>

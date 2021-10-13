@@ -1,4 +1,7 @@
-# The Extension
+ [Astronaut Page](andremalveira.github.io/astronaut) |  [Extension Preview](https://andremalveira.github.io/astronaut/?library=about#extension-preview) |  [Download](https://andremalveira.github.io/astronaut/?library=download) 
+
+# About
+## The Extension
 
 Astronaut Library.js is a small Library with useful resources for Developers created by André Malveira.
 
@@ -8,22 +11,23 @@ The extension would just change the default localhost color to a darker color, a
 
 So in addition to just changing the default white color to a darker color, I thought of changing the whole look of the page by manipulating the DOM in a way that could be useful for application development like having the project view on the same tab as localhost keeping the list of the other projects on the side, but of course not only with that, but with other tools.
 
-## Extension Tools
+### Extension Tools
 
-● Project preview in Desktop and Mobile version.
+- Project preview in Desktop and Mobile version.
 
-● Live Server, Real-time update of project changes.
+- Live Server, Real-time update of project changes.
 
-● Open project in Vscode directly from localhost, it is necessary to add the projects directory in settings.
+- Open project in Vscode directly from localhost, it is necessary to add the projects directory in settings.
 
-● Access database without leaving localhost, configuration is required to access phpmayadmin.
+- Access database without leaving localhost, configuration is required to access phpmayadmin.
 
-● Useful Color Palettes.
+- Useful Color Palettes.
 
-● Font Typography.
+- Font Typography.
 
-# Other Library Resources
+## Other Library Resources
 Besides the extension, the library also has other tools to use in websites or applications that use javascript.
 
-## Other Tools
-● Notify -> It's like a custom alert but created in order to show notifications.
+### Other Tools
+
+- Notify -> It's like a custom alert but created in order to show notifications.
