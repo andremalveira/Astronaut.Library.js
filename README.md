@@ -1,5 +1,5 @@
 
- > # <p align="center" style="margin:0;"> Still in Development | Ainda em Desenvolvimento </p>
+ > # <p align="center" margin="0"> Still in Development | Ainda em Desenvolvimento </p>
 
 <p align="center">
   <img src="./src/img/png/astronaut-hi.png" alt="Hi!!"/>
