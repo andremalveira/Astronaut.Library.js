@@ -263,11 +263,11 @@
               <div class="${namePage}-container library">
                 <i>${icons.braces}</i>
                 <h3>Astronaut Library.js</h3>
-                <a class="btn">Download Zip</a>
+                <a href="${DOMINIO_MAIN}/${REPO}/src/download/astronaut.library.zip" download class="btn" >Download Zip</a>
                 <div class="footer">
                   <div class="links">
-                    <div data-copy="https://github.com/andremalveira/cdnjs">${icons.link} ${langText.copy} Link</div>
-                    <div data-copy="<script src='https://github.com/andremalveira/cdnjs'></script>">${icons.slash} ${langText.copy} Script Tag</div>
+                    <div data-copy="${DOMINIO_MAIN}/cdnjs">${icons.link} ${langText.copy} Link</div>
+                    <div data-copy="<script src='${DOMINIO_MAIN}/cdnjs'></script>">${icons.slash} ${langText.copy} Script Tag</div>
                   </div>
                 </div>
               </div>

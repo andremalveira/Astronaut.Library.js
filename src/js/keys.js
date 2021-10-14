@@ -1,4 +1,6 @@
-  DIRECTORY_API = (json) => {return `https://andremalveira.github.io/astronaut/api/${json}`}
+  DOMINIO_MAIN = 'https://andremalveira.github.io'
+  REPO = 'astronaut'
+  DIRECTORY_API = (json) => {return `${DOMINIO_MAIN}/${REPO}/api/${json}`}
   IS_DOCUMENT_MAIN = () => {try {return window.self == window.top;} catch (e) {return false;}}
   DOMINIO_NAME_FAKE = 'astronaut.library.js';
   TITLE_DEFAULT = 'Astronaut Library .js'

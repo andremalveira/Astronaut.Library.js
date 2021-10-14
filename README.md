@@ -1,3 +1,6 @@
+<p align="center" style="font-size: 2rem; margin-bottom:2rem; color: #e5534b">
+ Still in Development | Ainda em Desenvolvimento
+</p>
 <p align="center">
   <img src="./src/img/png/astronaut-hi.png" alt="Hi!!"/>
 </p>
