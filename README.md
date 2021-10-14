@@ -1,5 +1,5 @@
 
- > # <center>Still in Development | Ainda em Desenvolvimento</center>
+ > # <p align="center"> Still in Development | Ainda em Desenvolvimento </p>
 
 <p align="center">
   <img src="./src/img/png/astronaut-hi.png" alt="Hi!!"/>
