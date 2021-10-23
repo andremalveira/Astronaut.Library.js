@@ -19,6 +19,7 @@ const lang = (lang) => {
     fullscreen:'Tela Cheia',
     fullscreenExit: 'Sair da Tela Cheia',
     refresh:'Atualizar',
+    howto: 'Como usar',
     information: 'Informação',
     toggleDevice:'Alternar Dispositivo',
     toggleDesktop: 'Alternar para Desktop ',
@@ -29,6 +30,8 @@ const lang = (lang) => {
     phoneScreenSize: 'Tamanho da Tela do Telefone ',
     sizeDefault: 'Tamanho Padrão',
     default: 'Padrão',
+    required: 'Obrigatório',
+    optional: 'Opcional',
     language: 'Idioma',
     theme:'Tema',
     statusBar: 'Barra de Status',
@@ -42,35 +45,6 @@ const lang = (lang) => {
     openNewTab: 'Abrir em nova Guia',
     openInVscode: 'Abrir no VSCode',
     pageNotFound: 'Página não Encontrada!',
-
-    //Menu Pages
-    extension: 'Extensão',
-    about: 'Sobre',
-
-    //ABOUT
-    aboutText: {
-      p0: `A Extensão`,
-      p1: `Astronaut Library.js é uma pequena biblioteca com recursos úteis para desenvolvedores criada por <a author>André Malveira</a>.`,
-      p2: `Desenvolvida totalmente em Javascript Pure, a biblioteca foi criada principalmente como uma extensão de navegador para 'localhost' dos servidores Apache, Wamp e Xampp.`,
-      p3: `A extensão apenas mudaria a cor do localhost padrão para uma cor mais escura, como um tema, mas conforme o processo avançava, eu vim com novas idéias que poderiam ser úteis para usuários de localhost como eu, porque aqueles que trabalham com os servidores Apache mencionados acima, eles costumam acessar o localhost principal para acessar um projeto, e para quem gosta de um tema escuro e já o usa em outros programas como VSCode, Browsers e até no sistema operacional, pensei que também gostariam de um localhost diferente com um tema escuro e que não prejudicaria tanto os olhos.`,
-      p4: `Portanto, além de apenas mudar a cor branca padrão para uma cor mais escura, pensei em mudar toda a aparência da página manipulando o DOM de uma forma que pudesse ser útil para o desenvolvimento de aplicativos, como ter a visualização do projeto na mesma guia do host local mantendo a lista dos outros projetos ao lado, mas claro que não só com isso, mas com outras ferramentas.`,
-      p5: `Ferramentas da Extensão`,
-      ps6: `
-        <p><i dot>●</i> Visualização do projeto na versão Desktop e Mobile.</p>
-        <p><i dot>●</i> Live Server, Atualização em tempo real das alterações no projeto.</p>
-        
-        <p><i dot>●</i> Abra o projeto no Vscode diretamente de localhost, é necessário adicionar o diretório dos projetos em configurações.</p>
-        <p><i dot>●</i> Acesso ao banco de dados sem sair de localhost, é necessário realizar configuração para acessar o phpmayadmin.</p>
-        <p><i dot>●</i> Paletas de Cores úteis.</p>
-        <p><i dot>●</i> Tipografia de Fontes.</p>
-      `,
-      p7: `Outros Recursos da Biblioteca`,
-      p8: `Além da extensão, a biblioteca também tem outras ferramentas para ultilizar em sites ou aplicações que usam o javascript.`,
-      p9: `Das outras Ferramentas`,
-      ps10: `
-        <p><i dot>●</i><a opendoc="notify"> Notify</a> -> É como um alerta personalizado porém criado a fim de mostrar notificações.</p>
-      `,
-    },
 
     //cnect
     cnectOnline: 'Você está Online!',
@@ -107,6 +81,74 @@ const lang = (lang) => {
     tgInputText: 'Digite um Texto',
     tgInfoTextOne: 'Visualize seu texto digitando nos inputs acima!',
 
+    
+    //Menu Pages
+    extension: 'Extensão',
+    about: 'Sobre',
+
+    //ABOUT
+    aboutText: {
+      p0: `A Extensão`,
+      p1: `Astronaut Library.js é uma pequena biblioteca com recursos úteis para desenvolvedores criada por <a author>André Malveira</a>.`,
+      p2: `Desenvolvida totalmente em Javascript Pure, a biblioteca foi criada principalmente como uma extensão de navegador para 'localhost' dos servidores Apache, Wamp e Xampp.`,
+      p3: `A extensão apenas mudaria a cor do localhost padrão para uma cor mais escura, como um tema, mas conforme o processo avançava, eu vim com novas idéias que poderiam ser úteis para usuários de localhost como eu, porque aqueles que trabalham com os servidores Apache mencionados acima, eles costumam acessar o localhost principal para acessar um projeto, e para quem gosta de um tema escuro e já o usa em outros programas como VSCode, Browsers e até no sistema operacional, pensei que também gostariam de um localhost diferente com um tema escuro e que não prejudicaria tanto os olhos.`,
+      p4: `Portanto, além de apenas mudar a cor branca padrão para uma cor mais escura, pensei em mudar toda a aparência da página manipulando o DOM de uma forma que pudesse ser útil para o desenvolvimento de aplicativos, como ter a visualização do projeto na mesma guia do host local mantendo a lista dos outros projetos ao lado, mas claro que não só com isso, mas com outras ferramentas.`,
+      p5: `Ferramentas da Extensão`,
+      ps6: `
+        <p><i dot>●</i> Visualização do projeto na versão Desktop e Mobile.</p>
+        <p><i dot>●</i> Live Server, Atualização em tempo real das alterações no projeto.</p>
+        
+        <p><i dot>●</i> Abra o projeto no Vscode diretamente de localhost, é necessário adicionar o diretório dos projetos em configurações.</p>
+        <p><i dot>●</i> Acesso ao banco de dados sem sair de localhost, é necessário realizar configuração para acessar o phpmayadmin.</p>
+        <p><i dot>●</i> Paletas de Cores úteis.</p>
+        <p><i dot>●</i> Tipografia de Fontes.</p>
+      `,
+      p7: `Outros Recursos da Biblioteca`,
+      p8: `Além da extensão, a biblioteca também tem outras ferramentas para ultilizar em sites ou aplicações que usam o javascript.`,
+      p9: `Das outras Ferramentas`,
+      ps10: `
+        <p><i dot>●</i><a opendoc="notify"> Notify</a> -> É como um alerta personalizado porém criado a fim de mostrar notificações.</p>
+      `,
+    },
+
+    //NOTIFY
+    ntAbout: 'Uma pequena biblioteca para mensagens de notificações em seus Projetos ou Aplicações Web, desenvolvido completamente em Javascript.',
+    ntMessageDescrip: 'Define a Mensagem',
+    ntMessageDescripDot1: 'Defina a mensagem principal ',
+    ntMessageDescripDot2: 'Use "->" para setar uma mensagem secundária',
+
+    ntIconDescrip: 'Define um Icone',
+    ntIconDescripDot1: 'Defina um ícone com URL',
+    ntIconDescripDot2: 'Defina um ícone com tag SVG',
+    ntIconDescripDot3: 'Defina um ícone com outras tags HTML também.',
+
+    ntLinkDescrip: 'Define Links',
+    netLinkDescripDot1: 'Define Links para menssagem ou icone',
+    netLinkDescripOp1: 'Link de redirecionamento para mensagem',
+    netLinkDescripOp2: 'Link de redirecionamento para icone',
+    netLinkDescripOp3: 'Abre link em nova guia',
+
+    ntTypeDescrip: 'Define o tipo da Notificação',
+    ntTypeDescripDot1: 'Define tipos/cores específicos para a mensagem',
+    ntTypeDescripDot2: "Valores aceitos: <span text>'info'</span>, <span text>'warn'</span>, <span text>'error'</span>, <span text>'off'</span>, <span text>'success'</span> -> padrão",
+
+    ntThemeDescrip: 'Define tema escuro',
+
+    ntStyleDescrip: 'Defina seu próprio estilo de notificação',
+    ntStyleDescripOp1: "Altera a posição da notificação na tela, <br> Outras opções: <span text fira>'top <i>-</i>> right'</span>,  <span text fira>'bottom <i>-</i>> right'</span> <br>or  <span text fira>'bottom <i>-</i>> left'</span>",
+    ntStyleDescripOp2: "Altera cor de fundo, outra opção <span text fira> '<t viewcolor>#ffffff85</t> <i>-</i>> 2px' </span>, <br> O segundo parâmetro é opcional, ele declara desfoque de fundo",
+    ntStyleDescripOp3: 'Altera a cor da fonte',
+    ntStyleDescripOp4: 'Altera a cor da borda',
+    ntStyleDescripOp5: 'Distância da notificação das laterais da tela',
+    ntStyleDescripOp6: 'Altera a cor do ícone',
+    ntStyleDescripOp7: 'Altera fundo do ícone',
+    ntStyleDescripOp8: 'Altera o tamanho do ícone',
+    ntStyleDescripOp9: "Altera a cor do ícone 'fechar'",
+    ntStyleDescripOp10: "Altera fundo do ícone 'fechar'",
+    ntStyleDescripOp11: "Altera tamanho do ícone 'fechar'",
+    ntStyleDescripOp12: 'Adicionar um filtro à notificação',
+    ntStyleDescripOp13: 'Tempo de animação da aparência da notificação', 
+
    }
     
   } else if(lang == 'en-us') {
@@ -128,6 +170,7 @@ const lang = (lang) => {
     fullscreen:'Full Screen',
     fullscreenExit: 'Exit Full Screen',
     refresh:'Refresh',
+    howto: 'How to use',
     information: 'Information',
     toggleDevice:'Toggle Device',
     toggleDesktop: 'Toggle for Desktop',
@@ -138,6 +181,8 @@ const lang = (lang) => {
     phoneScreenSize: 'Phone Screen Size',
     sizeDefault: 'Size Default',
     default: 'Default',
+    required: 'Required',
+    optional: 'Optional',
     language: 'Language',
     theme:'Theme',
     statusBar: 'Status Bar',
@@ -151,35 +196,6 @@ const lang = (lang) => {
     openNewTab: 'Open in New Tab',
     openInVscode: 'Open in VSCode',
     pageNotFound: 'Page not Found!',
-
-    //Menu Pages
-    extension: 'Extension',
-    about: 'About',
-
-    //ABOUT
-    aboutText: {
-      p0: `The Extension`,
-      p1: 'Astronaut Library.js is a small Library with useful resources for Developers created by <a author>André Malveira</a>.',
-      p2: 'Developed completely with Pure Javascript, the library was mainly created as a browser extension for "localhost" of the Apache, Wamp and Xampp servers.',
-      p3: `The extension would just change the default localhost color to a darker color, as a theme, but as the process progressed I came up with new ideas that could be useful for localhost users like me, because those who work with the Apache servers mentioned above, they often access the main localhost to access a project, and for those who like a dark theme and already use it in other programs such as VSCode, Browsers and even the Operating System, I thought they would also like a different localhost with a dark theme and that it wouldn't damage the eyes so much.`,
-      p4: `So in addition to just changing the default white color to a darker color, I thought of changing the whole look of the page by manipulating the DOM in a way that could be useful for application development like having the project view on the same tab as localhost keeping the list of the other projects on the side, but of course not only with that, but with other tools. `,
-      p5: `Extension Tools`,
-      ps6: `
-        <p><i dot>●</i> Project preview in Desktop and Mobile version.</p>
-        <p><i dot>●</i> Live Server, Real-time update of project changes.</p>
-      
-        <p><i dot>●</i> Open project in Vscode directly from localhost, it is necessary to add the projects directory in settings.</p>
-        <p><i dot>●</i> Access database without leaving localhost, configuration is required to access phpmayadmin.</p>
-        <p><i dot>●</i> Useful Color Palettes.</p>
-        <p><i dot>●</i> Font Typography.</p> 
-      `,
-      p7: `Other Library Resources`,
-      p8: `Besides the extension, the library also has other tools to use in websites or applications that use javascript. `,
-      p9: `Other Tools`,
-      ps10: `
-        <p><i dot>●</i><a opendoc="notify"> Notify</a> -> It's like a custom alert but created in order to show notifications.</p>
-      `,
-    },
 
     //cnect
     cnectOnline: 'You are Online!',
@@ -216,6 +232,72 @@ const lang = (lang) => {
     tgInputText: 'Type a Text',
     tgInfoTextOne: 'View your text by typing in the inputs above!',
 
+     //Menu Pages
+     extension: 'Extension',
+     about: 'About',
+ 
+     //ABOUT
+     aboutText: {
+       p0: `The Extension`,
+       p1: 'Astronaut Library.js is a small Library with useful resources for Developers created by <a author>André Malveira</a>.',
+       p2: 'Developed completely with Pure Javascript, the library was mainly created as a browser extension for "localhost" of the Apache, Wamp and Xampp servers.',
+       p3: `The extension would just change the default localhost color to a darker color, as a theme, but as the process progressed I came up with new ideas that could be useful for localhost users like me, because those who work with the Apache servers mentioned above, they often access the main localhost to access a project, and for those who like a dark theme and already use it in other programs such as VSCode, Browsers and even the Operating System, I thought they would also like a different localhost with a dark theme and that it wouldn't damage the eyes so much.`,
+       p4: `So in addition to just changing the default white color to a darker color, I thought of changing the whole look of the page by manipulating the DOM in a way that could be useful for application development like having the project view on the same tab as localhost keeping the list of the other projects on the side, but of course not only with that, but with other tools. `,
+       p5: `Extension Tools`,
+       ps6: `
+         <p><i dot>●</i> Project preview in Desktop and Mobile version.</p>
+         <p><i dot>●</i> Live Server, Real-time update of project changes.</p>
+       
+         <p><i dot>●</i> Open project in Vscode directly from localhost, it is necessary to add the projects directory in settings.</p>
+         <p><i dot>●</i> Access database without leaving localhost, configuration is required to access phpmayadmin.</p>
+         <p><i dot>●</i> Useful Color Palettes.</p>
+         <p><i dot>●</i> Font Typography.</p> 
+       `,
+       p7: `Other Library Resources`,
+       p8: `Besides the extension, the library also has other tools to use in websites or applications that use javascript. `,
+       p9: `Other Tools`,
+       ps10: `
+         <p><i dot>●</i><a opendoc="notify"> Notify</a> -> It's like a custom alert but created in order to show notifications.</p>
+       `,
+     },
+
+     //NOTIFY
+     ntAbout: 'A small library for notification messages in your Projects or Web Applications, developed completely in Javascript.',
+     ntMessageDescrip: 'Define the Message',
+     ntMessageDescripDot1: 'Set the main message',
+     ntMessageDescripDot2: 'Use "->" to set a secondary message',
+
+     ntIconDescrip: 'Define an Icon',
+     ntIconDescripDot1: 'Define an Icon with URL',
+     ntIconDescripDot2: 'Define an Icon with tag SVG',
+     ntIconDescripDot3: 'Define an Icon with others tags HTML too',
+
+     ntLinkDescrip: 'Define Links',
+     netLinkDescripDot1: 'Define links to message or icon',
+     netLinkDescripOp1: 'Redirect link when clicking on message',
+     netLinkDescripOp2: 'Redirect link when clicking on icon',
+     netLinkDescripOp3: 'Open link in new tab',
+
+     ntTypeDescrip: 'Defines the notification type',
+     ntTypeDescripDot1: 'Define specific types/colors for message',
+     ntTypeDescripDot2: "Accepted values: <span text fira>'warn'</span>, <span text fira>'error'</span>, <span text fira>'off'</span>, <span text fira>'success'</span> -> Default ",
+
+     ntThemeDescrip: 'Define theme dark',
+
+     ntStyleDescrip: 'Define your own notification style',
+     ntStyleDescripOp1: "Change the position of the notification on the screen, <br>Other options : <span text fira>'top <i>-</i>> right'</span>,  <span text fira>'bottom <i>-</i>> right'</span> <br>or  <span text fira>'bottom <i>-</i>> left'</span> ",
+     ntStyleDescripOp2: "Change background color, other option  <span text fira>'<t viewcolor>#ffffff85</t> <i>-</i>> 2px'</span>, <br>Second parameter is optional, he declare  background blur ",
+     ntStyleDescripOp3: 'Change font color',
+     ntStyleDescripOp4: 'Change border color',
+     ntStyleDescripOp5: 'Notification distance from the sides of the screen ',
+     ntStyleDescripOp6: 'Change icon color',
+     ntStyleDescripOp7: 'Change icon background',
+     ntStyleDescripOp8: 'Change icon size',
+     ntStyleDescripOp9: "Change icon 'close' color",
+     ntStyleDescripOp10: "Change icon 'close' background",
+     ntStyleDescripOp11: "Change icon 'close' size",
+     ntStyleDescripOp12: 'Add a filter to the notification',
+     ntStyleDescripOp13: 'Notification appearance animation time ',
 
    }
     

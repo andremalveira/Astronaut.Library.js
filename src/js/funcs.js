@@ -159,7 +159,6 @@ THIS.contextMenuCustom=function(event){
   init(this);
 }
 function clipboard(textToCopy) {
-  // navigator clipboard api needs a secure context (https)
   if (navigator.clipboard && window.isSecureContext) {
       // navigator clipboard api method'
       return navigator.clipboard.writeText(textToCopy);

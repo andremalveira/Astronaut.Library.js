@@ -301,7 +301,6 @@
 }
 [astronaut] body .container main #layout #preview,
 [astronaut] body .container main #layout .preview-mobile {
-  user-select: none;
   display: grid;
   grid-template-rows: auto 1fr;
   transition: ease 0.2s;

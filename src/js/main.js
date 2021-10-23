@@ -960,9 +960,9 @@ window.addEventListener('load', () => {
 
 
             if(changeUrl){
-              urlparams.change(nameParam, id)
+              routes.change(nameParam, id)
             } else {
-              urlparams.clear()
+              routes.clear()
             }
 
           } else {
@@ -970,11 +970,11 @@ window.addEventListener('load', () => {
             selector = createNewPageTag(selector)
             notFound({error:{number:404,text:langText.pageNotFound}, selector, theme: theme.actual(), lang:langText})
             setUrlBar(`error.404_page["${id}"].NotFound!`)
-            urlparams.change(nameParam, id)
+            routes.change(nameParam, id)
           }
         }
       }
-      const urlparams = {
+      const routes = {
         searchParams() {
           return (new URL(document.location)).searchParams;
         },
@@ -995,20 +995,31 @@ window.addEventListener('load', () => {
         popstate() {
           window.addEventListener('popstate', (event) => {
             this.check()
+            this.hash({scrollTo: false})
           });
         },
-        hash(){
+        hash(params){
+          var scrollTo = (params && params.scrollTo == false) ? params.scrollTo : true;
+
           if(location.hash.length > 0) {
-            var hash = location.hash, hashSelector = document.querySelector(`${location.hash}`);
+            var hash = location.hash, hashSelector = document.querySelector(`${hash}`);
+
             if(hashSelector){
-              var hashTo = hashSelector.offsetTop, hashParent = hashSelector.offsetParent;
-              hashParent.scroll( 0, hashTo );
+            
+              if(scrollTo){
+                setTimeout(() => {
+                  var hashTo = hashSelector.offsetTop, hashParent = hashSelector.offsetParent;
+                  hashParent.scroll( 0, hashTo );
+                }, 300);
+              }
+    
               setUrlBar(false, false, hash)
               return true
             }
           }
         },
         change(name, value) {
+
           if(this.hash()) {
               value += location.hash
           }
@@ -1032,7 +1043,7 @@ window.addEventListener('load', () => {
       navbarEvents.update(preview)
       layoutMode.check()
       viewList.check()
-      urlparams.check()
+      routes.check()
       disableContextMenuDefault()
 
       
