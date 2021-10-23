@@ -2,10 +2,10 @@
  > # <p align="center"> Still in Development | Ainda em Desenvolvimento </p>
 
 <p align="center">
-  <img src="./src/img/png/astronaut-hi.png" alt="Hi!!"/>
+  <img src="https://andremalveira.github.io/astronaut/src/img/png/astronaut-hi.png" alt="Hi!!"/>
 </p>
 <p align="center">
-  <img src="./src/img/png/astronaut-name.png" alt="Astronaut Library.js"/>
+  <img src="https://andremalveira.github.io/astronaut/src/img/png/astronaut-name.png" alt="Astronaut Library.js"/>
 </p>
 <p align="center">
   <a href="https://andremalveira.github.io/astronaut">Astronaut Page</a> |
