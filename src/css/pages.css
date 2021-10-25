@@ -64,7 +64,7 @@
 #new-page .page .bg-overlay {
   animation-duration: 2s;
   animation-name: bg-fade;
-  background: var(--bg-second-transparent)
+  background: var(--bg-second-transparent);
 }
 @keyframes bg-fade {
   0%, 10% {background: var(--bg-second);}
@@ -98,6 +98,7 @@
 #new-page .page section .grid-rows {
   display: grid;
   grid-template-rows: 25% auto;
+  padding: 0 0.5rem;
 }
 #new-page .page :is(h1, h2, h3) {
   font-weight: normal;
@@ -145,8 +146,18 @@ section:hover .s-hyperlink {
 /*btn*/
 #new-page .page .btn-download {
   display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+}
+#new-page .page a.btn-2 {
+  padding: 0.2rem 0.8rem;
+  box-shadow: 0px 0px 0px 1px var(--link-primary);
+  border-radius: 0.2rem;
+  backdrop-filter: blur(3px);
+  transition: ease 0.2s;
+  user-select: none;
+  cursor: pointer;
+}
+#new-page .page a.btn-2:hover {
+  background: var(--bg-info-border);
 }
 #new-page .page a.btn {
   height: fit-content;
@@ -154,14 +165,14 @@ section:hover .s-hyperlink {
   width: fit-content;
   padding: 0.4rem 1.5rem;
   border-radius: 0.3rem;
-  background: var(--btn-second-hover);
+  background: var(--btn-primary);
   color: #cad7e5;
-  border: solid 0.01rem var(--btn-second-border-hover);
+  border: solid 0.01rem var(--btn-primary-hover);
   cursor: pointer;
   transition: ease 0.2s;
 } 
 #new-page .page a.btn:hover {
-  background: var(--btn-second);
+  background: var(--btn-primary-hover);
 } 
 
 

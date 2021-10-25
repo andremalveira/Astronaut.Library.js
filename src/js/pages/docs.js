@@ -70,6 +70,9 @@ const docs = {
                       <div>
                         <h1>Astronaut Library - Notify</h1>
                         <p>${langText.ntAbout}</p>
+                        <div class="btn-download">
+                          <a class="btn-2" title="Notify Version ${V_NOTIFY.split('v')[1]}" >Download ${V_NOTIFY}</a>
+                        </div>
                       </div>
                       <div class="install">
                         <h3>${langText.howto}:</h3>
@@ -87,10 +90,7 @@ const docs = {
                             theme: 'dark',
                           })
                         </div>
-                        <div class="btn-download">
-                          <a class="btn" title="Download only Library ${namePage.capitalize()}">Download</a>
-                          <input type="hidden" id="input">
-                        </div>
+
                       </div>
 
                     </div>

@@ -9,3 +9,5 @@
   LOCALSTORAGE_NAME = 'astronaut_extension_settings';
   URL_CONNECTION = DIRECTORY_API('connection.json');
 
+  //Libray versions 
+  V_NOTIFY = 'v1.0'

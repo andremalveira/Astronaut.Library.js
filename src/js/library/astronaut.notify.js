@@ -1,40 +1,10 @@
-//---------------------------------------------------//
-//           Astronaut Library.js - Notify           //
-//                                                   //
-// Author: André Malveira.                           //
-// Github: https://github.com/andremalveira          //
-// Site:   https://andremalveira.github.io/astronaut //
-//---------------------------------------------------//
-
-/*//NOTIFY SETTINGS/OPTIONS
-  {      
-    message: 'text -> second text (optional)',
-    icon: 'link img' or 'code svg or div',
-    link: {
-      message: 'link', // where you want to redirect by clicking on the message 
-      icon: 'link' // where you want to redirect by clicking on the icon 
-    },
-    type: 'string', // 'info', 'warn', 'error', 'off', 'success',
-    theme: 'string', // 'dark' or not declare,
-    style: {
-      background: '#color', // or '#color -> 2px' !Second parameter is optional, he declare background with blur
-      color: '#color', // color Text
-      closeColor: '#color', // color of icon Close (x)
-      closeBackground: '#color', // background of icon Close 
-      closeSize: string, // size of icon Close 
-      iconColor: '#color', // color of icon defined in icon: ''  
-      iconSize: string, // Size of icon defined in icon: ''  
-      border: string, // color of Border
-      filter: string, // value of filter:
-      margin: string, // notification distance from the sides of the screen 
-      timeout: string, // notification appearance animation time 
-    },
-  }
-  How to initiate?
-  <script src="astronaut.notify.js"></script>
-  <script>astronaut.notify({message: 'you message'})</script>
-*/
-
+//---------------------------------------------------------------------------//
+//                    Astronaut Library.js - Notify v1.0                     //
+//                                                                           //
+// Author: André Malveira.                                                   //
+// Github: https://github.com/andremalveira                                  //
+// Docs:   https://andremalveira.github.io/astronaut/?docs=notify            //
+//---------------------------------------------------------------------------//
 
 
 let notify = {

@@ -71,6 +71,7 @@
   cursor: pointer;
   transition: ease 0.1s;
   position: relative;
+  color: currentColor;
 }
 [astronaut] body .container nav .menu .icons i { 
   display: flex;
