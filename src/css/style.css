@@ -73,6 +73,16 @@
   position: relative;
   color: currentColor;
 }
+[astronaut] body .container nav .menu .icons.text-vertical { 
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+  height: fit-content;
+  padding: 0.5rem 0;
+}
+[astronaut] body .container nav .menu .icons.text-vertical.active::before { 
+  right: 0;
+}
+
 [astronaut] body .container nav .menu .icons i { 
   display: flex;
 }

@@ -24,10 +24,14 @@ var structure = `
   <div class="container columns" >
     <nav>
       <div class="menu">
-        <div id="localhost" class="icons" title="Menu">${icons.list}</div>
+        <div id="localhost" class="icons" title="${langText.documentation}">${icons.ast.head}</div>
+        <div id="" data-id="extension" class="icons" title="Extension">${icons.box}</div>
         <span hr></span>
       </div>
       <div class="menu">
+        <div id="" data-id="about" class="icons text-vertical" title="${langText.about}">${langText.about}</div>
+        <div id="" data-id="download" class="icons text-vertical" title="Downloads">Downloads</div>
+        <span hr></span>
         <a target="_blank" href="https://github.com/andremalveira/astronaut" class="icons" title="Github Repository"><i class="icon-github">${icons.github}</i></a>
         <div id="credits" class="icons" title="${langText.credit}"><i class="icon-star">${icons.star}</i></div>
         <div id="author" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
@@ -46,12 +50,8 @@ var structure = `
               <div class="close-list">${icons.close}</div>
             </div>
             <div id="list-items">
-              <div class="item"><a flex data-type="docs" data-id="extension"><span>${langText.extension}</span></a></div>
-              <div break></div>
               <div class="item"><a flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
               <div break></div>
-              <div class="item"><a flex data-type="library" data-id="about"><span>${langText.about}</span></a></div>
-              <div class="item"><a flex data-type="library" data-id="download"><span>Download</span></a></div>
             </div>
 
           </div>

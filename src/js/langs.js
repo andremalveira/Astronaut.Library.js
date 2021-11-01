@@ -85,6 +85,8 @@ const lang = (lang) => {
     //Menu Pages
     extension: 'Extensão',
     about: 'Sobre',
+    documentation: 'Documentação',
+
 
     //ABOUT
     aboutText: {
@@ -235,6 +237,7 @@ const lang = (lang) => {
      //Menu Pages
      extension: 'Extension',
      about: 'About',
+     documentation: 'Documentation',
  
      //ABOUT
      aboutText: {

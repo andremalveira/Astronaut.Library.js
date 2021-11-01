@@ -919,10 +919,13 @@ window.addEventListener('load', () => {
 
       }
       const newPage = (params) => {
-        var id = params.id ?? false, selector = params.selector ?? false, changeUrl = params.changeUrl ?? true,
-            ok = true, newPageCheck = false, listItems = params.listItems ?? false, 
+        var id = params.id ?? false, selector = params.selector ?? false, 
+            changeUrl = params.changeUrl ?? true,
+            ok = true, newPageCheck = false, 
+            plistItems = params.listItems ?? false, 
+            pnav = params.nav ?? false, 
             varParam = params.varParam ?? '', nameParam = params.nameParam ?? '';
-            
+
 
         const createNewPageTag = (selector) => {
           selector.get('.display').insertAdjacentHTML('beforeend', `<div id="new-page" page="${id}"></div>`);
@@ -938,17 +941,28 @@ window.addEventListener('load', () => {
         if(ok){
           loading.auto(preview.get('.display'))
           if(newPageCheck){selector.get('#new-page').remove()}
-
+       
           if(listItems && listItems.get('.item.active')){
             listItems.get('.item.active').classList.remove('active')
+          }
+          if(nav && nav.get('.icons.active:not(.fixed)')){
+            nav.get('.icons.active:not(.fixed)').classList.remove('active')
           }
 
           if(typeof varParam[id] === "function"){
 
-            if(listItems){
+            if(plistItems){
               var item = listItems.get(`[data-id="${id}"`).closest('.item');
               item.classList.add('active')
             }
+            if(pnav){
+              var item = nav.get(`[data-id="${id}"`);
+              if(item){
+                item.classList.add('active')
+              }
+              viewList.close()
+            }
+
             selector = createNewPageTag(selector)
             varParam[id]({selector, theme: theme.actual(), lang:langText})
 
@@ -983,12 +997,12 @@ window.addEventListener('load', () => {
           if(params.get('docs')){
             docId = params.get('docs')
             newPage({listItems,id:docId, selector: preview, varParam:docs, nameParam:'docs'})
-          } else if(params.get('library')){
-            libraryId = params.get('library')
-            newPage({listItems,id:libraryId, selector: preview, varParam:library, nameParam:'library'})
+          } else if(params.get('page')){
+            libraryId = params.get('page')
+            newPage({nav,id:libraryId, selector: preview, varParam:page, nameParam:'page'})
           } else if(isSearchParams === -1){
             _HOME()
-          }
+          }page
           this.popstate()
 
         },
@@ -1030,7 +1044,7 @@ window.addEventListener('load', () => {
         }
       }
       const _HOME = () => {
-        newPage({id:'home', selector: preview, varParam:library, nameParam:'library', changeUrl:false})
+        newPage({id:'home', selector: preview, varParam:page, nameParam:'page', changeUrl:false})
         if(listItems.get('.item.active')){
           listItems.get('.item.active').classList.remove('active')
         }
@@ -1072,59 +1086,30 @@ window.addEventListener('load', () => {
           } else if(btnId.value == 'settings') {
             settings.start(btnId.value, btn)
           } else {
-            var funcs;
-            if(btnId.value == 'author'){
-              function funcs() {
-                var avatar = content.get('#new-modal .profile-author .avatar')
-                loading.auto(avatar, {time: 600, style:{bg:'border-radius: 50%', spinner:'width: 30px;height: 30px;opacity:0.4;'}})
+            if(btn.dataset.id != undefined){
+              newPage({nav, id:btn.dataset.id, selector: preview, varParam:page, nameParam:'page'})
+        
+            } else {
+              var funcs;
+              if(btnId.value == 'author'){
+                function funcs() {
+                  var avatar = content.get('#new-modal .profile-author .avatar')
+                  loading.auto(avatar, {time: 600, style:{bg:'border-radius: 50%', spinner:'width: 30px;height: 30px;opacity:0.4;'}})
+                }
               }
+              setTimeout(() => {
+                newModal.start({
+                  contentModal: htmls[btnId.value](STATUS_CONNECTION),
+                  btn, id: btnId.value, style:'width:30%;',
+                  func:funcs
+                })
+              }, 100);
             }
 
-            setTimeout(() => {
-              newModal.start({
-                contentModal: htmls[btnId.value](STATUS_CONNECTION),
-                btn, id: btnId.value, style:'width:30%;',
-                func:funcs
-              })
-            }, 100);
 
           }
         })
       })
-
-      var documentation = [
-        {"id":"home", "title":"Home"},
-        {"id":"notify", "title":"Notify"},
-        {"id":"download", "title":"Download"}
-      ]
-/*       //CREATE LIST ITEMS/PROJECTS - Items
-      documentation.forEach(e => {
-
-          iconExt = {
-            js:        `<i>${icons.language.js}</i>`,
-            json:      `<i>${icons.language.json}</i>`,
-            css:       `<i>${icons.language.css}</i>`,
-            html:      `<i>${icons.language.html}</i>`,
-            php:       `<i>${icons.language.php}</i>`,
-            txt:       `<i>${icons.text}</i>`,
-            compact:   `<i>${icons.compact}</i>`,
-            folder:    `<i>${icons.folder}</i>`,
-            undefined: `<i>${icons.question}</i>`,
-            img:       `<i>${icons.image}</i>`,
-          }
-          
-            itemHTML = `
-              <div class="item">
-                <a flex src="" id="${e.id}">
-                  <span>${e.title}</span>
-                </a>
-              </div>
-            `;  
-          
-          listItems.insertAdjacentHTML('beforeend',itemHTML)
-      }); */
-     
-     
      
       //LIST ITEMS/PROJECTS [event listener ]
       var menuDocs = listItems.getAll('.item a[data-type="docs"]'), 
@@ -1136,7 +1121,7 @@ window.addEventListener('load', () => {
       })
       menuLibrary.forEach(a => {
         a.addEventListener('click', e => {
-          newPage({listItems, id:a.dataset.id, selector: preview, varParam:library, nameParam:'library'})
+          newPage({listItems, id:a.dataset.id, selector: preview, varParam:page, nameParam:'page'})
         })
       })
       containerList.get('.root .for-home').addEventListener('click', () => {
