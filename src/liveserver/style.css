@@ -1,0 +1,236 @@
+
+#popupLiveServer {
+    cursor: default;
+    width: 20rem;
+    position: relative;
+}
+[themecolor="github"] #popupLiveServer input {
+    color: var(--font-primary);
+    border: solid 1px var(--btn-primary-hover);
+}
+[themecolor="github"] #popupLiveServer input[required] {
+    border: solid 1px #eb6161;
+}
+
+[themecolor="github"] #popupLiveServer input::placeholder {
+    color: var(--font-second);
+    opacity: 0.5;
+  }
+#popupLiveServer input:focus, button:focus {
+    outline: none;
+}
+#popupLiveServer .header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    padding: 15px 0px;
+    display: block;
+}
+
+#popupLiveServer .header > p {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 5px 0;
+}
+#popupLiveServer .warning-liveserver { 
+    margin: 0.9rem;
+    padding: 0.9rem;
+    background: var(--bg-warn);
+    border: solid 1px var(--bg-warn-border);
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+}
+#popupLiveServer .footer {
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.9px;
+    display: block;
+    padding: 5px ;
+    margin-bottom: 0.5rem;
+}
+#popupLiveServer .footer .flex-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 10px;
+}
+#popupLiveServer .footer .flex-gap div {
+    text-align: left;
+}
+
+#popupLiveServer .footer div[hr] {
+    height: 1px;
+    width: 90%;
+    background: var(--btn-primary-hover);
+    margin: 0.5rem auto;
+}
+#popupLiveServer .footer > p {
+    font-size: 0.7rem;
+    padding: 10px;
+    margin: 0;
+}
+
+#popupLiveServer .content {
+    width: 90%;
+    margin: auto;
+}
+
+#popupLiveServer #serverSetup {
+    margin: 1rem 0 2rem 0px;
+}
+#popupLiveServer .row {
+    padding: 10px 0px 5px 0px;
+}
+
+#popupLiveServer .form-label {
+    display: block;
+    padding: 3px 0px;
+    font-weight: 500;
+}
+
+#popupLiveServer .form-control {
+    margin: auto;
+    border-radius: 5px;
+    padding: 8px 3px;
+    width: 100%; 
+}
+
+#popupLiveServer .show {
+    display: block;
+}
+
+#popupLiveServer .hide {
+    display: none;
+}
+
+#popupLiveServer label[for="proxyCheckBox"], input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#popupLiveServer .short-right-label {
+    font-size: 10px;
+    float: right;
+    margin-right: 6px;
+}
+#popupLiveServer .flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* 
+this awesome button css taken from Codepen.io
+https://codepen.io/mallendeo/pen/eLIiG
+*/
+
+.tgl {
+    display: none;
+}
+
+.tgl,
+.tgl:after,
+.tgl:before,
+.tgl *,
+.tgl *:after,
+.tgl *:before,
+.tgl+.tgl-btn {
+    box-sizing: border-box;
+}
+
+.tgl::-moz-selection,
+.tgl:after::-moz-selection,
+.tgl:before::-moz-selection,
+.tgl *::-moz-selection,
+.tgl *:after::-moz-selection,
+.tgl *:before::-moz-selection,
+.tgl+.tgl-btn::-moz-selection {
+    background: none;
+}
+
+.tgl::selection,
+.tgl:after::selection,
+.tgl:before::selection,
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl+.tgl-btn::selection {
+    background: none;
+}
+
+.tgl+.tgl-btn {
+    outline: 0;
+    display: block;
+    width: 4em;
+    height: 2em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tgl+.tgl-btn:after,
+.tgl+.tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.tgl+.tgl-btn:after {
+    left: 0;
+}
+
+.tgl+.tgl-btn:before {
+    display: none;
+}
+
+.tgl:checked+.tgl-btn:after {
+    left: 50%;
+}
+
+.tgl-ios+.tgl-btn {
+    background: #d7d7d7;
+    border-radius: 2em;
+    padding: 2px;
+    transition: all .4s ease;
+    border: 1px solid #e8eae9;
+}
+
+.tgl-ios+.tgl-btn:after {
+    border-radius: 2em;
+    background: #fbfbfb;
+    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.tgl-ios+.tgl-btn:hover:after {
+    will-change: padding;
+}
+
+.tgl-ios+.tgl-btn:active {
+    box-shadow: inset 0 0 0 2em #e8eae9;
+}
+
+.tgl-ios+.tgl-btn:active:after {
+    padding-right: .8em;
+}
+
+.tgl-ios:checked+.tgl-btn {
+    background: #8e44ad;
+}
+
+.tgl-ios:checked+.tgl-btn:active {
+    box-shadow: none;
+}
+
+.tgl-ios:checked+.tgl-btn:active:after {
+    margin-left: -.8em;
+}

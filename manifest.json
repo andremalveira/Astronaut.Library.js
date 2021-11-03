@@ -1,0 +1,100 @@
+{
+  "manifest_version":3,
+  "version":"1.0",
+  "name": "Astronaut Localhost",
+  "description":"Localhost in a different way! | Localhost de uma forma diferente!",
+  "author":"github.com/andremalveira",
+  "homepage_url": "http://astlibjs.ga/?page=extension",
+
+  "applications": {
+    "gecko": {
+      "id": "astronaut@localhost.js"
+    }
+  },
+
+  "icons": {
+    "16": "src/img/icon/16x16.png",
+    "32": "src/img/icon/32x32.png",
+    "48": "src/img/icon/48x48.png",
+    "128": "src/img/icon/128x128.png"
+  },
+
+  "action": {
+    "default_title":"Astronaut Localhost",
+    "default_popup": "src/popup/popup.html"
+  },
+
+  "background": {
+    "service_worker": "swork.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+
+  "host_permissions": [
+    "*://localhost:*/?*",
+    "*://local:*/?*",
+    "*://www:*/?*",
+    "*://127.0.0.1:*/*"
+  ],
+
+  "content_scripts": [
+    {
+      "css":[
+        "src/css/default.css",
+        "src/css/colors.css",
+        "src/css/style.css",
+        "src/css/themecolor.css",
+        "src/liveserver/style.css"
+      ],
+      "js":[
+        "src/js/astronaut.functions.js",
+        "src/js/astronaut.config.js",
+        "src/js/astronaut.icons.js",
+        "src/js/astronaut.notify.js",
+        "src/js/astronaut.constants.js",
+        "src/js/astronaut.languages.js",
+        "src/js/astronaut.conection.js",
+        "src/js/astronaut.settings.storage.js",
+        "src/js/astronaut.index.js",
+        "src/js/astronaut.htmls.js", 
+
+        "src/liveserver/popup.js",
+        "src/liveserver/reload.js",
+        "src/js/pages/palettecolor.js",
+        "src/js/pages/typography.js",
+
+        "src/js/astronaut.build.js",
+        "src/js/astronaut.start.js"
+      ],
+      "matches": [
+        "*://localhost:*/?*",
+        "*://astronaut:*/?*",
+        "*://local:*/?*",
+        "*://www:*/?*",
+        "*://127.0.0.1:*/*"
+      ],
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [{ 
+    "resources": [
+      "src/img/svg/favicon.svg",
+      "src/img/icon/32x32.png",
+      "src/img/svg/astronaut.svg",
+      "src/img/svg/astronaut.square.svg",
+      "src/img/svg/file-earmark.svg",
+      "src/img/others/go-live.png",
+      "src/img/others/address-live-server.png",
+      "src/img/others/gif-open-in-vscode.gif",
+      "src/img/others/gif-config-AllowThirdPartyFraming-thumb.jpg",
+      "src/img/bg/4851071.jpg"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+
+}

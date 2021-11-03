@@ -1,0 +1,105 @@
+
+body {
+    width: 17rem;
+}
+
+.window-control [dot] { 
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.window-control [dot="E0443E"] {background: #E0443E;}
+.window-control [dot="DEA123"] {background: #DEA123;}
+.window-control [dot="1AAB29"] {background: #1AAB29;}
+
+[astronaut] body .container #content {
+    background: var(--bg-primary-transparent);
+}
+[astronaut] body .container {
+    width: 100%;
+    height: 100%;
+}
+[astronaut] body .container .flex-column {
+    display: flex;
+    flex-direction: column;
+}
+[astronaut] body .container .flex-gap-1-5 {
+    display: flex;
+    gap: 1.5rem;
+}
+[astronaut] body .container #content .body {
+    padding: 1rem 1rem;
+    row-gap: 1rem;
+    user-select: none;
+}
+[astronaut] body .container #content .icon {
+    display: flex;
+    align-items: center;
+    row-gap: 0.5rem;
+    flex-direction: column;
+}
+[astronaut] body .container #content .icon .texts {
+    align-items: center;
+    margin: 0.2rem 0 0.5rem 0px;
+}
+[astronaut] body .container #content .icon .title {
+    font-size: 0.9rem;
+}
+[astronaut] body .container #content .icon .subtitle {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+[astronaut] body .container #content .icon .links {
+    display: flex;
+    gap: 0.5rem;
+}
+[astronaut] body .container #content .icon .links a {
+    display: flex;
+    color: currentColor;
+}
+[astronaut] body .container #content .icon img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 4px var(--btn-primary);
+/*     animation: shadow_pulse linear 5s infinite; */
+}
+@keyframes shadow_pulse {
+    0% {box-shadow: 0px 0px 1px 4px var(--btn-primary);}
+    50% {box-shadow: 0px 0px 10px 4px var(--btn-primary);}
+    100% {box-shadow: 0px 0px 1px 4px var(--btn-primary);}
+}
+
+
+
+[astronaut] body .container #content .toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+[astronaut] body .container #content .toggle .btn-toggle {
+    width: 2.4rem;
+    height: 1rem;
+    border-radius: 25px;
+    background: var(--bg-primary);
+    position: relative;
+    cursor: pointer;
+}
+[astronaut] body .container #content .toggle .btn-toggle::after {
+    content: '';
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--link-primary);
+    top: 50%;
+    transform: translate(0%, -50%);
+    transition: ease 0.2s;
+}
+[astronaut] body .container #content .toggle .btn-toggle[checked]::after {
+    transform: translate(100%, -50%);
+    background: var(--btn-second-border-hover);
+}
+
+
+[astronaut] body .container #content .footer {
+    align-items: center;
+}

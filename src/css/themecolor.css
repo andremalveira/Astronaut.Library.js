@@ -1,0 +1,231 @@
+/*THEMES*/
+[themecolor="github"] *::-webkit-scrollbar {
+  background: var(--bg-primary);
+}
+[themecolor="github"] *::-webkit-scrollbar-thumb {
+  background: var(--btn-primary);
+}
+
+[themecolor="github"] body {
+  background: var(--bg-primary);
+  color: var(--font-primary)
+}
+[themecolor="github"] body h1 {
+  text-transform: capitalize;
+}
+[themecolor="github"] body a {
+  color: var(--link-primary);
+  text-decoration: none;
+}
+
+[themecolor="github"] body .container nav {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container nav .menu .icons:hover { 
+  background: var(--btn-primary);
+}
+[themecolor="github"] body .container nav .menu .icons.active.fixed,
+[themecolor="github"] body .container nav .menu .icons.active:not(.minimized):not(.fixed) { 
+  background: var(--bg-primary);
+}
+
+
+[themecolor="github"] body .container main .container-list #list-items .item::before {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container main .container-list #list-items .item:hover {
+  background:  var(--btn-primary-hover);
+}
+[themecolor="github"] body .container main .container-list #list-items .item.active {
+  background:  var(--btn-primary);
+}
+[themecolor="github"] body .container main .container-list #list-items .item.active::after {
+  background:  var(--btn-primary);
+}
+[themecolor="github"] body .container main .container-list #list-items a {
+  color: var(--font-primary)
+}
+[themecolor="github"] body .container main .container-list #list-items .item .more:hover,
+[themecolor="github"] body .container main .container-list .root .close-list:hover {
+  background: var(--btn-primary);
+}
+[themecolor="github"] body .container main .container-list #list-items .item .more.active {
+  opacity: 1;
+  background: var(--btn-primary);
+  color: var(--font-third);
+}
+[themecolor="github"] body .container main .container-list #list-items .item .more:active,
+[themecolor="github"] body .container main .container-list .root .close-list:active {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal [setting="delete"]:hover {
+  background: var(--btn-third);
+  color: white;
+  box-shadow: 0px 0px 0px 1px var(--btn-third-border);
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal .fa-caret-left {
+  color: var(--bg-second);
+  z-index: -1;
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal .fa-times-circle {
+  color: var(--btn-primary-hover);
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal .fa-times-circle:hover {
+  color: var(--font-second);
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal div:hover {
+  background: var(--btn-primary);
+}
+[themecolor="github"] body .container main .container-list #list-items .item #more-modal span[hr] {
+  background: var(--btn-primary);
+}
+[themecolor="github"] body .container main #preview {
+  border-left: solid 2px var(--bg-primary);
+}
+[themecolor="github"] body .container main #layout[layout="mobile"] #preview,
+[themecolor="github"] body .container main #layout[layout="double"] #preview,
+[themecolor="github"] body .container main #layout[layout="double"] .preview-mobile {
+  border: solid 5px var(--bg-primary);
+}
+[themecolor="github"] body .container main #layout .navigation-bar,
+[themecolor="github"] body .container main #layout .status-bar {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container [window] .display {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container [window] .display iframe[src] {
+  background: var(--btn-primary);
+}
+
+[themecolor="github"] body .container #content .navbar {
+  background: var(--bg-primary);
+}
+[themecolor="github"] body .container #content .navbar .bar-search {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container #content .navbar .bar-search .search {
+  color: var(--font-second);
+}
+[themecolor="github"] body .container #content .navbar .options .icon:hover {
+  background: var(--btn-primary);
+}
+[themecolor="github"] body .container #content .navbar .options .icon:active {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container #content .new-tab {
+  border-left: solid 2px var(--bg-primary);
+}
+/*===========================contextMenuCustom=======================*/
+[themecolor="github"] body #contextMenu .contextMenuCustom {
+  background: var(--btn-primary);
+  color: var(--font-primary);
+}
+[themecolor="github"] body [window] .navbar #contextMenu .contextMenuCustom {
+  background: var(--bg-second);
+  color: var(--font-second);
+}
+[themecolor="github"] body [window] .navbar .options #contextMenu .caret.before {
+  color: var(--bg-second);
+}
+[themecolor="github"] body #contextMenu .contextMenuCustom {
+  border: 0.01rem solid var(--border);
+}
+[themecolor="github"] body .navbar .options #contextMenu .caret.before {
+  color: var(--btn-primary);
+}
+[themecolor="github"] body #contextMenu button.btn:hover {
+  background: var(--btn-primary-hover)
+}
+/*========================FINAL contextMenuCustom====================*/
+
+/*===========================new-modal=======================*/
+
+[themecolor="github"] body .container #content #new-modal .window-modal {
+  color: var(--font-primary);
+  background: var(--bg-primary);
+  border: solid 5px var(--bg-primary);
+}
+
+[themecolor="github"] body .container #content #new-modal .content-modal label span.moreinfo:hover{
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal label span.moreinfo:active{
+  background: var(--btn-primary);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal .row .input.select .caret {
+  color: var(--btn-primary);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal .row .input.select input {
+  color: var(--font-second);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal .row input {
+  border: solid 1px var(--btn-primary);
+  color: var(--font-second);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal .row input:focus {
+  border: solid 1px var(--border);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal #notification i.notify-btn-close:hover {
+  background: var(--bg-second);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal #notification.warn {
+  background: var(--bg-warn);
+  border: solid 1px var(--bg-warn-border);
+}
+[themecolor="github"] body .container #content #new-modal .content-modal #notification.info {
+  background: var(--bg-info);
+  border: solid 1px var(--bg-info-border);
+}
+[themecolor="github"] body .container #content button.btn-form.green {
+  background: var(--btn-second);
+  border: solid 1px var(--btn-second-hover);
+}
+[themecolor="github"] body .container #content button.btn-form.green:not([status="disabled"]):hover {
+  background: var(--btn-second-hover);
+  border: solid 1px var(--btn-second-border-hover);
+}
+[themecolor="github"] body .container #content button.btn-form.red {
+  background: transparent;
+  border: solid 1px transparent;
+  color: var(--font-primary);
+  font-weight: bold;
+}
+[themecolor="github"] body .container #content button.btn-form.red:not([status="disabled"]):hover {
+  background: var(--btn-third);
+  border: solid 1px var(--btn-third-border);
+  color: #fff;
+}
+/*========================FINAL new-modal=======================*/
+
+/*==========================profile-author==========================*/
+[astronaut] body .container #content #new-modal .profile-author .main div.button {
+  background: var(--btn-primary);
+  border: solid 1px var(--btn-primary-hover);
+}
+[astronaut] body .container #content #new-modal .profile-author .main div.button:hover {
+  background: var(--btn-primary-hover);
+  border: solid 1px var(--border);
+}
+[astronaut] body .container #content #new-modal .profile-author .header .avatar::before {
+  box-shadow: 0px 0px 0px 0.3rem var(--bg-second);
+}
+/*==========================FINAL profile-author==========================*/
+
+
+
+
+
+/*loading*/
+[themecolor="github"] .spinner .path {
+  stroke: var(--font-primary);
+}
+[themecolor="github"] #loading {
+  background: var(--bg-primary);
+}
+[themecolor="github"] .new-tab #loading {
+  background: transparent;
+}
