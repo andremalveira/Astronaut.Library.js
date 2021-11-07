@@ -1,27 +1,28 @@
 const ASTRONAUT_LOCALHOST = {
   build() {
     //initial changes
-
+/*     HEAD.innerHTML=''  */
     HTML.setAttribute('astronaut', '')
-    theme.check()
+    themeColor.check()
     titleTab.default()
 
     if(SERVER_APACHE){
       var apacheaddress = document.querySelector('address');
-      if (location.search != '?C=S;O=A') { location.href = location.href + '?C=S;O=A' }
+      if (location.search != '?C=S') { location.href = location.href + '?C=S' }
       var apachetable = BODY.get('table');
       apacheaddress.style.display = 'none';
       apachetable.style.display = 'none'
       GET('body h1').remove()
       GET_ALL('table tr th').forEach(e => { e.parentElement.remove() })
+    } else {
+      var inputSearch = document.querySelector('input#search')
+      if(inputSearch) inputSearch.remove()
     }
 
-    var inputSearch = document.querySelector('input#search')
-        if(inputSearch) inputSearch.remove()
         
-
-
-    //insert new html structure 
+    //insert new html structure
+/*     BODY.innerHTML='' */
+/*     console.clear() */
     BODY.insertAdjacentHTML('afterbegin', INDEX) //STRUCTURE IN INDEX.HTML
 
     //VARIABLES ESSENCIAL
@@ -110,12 +111,11 @@ const ASTRONAUT_LOCALHOST = {
             </div>
           `)
           display.get('.status-bar .clock').insertTime()
-
+          display.get('iframe').addEventListener('load', ()=> {
+            metaThemeColorMobile.update(display.get('iframe'))
+          })
           metaThemeColorMobile.update(display.get('iframe'))
-
-
         }
-
       },
       check() {
         chrome.storage.local.get('layoutMode', (result) => {
@@ -128,16 +128,20 @@ const ASTRONAUT_LOCALHOST = {
               function checkMinimunResolution() {
                 if(window.innerWidth < 1280 || window.innerHeight < 825){
                   document.querySelector('.container').style.display='none'
-                  apacheaddress.style.display = '';
-                  apachetable.style.display = ''
+                  if(apacheaddress && apachetable){
+                    apacheaddress.style.display = '';
+                    apachetable.style.display = ''
+                  }
                   if(message){
                     document.body.insertAdjacentHTML('beforeend', '<h1>Resolution no Suported!</h1><h2>Minimum resolution 1280x825 </h2>')
                     message = false;
                   }
                 } else {
                   document.querySelector('.container').style.display=''
-                  apacheaddress.style.display = 'none';
-                  apachetable.style.display = 'none'
+                  if(apacheaddress && apachetable){
+                    apacheaddress.style.display = 'none';
+                    apachetable.style.display = 'none'
+                  }
                 }
               }
               checkMinimunResolution()
@@ -321,8 +325,8 @@ const ASTRONAUT_LOCALHOST = {
         pagemode = false,
         element = `class="new-tab" tab="${id}"`,
         optionRefresh = `<div class="icon" option="refresh" title="${langText.refresh}">${icons.refresh}</div>`,
-        optionInfo = '', astronautMirror = '', attrID = '', inputSearch = '', optionDiv = true;
-        
+        optionInfo = '', astronautMirror = '', attrID = '', inputSearch = '', optionDiv = true,  hWDefault = '';
+       
       if (id == 'double') {
         layoutmode = true,
         element = 'class="preview-mobile"'
@@ -331,18 +335,19 @@ const ASTRONAUT_LOCALHOST = {
         attrID = 'id="window_mirror"'
         inputSearch = `<input type="text" id="model" value="" class="search" autocomplete="off">`
         optionDiv = false;
+        hWDefault = heightWindowDefault;
       }
       if (page) {
         pagemode = 'page'
         optionInfo = `<span class="separator"></span><div class="icon" option="info" title="${langText.information}">${icons.infoCircle}</div>`
       }
       var newTabHTML = `
-        <div window ${element} ${pagemode} ${heightWindowDefault}>
+        <div window ${element} ${pagemode} ${hWDefault}>
           <div class="navbar">
             <div class="window-control">
               <i title="${langText.close}" option="close">${icons.windowControl.close}</i>
               <i title="${langText.minimize}" option="minimize">${icons.windowControl.minimize}</i>
-              ${icons.windowControl.maximize}
+              <i>${icons.windowControl.maximize}</i>
             </div>
             ${(optionDiv) ? '<div class="options">' : ''}
               ${optionRefresh}
@@ -399,7 +404,7 @@ const ASTRONAUT_LOCALHOST = {
           } else if (page) {
             var iframe = newTab.get('.display iframe');
             if (typeof window[id] === "function") {
-              window[id]({ iframe, theme: theme.actual(), lang: langText })
+              window[id]({ iframe, theme: themeColor.actual(), lang: langText })
             } else {
               konsole.error(`Function ${id}() no defined!`)
             }
@@ -473,7 +478,7 @@ const ASTRONAUT_LOCALHOST = {
                 if (iframe.closest('[window][page]')) {
                   var id = iframe.closest('[window][page]').attributes['tab'].value
                   if (typeof window[id] === "function") {
-                    window[id]({ iframe, theme: theme.actual(), lang: langText })
+                    window[id]({ iframe, theme: themeColor.actual(), lang: langText })
                   } else {
                     konsole.error(`Function ${id}() no defined!`)
                   }
@@ -575,9 +580,9 @@ const ASTRONAUT_LOCALHOST = {
         if (btndevices) {
           btndevices.get('.icon-layout').addEventListener('click', e => {
             btnsLayoutMode = `
-              <button class="btn" layoutmode='desktop' title="${langText.toggleDesktop}"><i>${icons.layout.desktop}</i><span>Desktop</span></button>
-              <button class="btn" layoutmode='mobile' title="${langText.toggleMobile}"><i>${icons.layout.mobile}</i><span>Mobile</span></button>
-              <button class="btn" layoutmode='double' title="${langText.toggleDouble}"><i>${icons.layout.double}</i><span>Double</span></button>
+              <button class="btn" layoutmode='desktop' title="${langText.toggleDesktop} &nbsp Ctrl+Q"><i>${icons.layout.desktop}</i><span>Desktop</span></button>
+              <button class="btn" layoutmode='mobile' title="${langText.toggleMobile} &nbsp Ctrl+Q"><i>${icons.layout.mobile}</i><span>Mobile</span></button>
+              <button class="btn" layoutmode='double' title="${langText.toggleDouble} &nbsp Ctrl+Q"><i>${icons.layout.double}</i><span>Double</span></button>
             `
             var popupHTML = contextMenu(btnsLayoutMode)
 
@@ -649,7 +654,7 @@ const ASTRONAUT_LOCALHOST = {
               tab = parentElementMain.attributes['tab'];
 
             if (parentElementMain.id == 'preview') {
-              if (listItems.get('.item.active')) { listItems.get('.item.active').classList.remove('active') }
+              if (listItems && listItems.get('.item.active')) { listItems.get('.item.active').classList.remove('active') }
               windowUrl.close(layout)
             } else if (parentElementMain.classList.contains('preview-mobile')) {
               layoutMode.desktop('desktop')
@@ -784,8 +789,10 @@ const ASTRONAUT_LOCALHOST = {
           }
         })
 
-        storageLocal.set('lastWindowUrl', url)
-
+        if(SERVER_APACHE){
+          storageLocal.noShared.set('lastWindowUrl', url)
+        }
+      
         if (storageLocal.get('liveServer')) {
           var SLliveServer = storageLocal.get('liveServer')
           if(SLliveServer && SLliveServer.isEnable && SLliveServer.liveServerUrl != ''){
@@ -796,14 +803,16 @@ const ASTRONAUT_LOCALHOST = {
 
         }
         //active item-list
-        if (listItems.get('.item.active')) { listItems.get('.item.active').classList.remove('active') }
-        listItems.getAll('.item a').forEach(a => {
-          if (a.attributes['src'].value == url) { a.parentElement.classList.add('active') }
-        })
+        if(listItems){
+          if (listItems.get('.item.active')) { listItems.get('.item.active').classList.remove('active') }
+          listItems.getAll('.item a').forEach(a => {
+            if (a.attributes['src'].value == url) { a.parentElement.classList.add('active') }
+          })
+        }
 
         windowUrl.barSearch()
         storageLocal.update()
-
+        titleTab.update()
       },
       close(elem) {
         elem.getAll('iframe').forEach(iframe => {
@@ -817,7 +826,9 @@ const ASTRONAUT_LOCALHOST = {
             }, 100);
           }
         })
-        chrome.storage.local.remove('lastWindowUrl', (result) => { });
+
+        storageLocal.noShared.remove('lastWindowUrl')
+
         if (storageLocal.get('liveServer')) {
           var SLliveServer = storageLocal.get('liveServer')
           SLliveServer.actualUrl = ''
@@ -825,6 +836,7 @@ const ASTRONAUT_LOCALHOST = {
         }
         storageLocal.update()
         titleTab.default()
+   
       },
       barSearch() {
         var barSearchURL = content.get('#layout:not([layout="mobile"]) #preview .bar-search #url')
@@ -846,11 +858,13 @@ const ASTRONAUT_LOCALHOST = {
         }
       },
       check() {
-        chrome.storage.local.get('lastWindowUrl', (result) => {
-          if (result.lastWindowUrl != undefined) {
-            windowUrl.open(result.lastWindowUrl, layout)
-          }
-        });
+        if (storageLocal.noShared.get('lastWindowUrl')) {
+          var lastWindowUrl = storageLocal.noShared.get('lastWindowUrl')
+          windowUrl.open(lastWindowUrl, layout)
+        } else if(!SERVER_APACHE){
+          windowUrl.open(location.href, layout)
+        }
+   
       }
 
     }
@@ -1030,19 +1044,26 @@ const ASTRONAUT_LOCALHOST = {
     }
     const settings = {
       open(id, btn) {
-        var storedSettings = storageLocal.get();
-        SSLanguage = (storedSettings.language == 'pt-br')
-          ? 'Português'
-          : (storedSettings.language == 'en-us')
-            ? 'English'
-            : 'English'
-        SSTheme = (storedSettings.theme) ? storedSettings.theme.capitalize() : 'Github',
-          SSStatusBar = (storedSettings.statusbar == 'disabled')
-            ? langText.disabled.capitalize()
-            : (storedSettings.statusbar == 'enabled')
-              ? langText.enabled.capitalize() : 'Disabled'
+        var storedSettings = storageLocal.get(),
+            SSLanguage = (storedSettings.language == 'pt-br')
+              ? 'Português'
+              : (storedSettings.language == 'en-us')
+                ? 'English'
+                : 'English',
+            SSStatusBar = (storedSettings.statusbar)
+              ? langText[storedSettings.statusbar].capitalize()
+              : 'Disabled',
 
-        formSettings = `
+            SSBlur = (storedSettings.blur == 'disabled')
+              ? langText.disabled.capitalize()
+              : (storedSettings.blur == 'enabled')
+                ? langText.enabled.capitalize() : 'Disabled',
+
+            SSTheme = (storedSettings.themeColor) 
+            ? storedSettings.themeColor.formatValueInText('_') 
+            : THEME_COLOR_DEFAULT.formatValueInText('_');
+
+       var formSettings = `
           <div class="form">
             <div class="row col-4">
               <div class="column">
@@ -1051,11 +1072,9 @@ const ASTRONAUT_LOCALHOST = {
                   <input type="button" name="language" lang="" value="${SSLanguage}">
                 </div>
               </div>
-              <div class="column">
-                <label><span>${(storedSettings.language) ? lang(storedSettings.language).theme : langText.theme}</span></label>
-                <div class="input select">
-                  <input type="button" name="theme" value="${SSTheme}">
-                </div>
+              <div class="column col-span-2">
+                <label><span>${(storedSettings.language) ? lang(storedSettings.language).directoryProjects : langText.directoryProjects}</span> <span class="moreinfo" info="infoDirectoryProjects">${icons.questionCircle}</span> </label>
+                <div class="input"><input type="text" name="dirprojects" value='${(storedSettings.dirprojects) ? storedSettings.dirprojects : ''}' placeholder="Ex: c:/wamp64/www or c:/xampp/htdocs"></div>
               </div>
               <div class="column">
                 <label><span>${(storedSettings.language) ? lang(storedSettings.language).statusBar : langText.statusBar}</span></label>
@@ -1064,13 +1083,28 @@ const ASTRONAUT_LOCALHOST = {
                 </div>
               </div>
             </div>
+            
             <div class="row col-4">
+              <div class="column">
+                <label><span>${(storedSettings.language) ? lang(storedSettings.language).theme : langText.theme}</span></label>
+                <div class="input select">
+                  <input type="button" name="themeColor" value="${SSTheme}">
+                </div>
+              </div>
+              <div class="column">
+                <label><span>Blur Theme</span></label>
+                <div class="input select">
+                  <input type="button" name="blur" value="${SSBlur}">
+                </div>
+              </div>
               <div class="column col-span-2">
-                <label><span>${(storedSettings.language) ? lang(storedSettings.language).directoryProjects : langText.directoryProjects}</span> <span class="moreinfo" info="infoDirectoryProjects">${icons.questionCircle}</span> </label>
-                <div class="input"><input type="text" name="dirprojects" value='${(storedSettings.dirprojects) ? storedSettings.dirprojects : ''}' placeholder="Ex: c:/wamp64/www or c:/xampp/htdocs"></div>
+                <label><span>${(storedSettings.language) ? lang(storedSettings.language).background : langText.background}</span> 
+                <span class="range flex-center-gap1" ${(storedSettings.background) ? '' : 'disabled'}>Blur <input type="range" name="blurBackground" value="${(storedSettings.blurBackground) ? storedSettings.blurBackground : '0'}" min="0" max="50"></span> </label>
+                <div class="input"><input type="text" name="background" value='${(storedSettings.background) ? storedSettings.background : ''}' placeholder="${(storedSettings.language) ? lang(storedSettings.language).backgroundPlaceholder : langText.backgroundPlaceholder}"></div>
               </div>
             </div>
           </div>
+          
           <div class="row column">
             <div id="notification"></div>
             <div class="row jfy-center">
@@ -1078,7 +1112,9 @@ const ASTRONAUT_LOCALHOST = {
               <button class="btn-form red" status="disabled" id="cancel" type="button">${(storedSettings.language) ? lang(storedSettings.language).cancel : langText.cancel}</button>
             </div>
           </div>
-        `
+        `;
+
+
         newModal.start({
           contentModal: formSettings,
           id: id, style: 'width:50%;', btn
@@ -1088,8 +1124,11 @@ const ASTRONAUT_LOCALHOST = {
           contentModal = newModalSelector.get('.content-modal'), form = newModalSelector.get('.content-modal .form'),
           btnSave = newModalSelector.get('.content-modal button#save'),
           btnCancel = newModalSelector.get('.content-modal button#cancel'), notification = newModalSelector.get('.content-modal #notification'),
-          dirprojects = (form.get('input[name="dirprojects"]').value == '') ? false : form.get('input[name="dirprojects"]').value
-        inputLang = form.get('input[name="language"]'), inputTheme = form.get('input[name="theme"]'), inputStatusBar = form.get('input[name="statusbar"]')
+          dirprojectsValue = (form.get('input[name="dirprojects"]').value == '') ? false : form.get('input[name="dirprojects"]').value,
+          backgroundValue = (form.get('input[name="background"]').value == '') ? false : form.get('input[name="background"]').value,
+          blurBackgroundValue = (form.get('input[name="blurBackground"]').value == '') ? false : form.get('input[name="blurBackground"]').value,
+          inputLang = form.get('input[name="language"]'), inputTheme = form.get('input[name="themeColor"]'),
+          inputStatusBar = form.get('input[name="statusbar"]'), inputBlur = form.get('input[name="blur"]');
 
         const btns = {
           unlock() {
@@ -1120,7 +1159,8 @@ const ASTRONAUT_LOCALHOST = {
             valueDefault = (params) ? params.valueDefault : '',
             nameVariableValue = (params) ? params.nameVariableValue : '',
             name = (params) ? params.input.name : false,
-            inputSelect = input.parentElement
+            func = (params && params.func) ? params.func : false,
+            inputSelect = input.parentElement;
 
 
           if (!inputSelect.get('#contextMenu')) {
@@ -1142,10 +1182,12 @@ const ASTRONAUT_LOCALHOST = {
                   storedSettings = storageLocal.get();
                 if (value != storedSettings[name] || value != valueDefault) {
                   inputSelect.get('input').value = text
-                  /*                    inputSelect.get('input').setAttribute('value', value) */
                   window[nameVariableValue] = value;
                   btns.unlock()
                   selectClose(inputSelect)
+                  if(func){
+                    func(value)
+                  }
                 }
               })
             })
@@ -1153,7 +1195,16 @@ const ASTRONAUT_LOCALHOST = {
             selectClose(inputSelect)
           }
         }
-
+        const checkIfThemeColorChanged = () => {
+          if(storageLocal.get().themeColor){
+            var themeColorValueNow = document.documentElement.getAttribute('themeColor')
+            if(themeColorValueNow != storageLocal.get().themeColor){
+              document.documentElement.setAttribute('themeColor', storageLocal.get().themeColor)
+            } else {
+              themeColor.toggle()
+            }
+          }
+        }
 
 
         inputLang.addEventListener('click', () => {
@@ -1162,19 +1213,23 @@ const ASTRONAUT_LOCALHOST = {
             valueDefault: 'en-us',
             nameVariableValue: 'langValue',
             options: `
-              <button class="btn" value='pt-br' title="Português"><i></i><span>Português</span></button>
-              <button class="btn" value='en-us' title="English"><i></i><span>English</span></button>
+              <button class="btn column-2" value='pt-br' title="Português"><span>Português</span></button>
+              <button class="btn column-2" value='en-us' title="English"><span>English</span></button>
             `
           })
         })
         inputTheme.addEventListener('click', () => {
           selectOpen({
             input: inputTheme,
-            valueDefault: 'github',
+            valueDefault: THEME_COLOR_DEFAULT,
             nameVariableValue: 'themeValue',
             options: `
-              <button class="btn" value='github' title="Github"><i></i><span>Github</span></button>
-            `
+              <button class="btn column-2" value='github_dark_dimmed' title="Github Dark Dimmed"><span>Github Dark Dimmed</span></button>
+              <button class="btn column-2" value='github_light' title="Github Light"><span>Github Light</span></button>
+            `,
+            func: (e) => {
+              document.documentElement.setAttribute('themeColor', e)
+            }
           })
         })
         inputStatusBar.addEventListener('click', () => {
@@ -1183,17 +1238,48 @@ const ASTRONAUT_LOCALHOST = {
             valueDefault: 'disabled',
             nameVariableValue: 'statusBarValue',
             options: `
-              <button class="btn" value='disabled' title="${langText.disable}"><i></i><span>${langText.disable}</span></button>
-              <button class="btn" value='enabled' title="${langText.enable}"><i></i><span>${langText.enable}</span></button>
+              <button class="btn column-2" value='disabled' title="${langText.disable}"><span>${langText.disable}</span></button>
+              <button class="btn column-2" value='enabled' title="${langText.enable}"><span>${langText.enable}</span></button>
+            `
+          })
+
+        })
+        inputBlur.addEventListener('click', () => {
+          selectOpen({
+            input: inputBlur,
+            valueDefault: 'disabled',
+            nameVariableValue: 'blurValue',
+            options: `
+              <button class="btn column-2" value='disabled' title="${langText.disable}"><span>${langText.disable}</span></button>
+              <button class="btn column-2" value='enabled' title="${langText.enable}"><span>${langText.enable}</span></button>
             `
           })
 
         })
 
         form.get('input[name="dirprojects"]').addEventListener('input', () => {
-          dirprojects = form.get('input[name="dirprojects"]').value
+          dirprojectsValue = form.get('input[name="dirprojects"]').value
           btns.unlock()
         })
+
+        var inputBackground = form.get('input[name="background"]'),
+            inputBlurBackground = form.get('input[name="blurBackground"]');
+        inputBackground.addEventListener('input', () => {
+          backgroundValue = form.get('input[name="background"]').value
+          if(inputBlurBackground.parentElement.getAttribute('disabled')){
+            inputBlurBackground.parentElement.removeAttribute('disabled')} 
+          else if(inputBlurBackground.value == 0){
+            inputBlurBackground.parentElement.setAttribute('disabled','')
+          }
+          btns.unlock()
+        })
+        inputBlurBackground.addEventListener('input', () => {
+          var rangeBackground = form.get('input[name="blurBackground"]');
+          blurBackgroundValue = rangeBackground.value
+          background.insert(backgroundValue, blurBackgroundValue)
+          btns.unlock()
+        })
+
         form.getAll('span.moreinfo').forEach(info => {
           var infoValue = info.attributes['info'].value
           info.addEventListener('click', () => {
@@ -1201,6 +1287,7 @@ const ASTRONAUT_LOCALHOST = {
           })
 
         })
+
         btnSave.addEventListener('click', () => {
           if (btnSave.attributes['status'].value == 'pending') {
             btns.block()
@@ -1212,7 +1299,7 @@ const ASTRONAUT_LOCALHOST = {
               }, 100);
             }
             if (typeof themeValue !== typeof undefined) {
-              storageLocal.set('theme', themeValue)
+              storageLocal.set('themeColor', themeValue)
               HTML.setAttribute('themecolor', themeValue)
             }
             if (typeof statusBarValue !== typeof undefined) {
@@ -1223,8 +1310,26 @@ const ASTRONAUT_LOCALHOST = {
                 statusb.disable()
               }
             }
-            if (dirprojects || dirprojects == '') {
-              storageLocal.set('dirprojects', dirprojects)
+            if (typeof blurValue !== typeof undefined) {
+              storageLocal.set(inputBlur.name, blurValue)
+              if (blurValue == 'enabled') {
+                blur.enable()
+              } else {
+                blur.disable()
+              }
+            }
+            if (dirprojectsValue || dirprojectsValue == '') {
+              storageLocal.set('dirprojects', dirprojectsValue)
+            }
+            if (backgroundValue) {
+              background.remove()
+              setTimeout(() => {
+                background.insert(backgroundValue, blurBackgroundValue)
+                storageLocal.set('background', backgroundValue)
+                storageLocal.set('blurBackground', blurBackgroundValue)
+              }, 100);
+            } else if (backgroundValue == '') {
+              background.remove()
             }
             btnSave.innerText = (storedSettings.language) ? lang(storedSettings.language).changesSaved : langText.changesSaved
           }
@@ -1232,6 +1337,7 @@ const ASTRONAUT_LOCALHOST = {
         btnCancel.addEventListener('click', () => {
           if (!btnCancel.attributes['status']) {
             settings.close(id, btn, false, newModalSelector)
+            checkIfThemeColorChanged()
           }
         })
       },
@@ -1275,7 +1381,7 @@ const ASTRONAUT_LOCALHOST = {
         var statusBarHTML = `
         <div class="left"></div>
         <div class="right">
-          <div>${address.innerText}</div>
+          <div>${apacheaddress.innerText}</div>
         </div>
         `;
 
@@ -1354,21 +1460,7 @@ const ASTRONAUT_LOCALHOST = {
         })
       },
       keypress(){
-        //F5 - update all iframes
-        keypress.down({
-          key: 116,
-          func: () => {
-            var layout = document.querySelector('#layout')
-            layout = (layout)
-              ? layout
-              : parent.document.querySelector('#layout')
-
-            layout.querySelectorAll('[window] iframe').forEach(iframe => {
-              console.clear()
-              iframe.contentWindow.location.reload()
-            })
-          }
-        })
+        //Ctrl+L - Clear Console
         keypress.down({
           ctrl: true,
           key: 76,
@@ -1376,17 +1468,18 @@ const ASTRONAUT_LOCALHOST = {
             this.clearConsole()
           }
         })
+        //Ctrl+Q - Toggle Devices
         keypress.down({
           ctrl: true,
           key: 81,
           func: () => {
             window.focus()
             var LayoutMode = document.querySelector('#layout').getAttribute('layout')
-            function wclmsg(e) {
+            function wclmsg(e, i) {
               astronaut.notify({
                 selector: parent.document,
                 message: `${e}`,
-                icon: icons.console,
+                icon: i,
                 style: ASTRONAUT_NOTIFY_SETTINGS_DEFAULT,
                 type: 'info',
                 autoClose: 2000
@@ -1394,43 +1487,50 @@ const ASTRONAUT_LOCALHOST = {
             }
             switch (LayoutMode) {
               case 'desktop':
-                layoutMode.for('mobile')
-                wclmsg('Layout Changed for Mobile')
+                var modevalue = 'mobile'
+                layoutMode.for(modevalue)
+                layoutMode.iconLayout(modevalue)
+                wclmsg('Layout Changed for Mobile', icons.layout.mobile)
               break;
               case 'mobile':
+                var modevalue = 'double'
                 layoutMode.for('double')
-                wclmsg('Layout Changed for Double')
+                layoutMode.iconLayout(modevalue)
+                wclmsg('Layout Changed for Double', icons.layout.double)
               break;
               case 'double':
+                var modevalue = 'desktop'
                 layoutMode.for('desktop')
-                wclmsg('Layout Changed for Desktop')
+                layoutMode.iconLayout(modevalue)
+                wclmsg('Layout Changed for Desktop', icons.layout.desktop)
               break;
             }
           }
         })
-        keypress.down({
-          ctrl: true,
-          key: 88,
-          func: () => {
-            window.focus()
-            console.log('Ctrl+X')
-          }
-        })
+     
       }
     }
-
+    const blur = {
+      enable(){
+        HTML.setAttribute('blur', '')
+      }, 
+      disable(){
+        HTML.removeAttribute('blur')
+      },
+      check() {
+        chrome.storage.local.get('blur', (result) => {
+          if (result.blur != undefined) {
+            if (result.blur == 'enabled') {
+              this.enable()
+            }
+          }
+        });
+      }
+    }
     //================================================================//
     //================================================================//
 
     //START INITIAL FUNTIONS ! IMPORTANT
-    disableContextMenuDefault()
-    windowEvents.update(preview)
-    loading.auto(BODY, {iframeLoaded: true})
-    layoutMode.check()
-    windowUrl.check()
-    shortcuts.keypress()
-    statusb.check()
-    events.navMenu()
 
     //FOR SERVER APACHE
     if(SERVER_APACHE){
@@ -1438,18 +1538,18 @@ const ASTRONAUT_LOCALHOST = {
       liveServer.isEnabled.check()
     }
 
+    disableContextMenuDefault()
+    windowEvents.update(preview)
+    loading.auto(BODY, {iframeLoaded: true})
+    layoutMode.check()
+    windowUrl.check()
+    shortcuts.keypress()
+    statusb.check()
+    blur.check()
+    events.navMenu()
+ 
 
-    document.querySelector('input#url').addEventListener('click', () => {
 
-      document.dispatchEvent(
-        new KeyboardEvent("keydown", {
-          keyCode: 88, // example values.
-          ctrlKey: true,  // if you aren't going to use them.
-        })
-      );
-        console.log('clicked')
-      
-      })
     //================================================================//
     //================================================================//
     messageStartedInConsole()

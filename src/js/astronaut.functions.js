@@ -15,6 +15,10 @@ THIS.get=function(e){return this.querySelector(e)}
 THIS.getAll=function(e){return this.querySelectorAll(e)}
 String.prototype.capitalize = function() {return this.charAt(0).toUpperCase() + this.substr(1);}
 String.prototype.lastCaracter = function(e) {return this.match(`(?:jpg|jpeg|gif|png|svg|js|json|html|css|php|txt|zip|exe|rar|/|)*$(?!\w|\s)`)[0];}
+String.prototype.formatValueInText = function(e) {var newText = '', text = this.split(e);text.forEach(word => {newText += `${word.capitalize()} `});return newText}
+
+
+
 THIS.loadHTML=function(url){
   var local = this
   fetch(url)

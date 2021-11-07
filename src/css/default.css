@@ -28,6 +28,13 @@
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
+}
+[astronaut] body::before {
+  content: '';
+  position: absolute; 
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -50,7 +57,7 @@ body #contextMenu .contextMenuCustom {
   backdrop-filter: blur(3px);
   box-shadow: rgb(0 0 0 / 41%) 0px 2px 7px -2px;
   z-index: 1;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0rem;
   background: #22272e26;
 }
 body #contextMenu button.btn {
@@ -69,8 +76,13 @@ body #contextMenu button.btn {
   outline: none;
   color: currentcolor;
   background: transparent;
-  border-radius: 0.3rem;
+/*   border-radius: 0.3rem; */
 }
+body #contextMenu button.btn.column-2 {
+  grid-template-columns: 1fr auto;
+  padding: 0.4rem 0.8rem;
+}
+
 body #contextMenu button.btn:hover {
   background: #22272e9e;
 }
@@ -81,6 +93,10 @@ body #contextMenu button.btn i {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  margin-top: 2px;
+}
+body #contextMenu button.btn.column-2 i {
+  margin-right: 0;
 }
 body #contextMenu button.btn span {
   text-align: left;
@@ -92,8 +108,9 @@ body #contextMenu button.btn span.shortcut {
 body #contextMenu button.btn svg.bi-check2 {
   text-align: left;
   margin-bottom: 1px;
-  color: #27C93F
+  color: rgb(0 217 32);
 }
+
 
 /*========================final contextMenuCustom====================*/
 

@@ -1,18 +1,15 @@
-[themecolor="github"] {
-  --bg-primary: #22272e;
-  --bg-primary-transparent: #373e4791;
-  --bg-second: #2d333b;
+:root {
+
   --border:  #768390;
 
   --font-primary: #adbac7;
   --font-second: #768390;
   --font-third: #e5534b;
 
-  --btn-primary:  #373e47;
-  --btn-primary-hover: #444c56;
   --btn-second:  #347d39;
   --btn-second-hover: #46954a;
   --btn-second-border-hover: #57ab5a;
+  
   --btn-third:  #c93c37;
   --btn-third-border:  #e5534b;
 
@@ -22,10 +19,40 @@
   --bg-warn-border: #ae7c1466;
   --bg-info: linear-gradient(#4184e426, #4184e426);;
   --bg-info-border: #4184e466;
+
+  --blur: blur(0.25rem);
 }
 
 
-.hide :is(.close_icon, ul) {
-  position: absolute;
-  left: -999rem;
+[themecolor="github_dark_dimmed"] {
+  --bg-primary: rgb(34 39 46);
+  --bg-primary-transparent: rgb(34 39 46 / 50%);
+  --bg-second: rgb(45 51 59);
+  --bg-second-transparent: rgb(45 51 59 / 50%);
+  
+  --btn-primary:  rgb(55 62 71);
+  --btn-primary-transparent: rgb(55 62 71 / 50%);
+  --btn-primary-hover: #444c56;
+
+  --border:  #768390;
+  --font-primary: #adbac7;
+}
+[themecolor="github_light"] {
+  --bg-primary: rgb(255 255 255);
+  --bg-primary-transparent: rgb(255 255 255 / 50%);
+  --bg-second: rgb(246 248 250);
+  --bg-second-transparent: rgb(246 248 250 / 50%);
+  
+  --btn-primary:  rgb(246 248 250);
+  --btn-primary-transparent: rgb(246 248 250 / 50%);
+  --btn-primary-hover: rgb(243 244 246);
+
+  --btn-second:  rgb(0 136 255);
+  --btn-second-hover: rgb(5 102 213);
+  --btn-second-border-hover: rgb(27 31 36 / 15%);
+
+  --border:  rgb(27 31 36 / 15%);
+
+  --font-primary: rgb(52 52 52);
+  --font-second: rgb(87 96 106);
 }

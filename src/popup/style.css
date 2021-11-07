@@ -3,14 +3,14 @@ body {
     width: 17rem;
 }
 
-.window-control [dot] { 
+[astronaut] body .container #content .navbar .window-control i[dot] { 
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
-.window-control [dot="E0443E"] {background: #E0443E;}
-.window-control [dot="DEA123"] {background: #DEA123;}
-.window-control [dot="1AAB29"] {background: #1AAB29;}
+[astronaut] body .container #content .navbar .window-control i[dot="E0443E"] {background: #E0443E;}
+[astronaut] body .container #content .navbar .window-control i[dot="DEA123"] {background: #DEA123;}
+[astronaut] body .container #content .navbar .window-control i[dot="1AAB29"] {background: #1AAB29;}
 
 [astronaut] body .container #content {
     background: var(--bg-primary-transparent);
@@ -31,6 +31,7 @@ body {
     padding: 1rem 1rem;
     row-gap: 1rem;
     user-select: none;
+    background: var(--bg-second);
 }
 [astronaut] body .container #content .icon {
     display: flex;

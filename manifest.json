@@ -2,7 +2,7 @@
   "manifest_version":3,
   "version":"1.0",
   "name": "Astronaut Localhost",
-  "description":"Localhost in a different way! | Localhost de uma forma diferente!",
+  "description":"Localhost in a different way for your development environment!",
   "author":"github.com/andremalveira",
   "homepage_url": "http://astlibjs.ga/?page=extension",
 
@@ -35,6 +35,7 @@
   ],
 
   "host_permissions": [
+    "*://localhost/*",
     "*://localhost:*/?*",
     "*://local:*/?*",
     "*://www:*/?*",
@@ -52,7 +53,7 @@
       ],
       "js":[
         "src/js/astronaut.functions.js",
-        "src/js/astronaut.config.js",
+        "src/js/astronaut.keys.global.js",
         "src/js/astronaut.icons.js",
         "src/js/astronaut.notify.js",
         "src/js/astronaut.constants.js",
@@ -71,6 +72,7 @@
         "src/js/astronaut.start.js"
       ],
       "matches": [
+        "*://localhost/*",
         "*://localhost:*/?*",
         "*://astronaut:*/?*",
         "*://local:*/?*",

@@ -4,6 +4,7 @@
       var bg = (options && options.style) ? options.style.bg : '',
           spinner = (options && options.style) ? options.style.spinner : ''
       e.style.display='relative'
+      document.documentElement.setAttribute('loading','')
       e.insertAdjacentHTML('beforeend',`
         <div id="loading" style="${bg}">
         <svg class="spinner" viewBox="0 0 50 50" style="${spinner}">
@@ -17,6 +18,7 @@
         var L = GET("#loading");
         L.style.transition='ease 0.2s';
         L.style.opacity='0';
+        document.documentElement.removeAttribute('loading')
         setTimeout(() => {if(GET("#loading")){GET("#loading").remove()}}, 200);
       }
     }, 
@@ -30,6 +32,7 @@
         document.querySelectorAll('#layout [window] iframe').forEach(e => {
           e.addEventListener('load', ()=> {
             loading.stop();
+            background.check()
           })
         })
       } else {
@@ -40,9 +43,9 @@
     }
   }
 
-  const theme = {
+  const themeColor = {
     toggle(themeValue) {
-      var themeDefault = 'github',
+      var themeDefault = THEME_COLOR_DEFAULT,
           newTheme = (themeValue) 
           ? themeValue
           : themeDefault;
@@ -52,15 +55,15 @@
     },
     check() {
       if(storageLocal.get()){
-        if(storageLocal.get().theme) {
-          theme.toggle(storageLocal.get().theme)
-        } else {theme.toggle()}
-      } else {theme.toggle()}
+        if(storageLocal.get().themeColor) {
+          themeColor.toggle(storageLocal.get().themeColor)
+        } else {themeColor.toggle()}
+      } else {themeColor.toggle()}
     },
     actual(){
       var themeDefault = this.toggle();
-      if(storageLocal.get() && storageLocal.get().theme){
-       return storageLocal.get().theme
+      if(storageLocal.get() && storageLocal.get().themeColor){
+       return storageLocal.get().themeColor
       } else {
         return themeDefault
       }
@@ -81,23 +84,22 @@
     update(){
       chrome.storage.local.get(function (result) {
         if (result != undefined) {
-          localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify(result));
+          localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify(result)); 
         }
       })
     },
-    set(id, value){
+    set(id, value, i){
       chrome.storage.local.set({[id]:value }, () =>{
         storageLocal.update()
       });
     },
     remove(id){
       chrome.storage.local.remove([id], (result) => {
-        console.log('Removed item in LocalSorage: ' + id);
         storageLocal.update()
       });
     },
     cacheData(dataName, data) {
-      var cacheData = 'cacheData', dataName = (dataName) ? dataName : ''
+      var cacheData = 'apiCacheData', dataName = (dataName) ? dataName : ''
     
       chrome.storage.local.get(function (result) {
         if (result[cacheData]) {
@@ -111,10 +113,45 @@
           });
         }
       })
+    },
+    noShared: {
+      get(id) {
+        if(localStorage.getItem(LOCALSTORAGE_NAME_NOSHARED)){
+          if(id){
+            return JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME_NOSHARED))[id]
+          } else {
+            return JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME_NOSHARED))
+          }
+  
+        } else {return false}
+      },
+      set(id, value){
+        var stored = storageLocal.noShared.get()
+       
+        if(stored) {
+          stored[id] = value
+          localStorage.setItem(LOCALSTORAGE_NAME_NOSHARED, JSON.stringify(stored));
+        } else {
+          var newValue = {[id]:value}
+          localStorage.setItem(LOCALSTORAGE_NAME_NOSHARED, JSON.stringify(newValue));
+        }
+      },
+      remove(id) {
+        var stored = storageLocal.noShared.get()
+        if(stored && stored[id]){
+          delete stored[id] 
+          localStorage.setItem(LOCALSTORAGE_NAME_NOSHARED, JSON.stringify(stored));
+          if(JSON.stringify(stored) === JSON.stringify({})){
+            localStorage.removeItem(LOCALSTORAGE_NAME_NOSHARED);
+          }
+        }
+      }
+
     }
   }
+
 /*   storageLocal.remove('liveServer') */
-  const  konsole = {
+  const konsole = {
     success(text) {
       console.log(
         `%cAstronaut.Localhost: ✔ ${text}`,
@@ -164,7 +201,10 @@
       }, 
       disable(){
         var btnLiveServer = document.querySelector('[window]#preview .navbar .icon[option="liveserver"]');
-        btnLiveServer.removeAttribute('enabled','')
+        if(btnLiveServer){
+          btnLiveServer.removeAttribute('enabled','')
+        }
+
       },
       check(){
         var storedSettings = storageLocal.get(),
@@ -270,10 +310,10 @@
 
   const metaThemeColorMobile = {
     update(iframe){
-
       function setThemeColor(statusBar, dom) {
         if(headata.themeColor(dom)){
           var contentThemeColor = headata.themeColor(dom).content;
+  
           if(contentThemeColor != '' && statusBar) {
             statusBar.style.background=contentThemeColor
           } 
@@ -337,6 +377,23 @@
     }
   }
 
+  const defineHead = (head) => {
+    var metas = `
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible"   content="IE=edge">
+      <meta name="viewport"                content="width=device-width, initial-scale=1.0">
+      <meta property="og:site_name"        content="Astronaut Library.js"> 
+      <meta property="og:type"             content="website" />
+      <meta property="og:url"              content="https://andremalveira.github.io/astronaut/" />
+      <meta property="og:title"            content="Astronaut Library.js"/>
+      <meta property="og:description"      content="Astronaut is a small Library with useful resources for Developers!" />
+      <meta property="og:image"            content="src/img/svg/astronaut.svg" />
+      <meta name="description"             content="Astronaut is a small Library with useful resources for Developers!" />
+      <meta name="keywords"                content="programming, development, coding, javascript, library, extension, liveserver, preview, mobile, desktop">
+    `
+    head.insertAdjacentHTML('afterbegin', metas)
+  }
+
   const fullscreen = {
     getFullScreenElement() {
       return document.fullscreenElement
@@ -353,5 +410,34 @@
         document.exitFullscreen()
       }
 
+    }
+  }
+
+  const background = {
+    insert(url, blurValue){
+      astronaut.insert.css(`
+[astronaut] body::before {
+  animation: background 0.5s;
+  background: var(--bg-primary) ${(url)? `url(${url})` : ''} no-repeat;
+  background-size: cover; 
+  ${(blurValue) ? `filter:blur(${blurValue}px);` : ''}
+}
+@keyframes background {
+  0% {opacity: 0;transform: scale(1.1);}
+  10% {transform: scale(1.1);}
+  100% {opacity: 1;transform: scale(1);}
+}
+
+`, 'background', false, parent.document)
+
+    },
+    remove(){
+      storageLocal.remove('background')
+      astronaut.remove.css('background', parent.document)
+    },
+    check(){
+      if(storageLocal.get('background')){
+        this.insert(storageLocal.get('background'), storageLocal.get('blurBackground'))
+      }
     }
   }

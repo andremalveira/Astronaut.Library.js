@@ -38,6 +38,17 @@ let notify = {
       }
     }
   },
+  remove: {
+    css(id, selector){
+      if(id){
+        var document = (selector) ? selector : document,
+            id = astronaut.name+'-'+id+'-css';
+        if(document.head.querySelector(`style#${id}`)){
+          document.head.querySelector(`style#${id}`).remove()
+        }
+      }
+    }
+  },
   notify(params) {
     if(params){
       var ID = astronaut.create.id(),

@@ -1,6 +1,5 @@
  
 //create new html structure 
-
 var listProjectsHTML = '<div></div>',
     menuApacheHTML = ''
 
@@ -61,21 +60,24 @@ var INDEX = `
               </div>
               <div class="options">
 
-                <div class="icon" option="devices" title="${langText.toggleDevice}">
+                <div class="icon" option="devices" title="${langText.toggleDevice} &nbsp Ctrl+Q">
                   <i class="icon-layout">${icons.layout.desktop}</i>
                 </div>
                
+                ${(SERVER_APACHE) ? `
                 <div class="icon" option="liveserver" ${SSPLiveServerEnabled}>
                   <i class="icon-liveServer" ${SSPLiveServerStatus}>${icons.liveServer}</i>
                 </div>
+                `: ''}
+
                 <div class="icon" option="moreoptions" title="More Options">
-                  <i class="icon-moreoptions" ${SSPLiveServerStatus}>${icons.dots}</i>
+                  <i class="icon-moreoptions">${icons.dots}</i>
                 </div>
               </div>
             </div>
             <div class="display">
               ${astronaut_logo}
-              <iframe ${SSPhoneModel_size}  id="window_main"></iframe>
+              <iframe ${SSPhoneModel_size} id="window_main"></iframe>
             </div>
           </div>
         </div>
