@@ -1,14 +1,13 @@
 # Astronaut Localhost Extension
 <p align="center">
-<img src="https://img.shields.io/badge/Version-v1.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>
+<img src="https://img.shields.io/badge/Version-v1.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Extension-319046" alt="Branche Extension"/>
+
 </p>
 
-<img src="https://img.shields.io/badge/Branches:--555555?style=flat-square&link=http://#left&link=http://#right" alt="Branches"/><img src="https://img.shields.io/badge/-Main-319046?style=flat-square&link=http://#left&link=http://#right" alt="Main"/><img src="https://img.shields.io/badge/-Extension-898989?style=flat-square" alt="Extension"/><img src="https://img.shields.io/badge/-Website-898989?style=flat-square" alt="Website"/>
-
 <p align="center">
-  <a href="https://andremalveira.github.io/astronaut/?library=download">Main</a> |
-  <a href="https://andremalveira.github.io/astronaut">Extension</a> |
-  <a href="https://andremalveira.github.io/astronaut/?library=about#extension-preview">Website</a> 
+  <a href="#">Website</a> |
+  <a href="#">Download</a> |
+  <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here">Support</a> 
 
 </p>
 <p align="center">
@@ -51,3 +50,4 @@ So in addition to just changing the default white color to a darker color, I tho
 
 # License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
+
