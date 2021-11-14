@@ -1,6 +1,6 @@
 ---
 name: Astronaut Library
-about: Describe the purpose of this problem below.
+about: Describe the issues related to libraries/plugins below.
 title: "[ Inform the library here ⚠ ][Enter here the type of label ⚠ ] - Insert the
   title here ⚠"
 labels: Astronaut Library
