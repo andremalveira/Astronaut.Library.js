@@ -1,19 +1,23 @@
 # Astronaut Localhost Extension
 <p align="center">
+<img src="https://img.shields.io/badge/License-MIT-263039?labelColor=1A222A" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-263039?labelColor=1A222A" alt="License-MIT"/>
+
+</p>
+
+<p align="center">
   <img src="./src/img/png/preview.png" alt="Astronaut Library.js"/>
 </p>
 
 ## Browser Compatibility
 
-![Chrome](https://img.shields.io/badge/-Google%20Chrome%20✅-303030?style=flat&logo=google-chrome)&nbsp;
-![Opera](https://img.shields.io/badge/-Opera%20✅-303030?style=flat&logo=opera)&nbsp;
-![Edge](https://img.shields.io/badge/-Microsoft%20Edge%20✅-303030?style=flat&logo=microsoft-edge)&nbsp;
-![Firefox](https://img.shields.io/badge/-Mozilla%20Firefox%20❌-303030?style=flat&logo=firefox)&nbsp;
-![Safari](https://img.shields.io/badge/-Safari%20❌-303030?style=flat&logo=safari)&nbsp;
+![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome)&nbsp;
+![Opera](https://img.shields.io/badge/Opera-✔-7dce35?style=flat&logo=opera)&nbsp;
+![Edge](https://img.shields.io/badge/Microsoft%20Edge-✔-7dce35?style=flat&logo=microsoft-edge)&nbsp;
+![Firefox](https://img.shields.io/badge/Mozilla%20Firefox-✖-f75c31?style=flat&logo=firefox)&nbsp;
+![Safari](https://img.shields.io/badge/Safari-✖-f75c31?style=flat&logo=safari)&nbsp;
 
 
 
-<br>
 <br>
 
 # About 
@@ -41,3 +45,5 @@ So in addition to just changing the default white color to a darker color, I tho
 - Font Typography.
 
 
+# License
+This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
