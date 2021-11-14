@@ -36,7 +36,6 @@ const liveReload = {
                 var stliveServer = storageLocal.get('liveServer')
                 if (stliveServer) {
                     if (stliveServer.liveServerUrl == '') {
-                        console.log(notify)
                         astronaut.notify({
                             message: `${langText.liveServerAddressEmpty} -> ${langText.accessConsole}`,
                             icon: icons.broadcast,
@@ -144,9 +143,8 @@ const liveReload = {
 
     },
     liveServer(){
-        
-        if ('WebSocket' in window) {
-            GET_ALL('[window] iframe').forEach(iframe => {
+        setTimeout(() => {
+            parent.document.querySelectorAll('[window] iframe').forEach(iframe => {
                 var window = iframe.contentWindow, document = iframe.contentWindow.document;
                 (function () {
                     function refreshCSS() {
@@ -176,11 +174,8 @@ const liveReload = {
                         sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
                     }
                 })();
-
-            })
-        } else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-
+                }
+            )
+        }, 3000);
     }
 }

@@ -1,25 +1,25 @@
 ; (function () {
     'use strict';
 
-    disableContextMenuDefault()
+/*     disableContextMenuDefault() */
     setTimeout(() => {
         document.querySelector('#url').classList.add('fadeonleft')
     }, 300);
 
     var toggleCheck = true, 
         btnToggle = document.getElementById('btnToggle'),
-        idforstrglcal = 'statusExtension'; // name in storageLocal
+        idforstrglcal = 'isAstExt'; // name in storageLocal
 
     //Actions button toggle
     const toggle = {
         on(){ // toggle on
             document.querySelector('label').setAttribute('checked','')
-            storageLocal.set(idforstrglcal,'enabled')
+            storageLocal.set(idforstrglcal,true)
             sentMessage('status-extension', true);
         },
         off(){ // toggle off
             document.querySelector('label').removeAttribute('checked')
-            storageLocal.set(idforstrglcal,'disabled')
+            storageLocal.set(idforstrglcal, false)
             sentMessage('status-extension', false);
         },
         check(){ // toggle check
@@ -41,8 +41,8 @@
 
     btnToggle.addEventListener('click', () => {toggle.check()}) //action click in toggle
     // check in storageLocal if it is enabled 
-    var statusExtension = storageLocal.get(idforstrglcal)
-    if(statusExtension == 'disabled'){
+    var isAstExt = storageLocal.get(idforstrglcal)
+    if(isAstExt === false){
         document.querySelector('label').removeAttribute('checked')
         toggleCheck = false
     } 

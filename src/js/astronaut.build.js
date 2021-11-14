@@ -1,11 +1,6 @@
 const ASTRONAUT_LOCALHOST = {
   build() {
     //initial changes
-/*     HEAD.innerHTML=''  */
-    HTML.setAttribute('astronaut', '')
-    themeColor.check()
-    titleTab.default()
-
     if(SERVER_APACHE){
       var apacheaddress = document.querySelector('address');
       if (location.search != '?C=S') { location.href = location.href + '?C=S' }
@@ -14,15 +9,20 @@ const ASTRONAUT_LOCALHOST = {
       apachetable.style.display = 'none'
       GET('body h1').remove()
       GET_ALL('table tr th').forEach(e => { e.parentElement.remove() })
-    } else {
+    } else if(SERVER_LIVE){
       var inputSearch = document.querySelector('input#search')
       if(inputSearch) inputSearch.remove()
+      
+      HEAD.innerHTML=''
+      BODY.innerHTML=''
     }
 
-        
+    
+    HTML.setAttribute('astronaut', '')
+    themeColor.check()
+    titleTab.default()
+
     //insert new html structure
-/*     BODY.innerHTML='' */
-/*     console.clear() */
     BODY.insertAdjacentHTML('afterbegin', INDEX) //STRUCTURE IN INDEX.HTML
 
     //VARIABLES ESSENCIAL
@@ -1266,9 +1266,10 @@ const ASTRONAUT_LOCALHOST = {
             inputBlurBackground = form.get('input[name="blurBackground"]');
         inputBackground.addEventListener('input', () => {
           backgroundValue = form.get('input[name="background"]').value
-          if(inputBlurBackground.parentElement.getAttribute('disabled')){
+          if(backgroundValue.length > 0 && inputBlurBackground.parentElement.getAttribute('disabled') == ''){
             inputBlurBackground.parentElement.removeAttribute('disabled')} 
-          else if(inputBlurBackground.value == 0){
+          else if(backgroundValue.length == 0){
+            console.log(backgroundValue.length)
             inputBlurBackground.parentElement.setAttribute('disabled','')
           }
           btns.unlock()
@@ -1288,7 +1289,7 @@ const ASTRONAUT_LOCALHOST = {
 
         })
 
-        btnSave.addEventListener('click', () => {
+        function save(){
           if (btnSave.attributes['status'].value == 'pending') {
             btns.block()
             if (typeof langValue !== typeof undefined) {
@@ -1333,20 +1334,26 @@ const ASTRONAUT_LOCALHOST = {
             }
             btnSave.innerText = (storedSettings.language) ? lang(storedSettings.language).changesSaved : langText.changesSaved
           }
-        })
-        btnCancel.addEventListener('click', () => {
+        }
+        function cancel(){
           if (!btnCancel.attributes['status']) {
             settings.close(id, btn, false, newModalSelector)
             checkIfThemeColorChanged()
           }
-        })
+        }
+       
+        btnSave.addEventListener('click', () => {save()})
+        if(btnSave) {keypress.down({key: 13,func: () => {save()}})}
+
+        btnCancel.addEventListener('click', () => {cancel()})
+        if(btnCancel) {keypress.down({key: 27,func: () => {cancel()}})}
       },
       close(id, btn, btnSave, newModalSelector) {
         const x = () => {
           newModal.close({ btn, newModalSelector })
         }
         if (btnSave) {
-          if (btnSave.attributes['status'].value != 'pending') {
+          if (btnSave.getAttribute('status') != 'pending') {
             x()
           } else {
             btnSave.style.animation = 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both'
@@ -1373,12 +1380,14 @@ const ASTRONAUT_LOCALHOST = {
     }
     const statusb = {
       enable() {
+        statusBar.innerHTML=''
         statusBar.style.display = 'grid'
         setTimeout(() => {
           statusBar.classList.add('show')
         }, 100);
 
         var statusBarHTML = `
+        <div class="nav"></div>
         <div class="left"></div>
         <div class="right">
           <div>${apacheaddress.innerText}</div>
@@ -1536,6 +1545,8 @@ const ASTRONAUT_LOCALHOST = {
     if(SERVER_APACHE){
       listProjects.check()
       liveServer.isEnabled.check()
+    } else if(SERVER_LIVE){
+      whenIframe('load', () => {liveReload.liveServer()})
     }
 
     disableContextMenuDefault()
@@ -1547,7 +1558,7 @@ const ASTRONAUT_LOCALHOST = {
     statusb.check()
     blur.check()
     events.navMenu()
- 
+
 
 
     //================================================================//

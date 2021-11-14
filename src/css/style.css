@@ -18,28 +18,35 @@
 [astronaut] body .container #status-bar {
   overflow: hidden;
   display: none;
-  grid-template-columns: 1fr 1fr;
-  background: var(--bg-primary-transparent);
+  grid-template-columns: auto 1fr 1fr;
   color: var(--font-second);
-  height: 0rem;
-  padding: 0.0rem 0.5rem;
+
   font-size: 0.8rem;
   position: relative;
   align-items: center;
   transition: ease 0.2s;
   z-index: 2;
 }
-[astronaut] body .container #status-bar.show {
-  height: 1.1rem;
+[astronaut] body .container #status-bar :is(.left, .right) {
+  display: flex;
+  background: var(--bg-primary-transparent);
+  padding: 0.0rem 0.5rem;
+  height: 0rem;
+}
+[astronaut] body .container #status-bar.show :is(.left, .right) {
   padding: 0.2rem 0.5rem;
+  height: 1.1rem;
+}
+[astronaut] body .container #status-bar .nav {
+  width: 3rem;
+  background: var(--bg-second);
+  height: 100%;
 }
 [astronaut] body .container #status-bar .left {
-  display: flex;
   justify-content: start;
 }
 
 [astronaut] body .container #status-bar .right {
-  display: flex;
   justify-content: flex-end;
 }
 
@@ -61,6 +68,16 @@
 [astronaut] body .container nav .menu:last-child  { 
   margin-bottom: 1.5em;
 }
+[astronaut] body .container nav .menu .ast { 
+  height: 38.68px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[astronaut] body .container nav .menu .ast svg { 
+  width: 20px;
+}
 [astronaut] body .container nav .menu .icons { 
   width: 100%;
   height: 2.5rem;
@@ -71,6 +88,9 @@
   transition: ease 0.1s;
   position: relative;
   color: currentColor;
+}
+[astronaut] body .container nav .menu .icons i { 
+  display: flex;
 }
 [astronaut] body .container nav .menu .icons svg { 
   width: 23px;

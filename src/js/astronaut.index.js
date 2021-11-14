@@ -35,9 +35,9 @@ var INDEX = `
         <div id="typography" page class="btn icons" title="${langText.typography}">${icons.typography}</div>
       </div>
       <div class="menu">
-        <a href="${URL_WEB_SITE}" target="_blank" class="icons" title="Website"><i class="icon-star">${icons.astronaut}</i></a>
+        <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here" target="_blank" class="icons" title="Support"><i class="icon-star">${icons.flag}</i></a>
         <div id="credits" class="btn icons" title="${langText.creditText1}"><i class="icon-star">${icons.star}</i></div>
-        <div id="author" class="btn icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
+        <div id="author" class="btn icons" title="${langText.coffee} ❤☕"><i class="icon-coffee">${icons.coffee}</i></div>
         <div id="settings" class="btn icons" title="${langText.settings}">${icons.gear}</div>
       </div>
     </nav>

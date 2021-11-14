@@ -2,7 +2,10 @@
 
 /*blur*/
 
-[themecolor][blur]  body .container :is(nav, [window] .display, #content .container-list) {
+[themecolor][blur]  body .container :is(
+  nav, [window] .display, 
+  #content .container-list, 
+  #status-bar .nav) {
     background: var(--bg-second-transparent);
     backdrop-filter: var(--blur);
 }

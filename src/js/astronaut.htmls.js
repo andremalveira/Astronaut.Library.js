@@ -33,7 +33,7 @@ const htmls = {
         <span>André Malveira</span>
         <span>@andremalveira</span>
       </div></a>
-      <div>${langText.coffee}</div>
+      <div>${langText.coffee} <span style='color: #eb3e3e;'>❤</span>☕</div>
     </div>
     <div class="main">
       <a href="https://www.paypal.com/donate/?business=VDQ4LD7Q6X9BA&currency_code=${langText.currency}" target="_blank"><div class="button"><i>${icons.paypal}</i>Paypal</div></a>

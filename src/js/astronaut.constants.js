@@ -1,4 +1,13 @@
   
+  const whenIframe = (type, f) => {
+    if(type && f) {
+     
+      parent.document.querySelectorAll('#layout [window] iframe').forEach(e => {
+        e.addEventListener(type, ()=> {f()})
+      })
+    }
+  }
+
   const loading = {
     start(e, options) {
       var bg = (options && options.style) ? options.style.bg : '',
@@ -29,11 +38,9 @@
       loading.start(selector, options)
 
       if(iframeLoaded){
-        document.querySelectorAll('#layout [window] iframe').forEach(e => {
-          e.addEventListener('load', ()=> {
-            loading.stop();
-            background.check()
-          })
+        whenIframe('load', () => {
+          loading.stop();
+          background.check()
         })
       } else {
         setTimeout(() => {
@@ -292,6 +299,24 @@
       })
     }
   }
+  
+  const enableRefreshWindows = () => {
+      //F5 - update all iframes
+      keypress.down({
+        key: 116,
+        func: () => {
+          var layout = document.querySelector('#layout')
+          layout = (layout)
+            ? layout
+            : parent.document.querySelector('#layout')
+  
+          layout.querySelectorAll('[window] iframe').forEach(iframe => {
+            console.clear()
+            iframe.contentWindow.location.reload()
+          })
+        }
+      })
+  }
 
   const headata =  {
     favicon(doc){
@@ -349,7 +374,11 @@
             } else {
               newIcon = getImage('svg/file-earmark.svg')
               parent.document.title +=  ` - ${langText.faviconNotDefined}`
-              console.error(`${langText.faviconNotDefined} in ${location.href}`)
+              if (!sessionStorage.getItem('faviconNotDefined')) {
+                console.error(`${langText.faviconNotDefined} in ${location.href}`)
+                sessionStorage.setItem('faviconNotDefined', 1);
+              }
+             
             }
             headata.favicon(parent.document).href  = newIcon
           }, 0);
@@ -418,7 +447,7 @@
       astronaut.insert.css(`
 [astronaut] body::before {
   animation: background 0.5s;
-  background: var(--bg-primary) ${(url)? `url(${url})` : ''} no-repeat;
+  background: var(--bg-primary) ${(url)? `url(${url})` : ''} no-repeat center;
   background-size: cover; 
   ${(blurValue) ? `filter:blur(${blurValue}px);` : ''}
 }

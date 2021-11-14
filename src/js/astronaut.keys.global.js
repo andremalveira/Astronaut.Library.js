@@ -3,10 +3,16 @@
   const IFM = () => {if(window.frameElement){return window.frameElement.id == 'window_main'}}
   const IFMirror = () => {if(window.frameElement){return window.frameElement.id == 'window_mirror'}}
   const IAS = () =>  {var address = parent.document.querySelector('address') ?? false;apache = (address) ? ((address.innerText.indexOf('Apache') == 0) ? true : false) : false;return apache}
+  const ILS = () =>  {
+    var body = parent.document.body,
+        liveServerTxt = (body) ? body.innerHTML.indexOf('live-server') : false;
+      return (liveServerTxt >= 0) ? true : false
+  }
   const PNE = () => {if(IDM()){if(location.pathname != '/') return false;return true} }
 
   //KEYS GLOBAIS
   SERVER_APACHE = IAS();
+  SERVER_LIVE = ILS();
   STATUS_CONNECTION = true;
   DOCUMENT_MAIN = IDM();
   FRAME_MAIN = IFM();
@@ -22,3 +28,4 @@
     theme:'dark', 
     iconSize: '1.8rem'
   }
+
