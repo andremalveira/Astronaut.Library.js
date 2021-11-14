@@ -7,4 +7,4 @@ assignees: ''
 
 ---
 
-Before opening a new issue, check [here][/issues] that no other issue like yours has been resolved!
+Before opening a new issue, check that no other issue like yours has been resolved!
