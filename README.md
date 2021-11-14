@@ -5,11 +5,13 @@
 
 ## Browser Compatibility
 
-<img src="https://img.shields.io/badge/-Google%20Chrome ✔-303030?style=flat&logo=google-chrome&"/>
-<img src="https://img.shields.io/badge/-Opera ✔-303030?style=flat&logo=opera"/>
-<img src="https://img.shields.io/badge/-Microsoft%20Edge ✔-303030?style=flat&logo=microsoft-edge"/>
-<img src="https://img.shields.io/badge/-Mozilla Firefox ✖-303030?style=flat&logo=firefox"/>
-<img src="https://img.shields.io/badge/-Safari ✖-303030?style=flat&logo=safari"/>
+![Chrome](https://img.shields.io/badge/-Google%20Chrome%20✅-303030?style=flat&logo=google-chrome)&nbsp;
+![Opera](https://img.shields.io/badge/-Opera%20✅-303030?style=flat&logo=opera)&nbsp;
+![Edge](https://img.shields.io/badge/-Microsoft%20Edge%20✅-303030?style=flat&logo=microsoft-edge)&nbsp;
+![Firefox](https://img.shields.io/badge/-Mozilla%20Firefox%20❌-303030?style=flat&logo=firefox)&nbsp;
+![Safari](https://img.shields.io/badge/-Safari%20❌-303030?style=flat&logo=safari)&nbsp;
+
+
 
 <br>
 <br>
