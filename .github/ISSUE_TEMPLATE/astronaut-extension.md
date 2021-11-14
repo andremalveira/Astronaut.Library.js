@@ -14,5 +14,6 @@ Types of Label:
   - Suggestion
   - Documentation
   - Question
+  - Feature Resquest
 
 ⚠ Report the situation in detail, in case of errors report here or send a print.
