@@ -1,19 +1,20 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-hi.png?token=AJTRTPRPJVKGGNC5DRZJB4LBSBRAA" alt="Hi!!"/>
-</p>
-
-<p align="center">
-  <a href="https://andremalveira.github.io/astronaut">Astronaut Page</a> |
-  <a href="https://andremalveira.github.io/astronaut/?library=about#extension-preview">Extension Preview</a> |
-  <a href="https://andremalveira.github.io/astronaut/?library=download">Download</a>
-</p>
-
+# Astronaut Localhost Extension
 <p align="center">
   <img src="./src/img/png/preview.png" alt="Astronaut Library.js"/>
 </p>
 
-# About
-## The Extension
+## Browser Compatibility
+
+<img src="https://img.shields.io/badge/-Google%20Chrome ✔-303030?style=flat&logo=google-chrome&"/>
+<img src="https://img.shields.io/badge/-Opera ✔-303030?style=flat&logo=opera"/>
+<img src="https://img.shields.io/badge/-Microsoft%20Edge ✔-303030?style=flat&logo=microsoft-edge"/>
+<img src="https://img.shields.io/badge/-Mozilla Firefox ✖-303030?style=flat&logo=firefox"/>
+<img src="https://img.shields.io/badge/-Safari ✖-303030?style=flat&logo=safari"/>
+
+<br>
+<br>
+
+# About 
 
 Astronaut Library.js is a small Library with useful resources for Developers created by André Malveira.
 
@@ -23,7 +24,7 @@ The extension would just change the default localhost color to a darker color, a
 
 So in addition to just changing the default white color to a darker color, I thought of changing the whole look of the page by manipulating the DOM in a way that could be useful for application development like having the project view on the same tab as localhost keeping the list of the other projects on the side, but of course not only with that, but with other tools.
 
-### Extension Tools
+## Features
 
 - Project preview in Desktop and Mobile version.
 
@@ -36,3 +37,5 @@ So in addition to just changing the default white color to a darker color, I tho
 - Useful Color Palettes.
 
 - Font Typography.
+
+
