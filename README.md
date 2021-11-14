@@ -1,9 +1,16 @@
 # Astronaut Localhost Extension
 <p align="center">
-<img src="https://img.shields.io/badge/License-MIT-263039?labelColor=1A222A" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-263039?labelColor=1A222A" alt="License-MIT"/>
-
+<img src="https://img.shields.io/badge/Version-v1.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>
 </p>
 
+<img src="https://img.shields.io/badge/Branches:--555555?style=flat-square&link=http://#left&link=http://#right" alt="Branches"/><img src="https://img.shields.io/badge/-Main-319046?style=flat-square&link=http://#left&link=http://#right" alt="Main"/><img src="https://img.shields.io/badge/-Extension-898989?style=flat-square" alt="Extension"/><img src="https://img.shields.io/badge/-Website-898989?style=flat-square" alt="Website"/>
+
+<p align="center">
+  <a href="https://andremalveira.github.io/astronaut/?library=download">Main</a> |
+  <a href="https://andremalveira.github.io/astronaut">Extension</a> |
+  <a href="https://andremalveira.github.io/astronaut/?library=about#extension-preview">Website</a> 
+
+</p>
 <p align="center">
   <img src="./src/img/png/preview.png" alt="Astronaut Library.js"/>
 </p>
@@ -16,9 +23,6 @@
 ![Firefox](https://img.shields.io/badge/Mozilla%20Firefox-✖-f75c31?style=flat&logo=firefox)&nbsp;
 ![Safari](https://img.shields.io/badge/Safari-✖-f75c31?style=flat&logo=safari)&nbsp;
 
-
-
-<br>
 
 # About 
 
