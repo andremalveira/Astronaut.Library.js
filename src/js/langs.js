@@ -93,8 +93,7 @@ const lang = (lang) => {
       p0: `A Extensão`,
       p1: `Astronaut Library.js é uma pequena biblioteca com recursos úteis para desenvolvedores criada por <a author>André Malveira</a>.`,
       p2: `Desenvolvida totalmente em Javascript Pure, a biblioteca foi criada principalmente como uma extensão de navegador para 'localhost' dos servidores Apache, Wamp e Xampp.`,
-      p3: `A extensão apenas mudaria a cor do localhost padrão para uma cor mais escura, como um tema, mas conforme o processo avançava, eu vim com novas idéias que poderiam ser úteis para usuários de localhost como eu, porque aqueles que trabalham com os servidores Apache mencionados acima, eles costumam acessar o localhost principal para acessar um projeto, e para quem gosta de um tema escuro e já o usa em outros programas como VSCode, Browsers e até no sistema operacional, pensei que também gostariam de um localhost diferente com um tema escuro e que não prejudicaria tanto os olhos.`,
-      p4: `Portanto, além de apenas mudar a cor branca padrão para uma cor mais escura, pensei em mudar toda a aparência da página manipulando o DOM de uma forma que pudesse ser útil para o desenvolvimento de aplicativos, como ter a visualização do projeto na mesma guia do host local mantendo a lista dos outros projetos ao lado, mas claro que não só com isso, mas com outras ferramentas.`,
+      p3: `A extensão apenas mudaria a parência padrão de localhost, mas conforme o processo avançava, eu vim com novas idéias que poderiam ser úteis para o desenvolvimento de aplicativos, como ter a visualização do projeto na mesma guia do host local mantendo a lista dos outros projetos ao lado, mas claro que não só com isso, mas com outras ferramentas.`,
       p5: `Ferramentas da Extensão`,
       ps6: `
         <p><i dot>●</i> Visualização do projeto na versão Desktop e Mobile.</p>
@@ -109,7 +108,7 @@ const lang = (lang) => {
       p8: `Além da extensão, a biblioteca também tem outras ferramentas para ultilizar em sites ou aplicações que usam o javascript.`,
       p9: `Das outras Ferramentas`,
       ps10: `
-        <p><i dot>●</i><a opendoc="notify"> Notify</a> -> É como um alerta personalizado porém criado a fim de mostrar notificações.</p>
+        <p><i dot>●</i><a opendoc="notify"> Notify</a> -> Um alerta personalizado para notificações push.</p>
       `,
     },
 
@@ -244,8 +243,7 @@ const lang = (lang) => {
        p0: `The Extension`,
        p1: 'Astronaut Library.js is a small Library with useful resources for Developers created by <a author>André Malveira</a>.',
        p2: 'Developed completely with Pure Javascript, the library was mainly created as a browser extension for "localhost" of the Apache, Wamp and Xampp servers.',
-       p3: `The extension would just change the default localhost color to a darker color, as a theme, but as the process progressed I came up with new ideas that could be useful for localhost users like me, because those who work with the Apache servers mentioned above, they often access the main localhost to access a project, and for those who like a dark theme and already use it in other programs such as VSCode, Browsers and even the Operating System, I thought they would also like a different localhost with a dark theme and that it wouldn't damage the eyes so much.`,
-       p4: `So in addition to just changing the default white color to a darker color, I thought of changing the whole look of the page by manipulating the DOM in a way that could be useful for application development like having the project view on the same tab as localhost keeping the list of the other projects on the side, but of course not only with that, but with other tools. `,
+       p3: `The extension would just change the default parsing of localhost, but as the process progressed I came up with new ideas that could be useful for application development, like having the project view in the same tab as localhost keeping the list of other projects while side, but of course not only with that, but with other tools.`,
        p5: `Extension Tools`,
        ps6: `
          <p><i dot>●</i> Project preview in Desktop and Mobile version.</p>
@@ -260,7 +258,7 @@ const lang = (lang) => {
        p8: `Besides the extension, the library also has other tools to use in websites or applications that use javascript. `,
        p9: `Other Tools`,
        ps10: `
-         <p><i dot>●</i><a opendoc="notify"> Notify</a> -> It's like a custom alert but created in order to show notifications.</p>
+         <p><i dot>●</i><a opendoc="notify"> Notify</a> -> A custom alert for push notifications.</p>
        `,
      },
 

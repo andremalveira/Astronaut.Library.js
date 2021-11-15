@@ -6,7 +6,7 @@
   TITLE_DEFAULT = 'Astronaut Library .js'
   STATUS_CONNECTION = true;
   DOCUMENT_MAIN = IS_DOCUMENT_MAIN();
-  LOCALSTORAGE_NAME = 'astronaut_extension_settings';
+  LOCALSTORAGE_NAME = 'AstronautLibrary.js';
   URL_CONNECTION = DIRECTORY_API('connection.json');
 
   //Libray versions 

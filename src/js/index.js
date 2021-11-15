@@ -24,15 +24,16 @@ var structure = `
   <div class="container columns" >
     <nav>
       <div class="menu">
-        <div id="localhost" class="icons" title="${langText.documentation}">${icons.ast.head}</div>
-        <div id="" data-id="extension" class="icons" title="Extension">${icons.box}</div>
+        <div id="localhost" class="icons" title="${langText.documentation}">${icons.book}</div>
+
         <span hr></span>
       </div>
       <div class="menu">
         <div id="" data-id="about" class="icons text-vertical" title="${langText.about}">${langText.about}</div>
-        <div id="" data-id="download" class="icons text-vertical" title="Downloads">Downloads</div>
+        <div id="" data-id="downloads" class="icons text-vertical" title="Downloads">Downloads</div>
         <span hr></span>
-        <a target="_blank" href="https://github.com/andremalveira/astronaut" class="icons" title="Github Repository"><i class="icon-github">${icons.github}</i></a>
+        <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js" class="icons" title="Github Repository"><i class="icon-github">${icons.github}</i></a>
+        <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5B+Enter+here+the+type+of+label+⚠+%5D+-+Insert+the+title+here+⚠" class="icons" title="Support"><i class="icon-github">${icons.flag}</i></a>
         <div id="credits" class="icons" title="${langText.credit}"><i class="icon-star">${icons.star}</i></div>
         <div id="author" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
         <div id="settings" class="icons" title="${langText.settings}">${icons.gear}</div>
@@ -56,7 +57,7 @@ var structure = `
 
           </div>
         </div>
-        <div id="layout" ${SSLayoutMode}>
+        <div id="layout">
           <div window id="preview" ${SSPhoneModel_model} >
             <div class="navbar">
               <div class="window-control">

@@ -192,7 +192,7 @@ window.addEventListener('load', () => {
           astronautMirror = astronaut_logo
         }
         if(page){
-          pagemode = 'page'
+          pagemode = 'p'
           optionInfo = `<span class="separator"></span><div class="icon" option="info" title="${langText.information}">${icons.infoCircle}</div>`
         }
         var newTabHTML = `
@@ -540,7 +540,7 @@ window.addEventListener('load', () => {
           })
 
           windowUrl.barSearch()
-          storageLocal.update()
+
         },
         close(elem){
           elem.getAll('iframe').forEach(iframe => {
@@ -560,7 +560,7 @@ window.addEventListener('load', () => {
             SLliveServer.actualUrl = ''
             storageLocal.set('liveServer', SLliveServer)
           }
-          storageLocal.update()
+
         },
         barSearch() {
           var barSearchURL = preview.get('.bar-search #url')
@@ -997,12 +997,12 @@ window.addEventListener('load', () => {
           if(params.get('docs')){
             docId = params.get('docs')
             newPage({listItems,id:docId, selector: preview, varParam:docs, nameParam:'docs'})
-          } else if(params.get('page')){
-            libraryId = params.get('page')
-            newPage({nav,id:libraryId, selector: preview, varParam:page, nameParam:'page'})
+          } else if(params.get('p')){
+            libraryId = params.get('p')
+            newPage({nav,id:libraryId, selector: preview, varParam:page, nameParam:'p'})
           } else if(isSearchParams === -1){
             _HOME()
-          }page
+          }
           this.popstate()
 
         },
@@ -1044,7 +1044,8 @@ window.addEventListener('load', () => {
         }
       }
       const _HOME = () => {
-        newPage({id:'home', selector: preview, varParam:page, nameParam:'page', changeUrl:false})
+        newPage({id:'home', selector: preview, varParam:page, nameParam:'p', changeUrl:false})
+        viewList.close()
         if(listItems.get('.item.active')){
           listItems.get('.item.active').classList.remove('active')
         }
@@ -1055,7 +1056,6 @@ window.addEventListener('load', () => {
 
       //START INITIAL FUNTIONS ! IMPORTANT
       navbarEvents.update(preview)
-      layoutMode.check()
       viewList.check()
       routes.check()
       disableContextMenuDefault()
@@ -1068,7 +1068,7 @@ window.addEventListener('load', () => {
       nav.getAll('.menu .icons').forEach( btn => {
         btn.addEventListener('click', () => {
           btnSrc = btn.attributes['src'];
-          btnPage = btn.attributes['page'];
+          btnPage = btn.attributes['p'];
           btnId = btn.attributes['id'];
 
           if(btnSrc) {
@@ -1087,7 +1087,7 @@ window.addEventListener('load', () => {
             settings.start(btnId.value, btn)
           } else {
             if(btn.dataset.id != undefined){
-              newPage({nav, id:btn.dataset.id, selector: preview, varParam:page, nameParam:'page'})
+              newPage({nav, id:btn.dataset.id, selector: preview, varParam:page, nameParam:'p'})
         
             } else {
               var funcs;
@@ -1121,7 +1121,7 @@ window.addEventListener('load', () => {
       })
       menuLibrary.forEach(a => {
         a.addEventListener('click', e => {
-          newPage({listItems, id:a.dataset.id, selector: preview, varParam:page, nameParam:'page'})
+          newPage({listItems, id:a.dataset.id, selector: preview, varParam:page, nameParam:'p'})
         })
       })
       containerList.get('.root .for-home').addEventListener('click', () => {
@@ -1148,8 +1148,6 @@ window.addEventListener('load', () => {
         font-size:1rem;
       `);
       
-
-
   
 })
 

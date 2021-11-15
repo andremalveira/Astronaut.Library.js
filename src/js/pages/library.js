@@ -92,13 +92,12 @@
                 <p>${langText.aboutText.p1}</p>
                 <p>${langText.aboutText.p2}</p>
                 <p>${langText.aboutText.p3}</p>
-                <p>${langText.aboutText.p4}</p>
                 <h3>${langText.aboutText.p5}</h3>
                 <div tab>${langText.aboutText.ps6}</div>
                 <div break></div>
                 <h1>${langText.aboutText.p7}</h1>
                 <p>${langText.aboutText.p8}</p>
-                <h3>${langText.aboutText.p9}</h3>
+
                 <div tab>${langText.aboutText.ps10}</div>
               </div>
 
@@ -235,7 +234,7 @@
           })
       
     },
-    download(params){
+    downloads(params){
       var theme = (params.theme) ? params.theme : '', 
           langText = (params.lang) ? params.lang : '', 
           selector = params.selector ?? false,
@@ -249,7 +248,10 @@
             <div class="${namePage}-body space">
               <div class="${namePage}-container extension">
                 <i>${icons.box}</i>
-                <h3>Astronaut Extension</h3>
+                <div class="center">
+                  <h3>Astronaut Extension</h3>
+                  <h5>Custom Localhost</h5>
+                </div>
                 <a class="btn">Download</a>
                 <div class="footer">    
                   <div class="compatibilities">
@@ -257,12 +259,16 @@
                     <i yes title="Opera">${icons.opera}</i>
                     <i yes title="Microsoft Edge">${icons.edge}</i>
                     <i not title="Mozilla Firefox">${icons.firefox}</i>
+                    <i not title="Safari">${icons.safari}</i>
                   </div>      
                 </div>
               </div>
               <div class="${namePage}-container library">
                 <i>${icons.braces}</i>
-                <h3>Astronaut Library.js</h3>
+                <div class="center">
+                  <h3>Astronaut Library.js</h3>
+                  <h5>Complete</h5>
+                </div>
                 <a href="${DOMINIO_MAIN}/${REPO}/src/download/astronaut.library.zip" download class="btn" >Download Zip</a>
                 <div class="footer">
                   <div class="links">
@@ -321,9 +327,18 @@
               width: 5rem;
               height: 5rem;
             } 
+            .${namePage}-container .center {
+              text-align: center;
+            }
             .${namePage}-container h3 {
               font-weight: normal;
               color: var(--link-primary);
+              margin: 0;
+            } 
+            .${namePage}-container h5 {
+              font-weight: normal;
+              margin: 0;
+              opacity: 0.5;
             } 
             .${namePage}-container a.btn {
               padding: 0.4rem 1.5rem;
@@ -437,7 +452,11 @@
         <div class="${namePage}-body">
         <div class="${namePage}-container">
           <h1>extension</h1>
-          <p>Astronaut Library .js</p>
+          <p>Astronaut Library.js is a small library with useful resources for developers created by André Malveira.
+
+          Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
+          
+          The extension would just change the default parsing of localhost, but as the process progressed I came up with new ideas that could be useful for application development, like having the project view in the same tab as localhost keeping the list of other projects while side, but of course not only with that, but with other tools. </p>
         </div>
         </div>
       `;

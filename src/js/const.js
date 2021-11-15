@@ -57,10 +57,10 @@
   }
         
   const storageLocal = {
-    get(params) {
-      if(JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME))){
-        if(params){
-          return JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME))[params]
+    get(id) {
+      if(localStorage.getItem(LOCALSTORAGE_NAME)){
+        if(id){
+          return JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME))[id]
         } else {
           return JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME))
         }
@@ -68,16 +68,25 @@
       } else {return false}
     },
     set(id, value){
-      if(storageLocal.get()){
-        var obj = storageLocal.get()
-            obj[id] = value
-        localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify(obj));
+      var stored = storageLocal.get()
+     
+      if(stored) {
+        stored[id] = value
+        localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify(stored));
       } else {
-        localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify({[id]:value}));
+        var newValue = {[id]:value}
+        localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify(newValue));
       }
     },
-    remove(id){
-      localStorage.removeItem([id]);
+    remove(id) {
+      var stored = storageLocal.get()
+      if(stored && stored[id]){
+        delete stored[id] 
+        localStorage.setItem(LOCALSTORAGE_NAME, JSON.stringify(stored));
+        if(JSON.stringify(stored) === JSON.stringify({})){
+          localStorage.removeItem(LOCALSTORAGE_NAME);
+        }
+      }
     },
     cacheData(dataName, data) {
       var cacheData = 'cacheData', dataName = (dataName) ? dataName : ''
