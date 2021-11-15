@@ -11,7 +11,7 @@ Astronaut Library.js is a small library with useful resources for developers cre
 <br>
 
 <p align="center">
-<a href="#">
+<a href="#details">
 <img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/></a>
 
 </p>
@@ -48,12 +48,14 @@ The extension would just change the default parsing of localhost, but as the pro
 <a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
 <a href="https://astlibjs.ga/" target="_blank"><img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
 ## Browsers Compatibility
+<a href="#compatibility">
+
 ![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome&logoColor=FFFFFF)&nbsp;&nbsp; 
 ![Edge](https://img.shields.io/badge/Microsoft%20Edge-✔-7dce35?style=flat&logo=microsoft-edge)&nbsp;&nbsp;
 ![Opera](https://img.shields.io/badge/Opera-✔-7dce35?style=flat&logo=opera)&nbsp;&nbsp;
 ![Firefox](https://img.shields.io/badge/Mozilla%20Firefox-✖-f75c31?style=flat&logo=firefox&logoColor=FFFFFF)&nbsp;&nbsp;
 ![Safari](https://img.shields.io/badge/Safari-✖-f75c31?style=flat&logo=safari)&nbsp;&nbsp;
-
+</a>
 <br>
 
 # Library Resources
