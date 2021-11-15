@@ -43,7 +43,7 @@ The extension would just change the default parsing of localhost, but as the pro
 - Font Typography.
 
 ## Version/Branche/Download
-<a href="">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
+<a id="version" href="#version">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
 <a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
 <a href="https://astlibjs.ga/"><img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
 ## Browsers Compatibility
