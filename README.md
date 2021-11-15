@@ -20,7 +20,9 @@
 <br>
 
 # About Extension 
-
+<p align="center">
+  <img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/>
+</p>
 Astronaut Library.js is a small library with useful resources for developers created by André Malveira.
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
@@ -39,10 +41,10 @@ The extension would just change the default parsing of localhost, but as the pro
 ## Version/Branche
 ![Version](https://img.shields.io/badge/Version-v1.0-319046)&nbsp;&nbsp; ![Branche](https://img.shields.io/badge/Branche-Extension-319046)
 ## Browsers Compatibility
-![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome)&nbsp;&nbsp; 
+![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome&logoColor=FFFFFF)&nbsp;&nbsp; 
 ![Edge](https://img.shields.io/badge/Microsoft%20Edge-✔-7dce35?style=flat&logo=microsoft-edge)&nbsp;&nbsp;
 ![Opera](https://img.shields.io/badge/Opera-✔-7dce35?style=flat&logo=opera)&nbsp;&nbsp;
-![Firefox](https://img.shields.io/badge/Mozilla%20Firefox-✖-f75c31?style=flat&logo=firefox)&nbsp;&nbsp;
+![Firefox](https://img.shields.io/badge/Mozilla%20Firefox-✖-f75c31?style=flat&logo=firefox&logoColor=FFFFFF)&nbsp;&nbsp;
 ![Safari](https://img.shields.io/badge/Safari-✖-f75c31?style=flat&logo=safari)&nbsp;&nbsp;
 
 <br>
@@ -50,7 +52,7 @@ The extension would just change the default parsing of localhost, but as the pro
 # Library Resources
 Besides the extension, the library also has other tools to use in websites or applications that use javascript.
 
-- [Notify](https://astlibjs.ga/?docs=notify) -> It's like a custom alert but created in order to show notifications.
+- [Notify](https://astlibjs.ga/?docs=notify) -> A custom alert for push notifications.
 
 # License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
