@@ -42,8 +42,10 @@ The extension would just change the default parsing of localhost, but as the pro
 - Useful Color Palettes.
 - Font Typography.
 
-## Version/Branche
-![Version](https://img.shields.io/badge/Version-v1.0-319046)&nbsp;&nbsp; ![Branche](https://img.shields.io/badge/Branche-Extension-319046)
+## Version/Branche/Download
+![Version](https://img.shields.io/badge/Version-v1.0-319046)&nbsp;&nbsp; 
+![Branche](https://img.shields.io/badge/Branche-Extension-319046)&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF&link=https://astlibjs.ga/"/>
 ## Browsers Compatibility
 ![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome&logoColor=FFFFFF)&nbsp;&nbsp; 
 ![Edge](https://img.shields.io/badge/Microsoft%20Edge-✔-7dce35?style=flat&logo=microsoft-edge)&nbsp;&nbsp;
