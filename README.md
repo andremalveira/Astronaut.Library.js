@@ -1,4 +1,10 @@
-# Astronaut Library .js
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-hi.png?token=AJTRTPUKLBN55XE7SAHP733BSHKPA" alt="Hi!!"/>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-name.png?token=AJTRTPXD7TJYYBHUFTEVIWLBSHKPE" alt="Astronaut Library.js"/>
+</p>
+
 <p align="center">
 <img src="https://img.shields.io/badge/Extension Version-v1.0-319046?" alt="Extension Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/>
 
@@ -10,11 +16,8 @@
   <a href="https://astlibjs.ga/?p=downloads">Downloads</a> •
   <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here">Support</a> 
 </p>
-<p align="center">
-  <img src="./src/img/png/preview.png" alt="Astronaut Library.js"/>
-</p>
 
-
+<br>
 
 # About Extension 
 
@@ -33,8 +36,8 @@ The extension would just change the default parsing of localhost, but as the pro
 - Useful Color Palettes.
 - Font Typography.
 
-## Version
-![Version](https://img.shields.io/badge/Extension%20Version-v1.0-319046)
+## Version/Branche
+![Version](https://img.shields.io/badge/Version-v1.0-319046)&nbsp;&nbsp; ![Branche](https://img.shields.io/badge/Branche-Extension-319046)
 ## Browsers Compatibility
 ![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome)&nbsp;&nbsp; 
 ![Edge](https://img.shields.io/badge/Microsoft%20Edge-✔-7dce35?style=flat&logo=microsoft-edge)&nbsp;&nbsp;
