@@ -1,6 +1,6 @@
 ---
 name: Astronaut Extension
-about: Describe the purpose of this problem below.
+about: Describe Extension-related issues below.
 title: "[ Enter here the type of label ⚠ ] - Insert the title here ⚠"
 labels: Astronaut Extension
 assignees: ''
@@ -14,5 +14,6 @@ Types of Label:
   - Suggestion
   - Documentation
   - Question
+  - Feature Resquest
 
 ⚠ Report the situation in detail, in case of errors report here or send a print.
