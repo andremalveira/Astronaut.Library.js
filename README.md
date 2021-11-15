@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-hi.png" alt="Hi!!"/>
+  <img src="https://gist.githubusercontent.com/andremalveira/3216f39117e2c209187fa7aedf872f96/raw/8128ef26840b025e43ea904289e63123a09930b6/astronaut-hi.png" alt="Hi!!"/>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-name.png" alt="Astronaut Library.js"/>
+  <img src="https://gist.githubusercontent.com/andremalveira/a79766d05424a62246842f4b4da75c0f/raw/fa7ddb1e4342e0eac032edad32b0876d349471e9/astronaut-name.png" alt="Astronaut Library.js"/>
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Extension Version-v1.0-319046?" alt="Extension Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/>
+<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/>
 
 </p>
 
