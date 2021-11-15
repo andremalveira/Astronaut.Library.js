@@ -1,14 +1,14 @@
-# Astronaut Localhost Extension
+# Astronaut Extension - Custom Localhost
 <p align="center">
 <img src="https://img.shields.io/badge/Version-v1.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Extension-319046" alt="Branche Extension"/>
 
 </p>
 
 <p align="center">
-  <a href="#">Website</a> |
-  <a href="#">Download</a> |
+  <a href="#">Website</a> •
+  <a href="https://astlibjs.ga/?p=about#extension-preview">Extension Preview</a> •
+  <a href="#">Download</a> •
   <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here">Support</a> 
-
 </p>
 <p align="center">
   <img src="./src/img/png/preview.png" alt="Astronaut Library.js"/>
@@ -25,13 +25,11 @@
 
 # About 
 
-Astronaut Library.js is a small Library with useful resources for Developers created by André Malveira.
+Astronaut Library.js is a small library with useful resources for developers created by André Malveira.
 
-Developed completely with Pure Javascript, the library was mainly created as a browser extension for "localhost" of the Apache, Wamp and Xampp servers.
+Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
 
-The extension would just change the default localhost color to a darker color, as a theme, but as the process progressed I came up with new ideas that could be useful for localhost users like me, because those who work with the Apache servers mentioned above, they often access the main localhost to access a project, and for those who like a dark theme and already use it in other programs such as VSCode, Browsers and even the Operating System, I thought they would also like a different localhost with a dark theme and that it wouldn't damage the eyes so much.
-
-So in addition to just changing the default white color to a darker color, I thought of changing the whole look of the page by manipulating the DOM in a way that could be useful for application development like having the project view on the same tab as localhost keeping the list of the other projects on the side, but of course not only with that, but with other tools.
+The extension would just change the default parsing of localhost, but as the process progressed I came up with new ideas that could be useful for application development, like having the project view in the same tab as localhost keeping the list of other projects while side, but of course not only with that, but with other tools. 
 
 ## Features
 
