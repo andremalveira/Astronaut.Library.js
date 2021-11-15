@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://gist.githubusercontent.com/andremalveira/3216f39117e2c209187fa7aedf872f96/raw/8128ef26840b025e43ea904289e63123a09930b6/astronaut-hi.png" alt="Hi!!"/>
+  <a href="#astroanut-hi"><img src="https://gist.githubusercontent.com/andremalveira/3216f39117e2c209187fa7aedf872f96/raw/8128ef26840b025e43ea904289e63123a09930b6/astronaut-hi.png" alt="Hi!!"/></a>
 </p>
 <p align="center">
-  <img src="https://gist.githubusercontent.com/andremalveira/a79766d05424a62246842f4b4da75c0f/raw/fa7ddb1e4342e0eac032edad32b0876d349471e9/astronaut-name.png" alt="Astronaut Library.js"/>
+  <a href="#astroanut-name"><img src="https://gist.githubusercontent.com/andremalveira/a79766d05424a62246842f4b4da75c0f/raw/fa7ddb1e4342e0eac032edad32b0876d349471e9/astronaut-name.png" alt="Astronaut Library.js"/></a>
 </p>
 <p align="center">
 Astronaut Library.js is a small library with useful resources for developers created by <a href="https://github.com/andremalveira">André Malveira</a>.
@@ -11,7 +11,8 @@ Astronaut Library.js is a small library with useful resources for developers cre
 <br>
 
 <p align="center">
-<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/>
+<a href="#">
+<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/></a>
 
 </p>
 
@@ -26,7 +27,7 @@ Astronaut Library.js is a small library with useful resources for developers cre
 
 # About Extension 
 <p align="center">
-  <img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/>
+  <a href="#extension-preview"><img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/></a>
 </p>
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
@@ -43,9 +44,9 @@ The extension would just change the default parsing of localhost, but as the pro
 - Font Typography.
 
 ## Version/Branche/Download
-<a id="version" href="#version">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
+<a href="#version">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
 <a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
-<a href="https://astlibjs.ga/"><img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
+<a href="https://astlibjs.ga/" target="_blank"><img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
 ## Browsers Compatibility
 ![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome&logoColor=FFFFFF)&nbsp;&nbsp; 
 ![Edge](https://img.shields.io/badge/Microsoft%20Edge-✔-7dce35?style=flat&logo=microsoft-edge)&nbsp;&nbsp;
