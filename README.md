@@ -6,7 +6,7 @@
   <img src="./src/img/png/astronaut-name.png" alt="Astronaut Library.js"/>
 </p>
 <p align="center">
-  <a href="https://andremalveira.github.io/astronaut">Astronaut Page</a>
+ <a href="https://astlibjs.ga/">Website</a>
 </p>
 
 
