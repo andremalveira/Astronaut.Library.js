@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-hi.png?token=AJTRTPUKLBN55XE7SAHP733BSHKPA" alt="Hi!!"/>
+  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-hi.png" alt="Hi!!"/>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-name.png?token=AJTRTPXD7TJYYBHUFTEVIWLBSHKPE" alt="Astronaut Library.js"/>
+  <img src="https://raw.githubusercontent.com/andremalveira/Astronaut.Library.js/website/src/img/png/astronaut-name.png" alt="Astronaut Library.js"/>
 </p>
 
 <p align="center">
