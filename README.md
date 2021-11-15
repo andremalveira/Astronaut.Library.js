@@ -43,8 +43,8 @@ The extension would just change the default parsing of localhost, but as the pro
 - Font Typography.
 
 ## Version/Branche/Download
-![Version](https://img.shields.io/badge/Version-v1.0-319046)&nbsp;&nbsp; 
-![Branche](https://img.shields.io/badge/Branche-Extension-319046)&nbsp;&nbsp; 
+<a href="">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
+<a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
 <a href="https://astlibjs.ga/"><img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
 ## Browsers Compatibility
 ![Chrome](https://img.shields.io/badge/Google%20Chrome-✔-7dce35?style=flat&logo=google-chrome&logoColor=FFFFFF)&nbsp;&nbsp; 
@@ -63,8 +63,6 @@ Besides the extension, the library also has other tools to use in websites or ap
 # License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
 
-<br>
-<br>
 
 # External libraries used in this project
 [Catalyststuff](https://www.freepik.com/catalyststuff) • 
