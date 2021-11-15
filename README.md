@@ -4,6 +4,11 @@
 <p align="center">
   <img src="https://gist.githubusercontent.com/andremalveira/a79766d05424a62246842f4b4da75c0f/raw/fa7ddb1e4342e0eac032edad32b0876d349471e9/astronaut-name.png" alt="Astronaut Library.js"/>
 </p>
+<p align="center">
+Astronaut Library.js is a small library with useful resources for developers created by <a href="https://github.com/andremalveira">André Malveira</a>.
+</p>
+
+<br>
 
 <p align="center">
 <img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/>
@@ -23,7 +28,6 @@
 <p align="center">
   <img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/>
 </p>
-Astronaut Library.js is a small library with useful resources for developers created by André Malveira.
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
 
@@ -57,3 +61,12 @@ Besides the extension, the library also has other tools to use in websites or ap
 # License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
 
+<br>
+<br>
+
+# External libraries used in this project
+[Catalyststuff](https://www.freepik.com/catalyststuff) • 
+[Bootstrap Icons](https://icons.getbootstrap.com) • 
+[Devicon](https://devicon.dev) • 
+[Font Awesome](https://fontawesome.com/v5.15/icons) • 
+[Live Server Web Extension](https://github.com/ritwickdey/live-server-web-extension)
