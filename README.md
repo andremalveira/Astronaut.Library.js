@@ -5,7 +5,7 @@
   <a href="#astroanut-name"><img src="https://gist.githubusercontent.com/andremalveira/a79766d05424a62246842f4b4da75c0f/raw/fa7ddb1e4342e0eac032edad32b0876d349471e9/astronaut-name.png" alt="Astronaut Library.js"/></a>
 </p>
 <p align="center">
-Astronaut Library.js is a small library with useful resources for developers created by <a href="https://github.com/andremalveira">André Malveira</a>.
+A small library with useful resources for developers created by <a href="https://github.com/andremalveira">André Malveira</a>.
 </p>
 
 <br>
@@ -25,7 +25,14 @@ Astronaut Library.js is a small library with useful resources for developers cre
 
 <br>
 
-# About Extension 
+> # Library Resources
+Besides the extension, the library also has other tools to use in websites or applications that use javascript.
+
+- [Notify](https://astlibjs.ga/?docs=notify) -> A custom alert for push notifications.
+
+<br>
+
+> # Library Extension 
 <p align="center">
   <a href="#extension-preview"><img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/></a>
 </p>
@@ -62,22 +69,20 @@ The extension would just change the default parsing of localhost, but as the pro
 
 ![WampServer](https://img.shields.io/badge/WampServer-✔-7dce35?style=flat)&nbsp;&nbsp; 
 ![Xampp](https://img.shields.io/badge/Xampp-✔-7dce35?style=flat)&nbsp;&nbsp; 
-![Live%20Server](https://img.shields.io/badge/Live%20Server-✔-7dce35?style=flat)&nbsp;&nbsp; 
-
+![Mamp](https://img.shields.io/badge/Mamp-✔-7dce35?style=flat)&nbsp;&nbsp; 
+![Live%20Server%20VSCode%20Extension](https://img.shields.io/badge/Live%20Server%20VSCode%20Extension-✔-7dce35?style=flat)&nbsp;&nbsp; 
 
 </a>
+
 <br>
 
-# Library Resources
-Besides the extension, the library also has other tools to use in websites or applications that use javascript.
 
-- [Notify](https://astlibjs.ga/?docs=notify) -> A custom alert for push notifications.
-
-# License
+> # License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
 
+<br>
 
-# External libraries used in this project
+> # External libraries used in this project
 [Catalyststuff](https://www.freepik.com/catalyststuff) • 
 [Bootstrap Icons](https://icons.getbootstrap.com) • 
 [Devicon](https://devicon.dev) • 
