@@ -25,20 +25,20 @@ A small library with useful resources for developers created by <a href="https:/
 
 <br>
 
-> # Library Resources
-Besides the extension, the library also has other tools to use in websites or applications that use javascript.
+# Library Resources
+Resources to websites or applications that use javascript.
 
 - [Notify](https://astlibjs.ga/?docs=notify) -> A custom alert for push notifications.
 
 <br>
 
-> # Library Extension 
+# Library Extension 
 
 <p align="center">
   <a href="#extension-preview"><img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/></a>
 </p>
 
-## <p align="center" style="color:#2d9fe5">Localhost in a different way for your development environment!</p>
+## Localhost in a different way for your development environment!
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
 
@@ -80,12 +80,12 @@ The extension would just change the default parsing of localhost, but as the pro
 <br>
 
 
-> # License
+# License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
 
 <br>
 
-> # External libraries used in this project
+# External libraries used in this project
 [Catalyststuff](https://www.freepik.com/catalyststuff) • 
 [Bootstrap Icons](https://icons.getbootstrap.com) • 
 [Devicon](https://devicon.dev) • 
