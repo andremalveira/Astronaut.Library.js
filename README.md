@@ -33,9 +33,12 @@ Besides the extension, the library also has other tools to use in websites or ap
 <br>
 
 > # Library Extension 
+
 <p align="center">
   <a href="#extension-preview"><img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/></a>
 </p>
+
+## <p align="center" style="color:#2d9fe5">Localhost in a different way for your development environment!</p>
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
 
