@@ -3,7 +3,7 @@
 //                                                                           //
 // Author: André Malveira.                                                   //
 // Github: https://github.com/andremalveira                                  //
-// Docs:   https://andremalveira.github.io/astronaut/?docs=notify            //
+// Docs:   https://astlibjs.ga/?docs=notify            //
 //---------------------------------------------------------------------------//
 
 
@@ -355,6 +355,12 @@ let notify = {
 
         }, timeout.split('s')[0]*1000-100);
       }
+      function isNumber(variable) {
+        if (variable instanceof Number || typeof variable ==='number') {
+            return true;
+        }
+        return false;
+      }
       //insert css and html
       if(ok){
         var _notify = selector.querySelector(`.${this.name}_notify`);
@@ -386,7 +392,7 @@ let notify = {
             if(!close){
               selector.getElementById(ID).notifyClose()
             }
-          }, 5000);
+          }, (isNumber(autoClose)) ? autoClose : 5000);
         }
 
       }

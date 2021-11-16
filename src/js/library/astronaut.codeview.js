@@ -3,7 +3,7 @@
 //                                                   //
 // Author: André Malveira.                           //
 // Github: https://github.com/andremalveira          //
-// Site:   https://andremalveira.github.io/astronaut //
+// Site:   https://astlibjs.ga/                      //
 //---------------------------------------------------//
 
 /*/CodeView Settings

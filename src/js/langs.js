@@ -81,6 +81,9 @@ const lang = (lang) => {
     tgInputText: 'Digite um Texto',
     tgInfoTextOne: 'Visualize seu texto digitando nos inputs acima!',
 
+    //credits
+    creditText1: 'Bibliotecas externas usadas neste projeto',
+    creditText2: 'Bibliotecas externas usadas neste projeto',
     
     //Menu Pages
     extension: 'Extensão',
@@ -150,6 +153,9 @@ const lang = (lang) => {
     ntStyleDescripOp12: 'Adicionar um filtro à notificação',
     ntStyleDescripOp13: 'Tempo de animação da aparência da notificação', 
 
+    ntAutoCloseDescrip: 'Define o fechamento automático',
+    ntAutoCloseDescripOp1: 'Você pode definir os valores como verdadeiro ou em tempo com milissegundos',
+    ntAutoCloseDescripOp2: 'Value padrão: false, tempo padrão: 5000 = 5 segundos',
    }
     
   } else if(lang == 'en-us') {
@@ -233,6 +239,10 @@ const lang = (lang) => {
     tgInputText: 'Type a Text',
     tgInfoTextOne: 'View your text by typing in the inputs above!',
 
+    //credits
+    creditText1: 'External libraries used in this project',
+    creditText2: 'External libraries used in this project',
+
      //Menu Pages
      extension: 'Extension',
      about: 'About',
@@ -300,6 +310,9 @@ const lang = (lang) => {
      ntStyleDescripOp12: 'Add a filter to the notification',
      ntStyleDescripOp13: 'Notification appearance animation time ',
 
+     ntAutoCloseDescrip: 'Sets automatic closing',
+     ntAutoCloseDescripOp1: 'You can set the values to true or in milliseconds',
+     ntAutoCloseDescripOp2: 'Default value: false, default time: 5000 = 5 seconds',
    }
     
   }

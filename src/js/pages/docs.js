@@ -181,6 +181,38 @@ const docs = {
                       </div>
                     </section>
                   </div>
+                  <div class="column-1-center">
+                    <section id="autoClose">
+                      <h2 hyperlink="autoClose"> Auto Close:</h2>
+                      <div tab>
+                        <p>${langText.ntAutoCloseDescrip}, ${langText.ntAutoCloseDescripOp1}</p>
+                        <p></p>
+                        <p>${langText.ntAutoCloseDescripOp2}</p>
+                        <div class="${namePage}-table-style"></div>
+                        <div hr></div>
+                        <div data-run="true" class="ast-codeview" data-lang="js" data-title="script.js">
+                          astronaut.notify({
+                            message: 'Main message -> Secondary message',
+                            icon: 'src/img/astronaut.head.svg',
+                            style: {
+                              iconSize: '80%',
+                            },
+                            autoClose: true //true or time in milisecond Ex: (1000)
+                          })
+                        </div>
+                        <div data-run="true" class="ast-codeview" data-lang="js" data-title="script.js">
+                          astronaut.notify({
+                            message: 'Main message -> Secondary message',
+                            icon: 'src/img/astronaut.head.svg',
+                            style: {
+                              iconSize: '80%',
+                            },
+                            autoClose: 1000 //true or time in milisecond Ex: (1000)
+                          })
+                        </div>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
@@ -268,6 +300,7 @@ const docs = {
           ['<a smooth attr href="#type">type:</a>',	"String -> attr:obj",	"text -> attr:text",	`${langText.optional} -> attr:opacity`,	`${langText.ntTypeDescrip}`],
           ['<a smooth attr href="#type">theme:</a>',	"String -> attr:obj",	"text -> attr:text",	`${langText.optional} -> attr:opacity`,	`${langText.ntThemeDescrip}`],
           ['<a smooth attr href="#style">style:</a>',	"Object -> attr:obj",	"{object}",	`${langText.optional} -> attr:opacity`,	`${langText.ntStyleDescrip}`],
+          ['<a smooth attr href="#autoClose">autoClose:</a>',	"Boolean/Number -> attr:obj",	"true/miliseconds -> attr:boolean",	`${langText.optional} -> attr:opacity`,	`${langText.ntAutoCloseDescrip}`],
         ],
         style: {
           blur: '2rem',

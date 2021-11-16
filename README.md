@@ -38,4 +38,4 @@ The extension would just change the default parsing of localhost, but as the pro
 ## Other Library Resources
 Besides the extension, the library also has other tools to use in websites or applications that use javascript.
 
-- Notify -> It's like a custom alert but created in order to show notifications.
+- Notify -> A custom alert for push notifications.

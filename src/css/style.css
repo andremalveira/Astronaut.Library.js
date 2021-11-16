@@ -144,6 +144,9 @@
 [astronaut] body .container main.view-list-ocult .container-list {
   width: 18rem;
 }
+[astronaut] body .container main.view-list-ocult {
+  column-gap: 1rem;
+}
 [astronaut] body .container main.view-list-ocult #preview {
   box-shadow: rgba(0, 0, 0, 0.48) 0px 0px 15px 0px;
   border-left: none;

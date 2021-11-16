@@ -62,7 +62,7 @@ const htmls = {
     }
   </style>
   <div class="credits">
-    <span> ${langText.credit}</span>
+    <span> ${langText.creditText2}</span>
     <div class="container-item">
       <div class="item">
         <i style="color:#7952B3">${icons.dot}</i>

@@ -34,7 +34,6 @@ var structure = `
         <span hr></span>
         <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js" class="icons" title="Github Repository"><i class="icon-github">${icons.github}</i></a>
         <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5B+Enter+here+the+type+of+label+⚠+%5D+-+Insert+the+title+here+⚠" class="icons" title="Support"><i class="icon-github">${icons.flag}</i></a>
-        <div id="credits" class="icons" title="${langText.credit}"><i class="icon-star">${icons.star}</i></div>
         <div id="author" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
         <div id="settings" class="icons" title="${langText.settings}">${icons.gear}</div>
       </div>
