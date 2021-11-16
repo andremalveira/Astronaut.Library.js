@@ -68,14 +68,14 @@ The extension would just change the default parsing of localhost, but as the pro
 </a>
 
 ## Compatible Servers
-<span>
+<a>
 
 ![WampServer](https://img.shields.io/badge/WampServer-✔-7dce35?style=flat)&nbsp;&nbsp; 
 ![Xampp](https://img.shields.io/badge/Xampp-✔-7dce35?style=flat)&nbsp;&nbsp; 
 ![Mamp](https://img.shields.io/badge/Mamp-✔-7dce35?style=flat)&nbsp;&nbsp; 
 ![Live%20Server%20VSCode%20Extension](https://img.shields.io/badge/Live%20Server%20VSCode%20Extension-✔-7dce35?style=flat)&nbsp;&nbsp; 
 
-</span>
+</a>
 
 <br>
 
