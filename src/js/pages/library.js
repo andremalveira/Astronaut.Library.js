@@ -18,6 +18,7 @@
               <div class="svg bg home-background"></div>
               <div class="svg bg home-planet"></div>
               <div class="home-name"></div>
+              <h1 accessibility>Astronaut Library .js</h1>
               <p>A small Library with useful resources for Developers.</p>
             </div>
           </div>

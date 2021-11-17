@@ -2,6 +2,7 @@
 
 [flex]{display: flex;}
 [grid-columns-auto-1fr]{display: grid;grid-template-columns: auto 1fr;}
+[accessibility]{width: 0;height: 0;overflow: hidden;opacity: 0;visibility: inherit;position: absolute;}
 
 *::-webkit-scrollbar {
   width: 8px;
