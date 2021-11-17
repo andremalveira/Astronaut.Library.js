@@ -77,7 +77,7 @@ The extension would just change the default parsing of localhost, but as the pro
 
 </a>
 <p align="center">
-  <a href="#extension-preview"><img src="https://gist.githubusercontent.com/andremalveira/a08d99aab23e5e4b411e020017f2d27d/raw/388abe3da9476ed44ff0a0bd88583b740823c3e7/astronaut-preview-gif.gif" alt="Astronaut Library.js"/></a>
+  <a href="#extension-preview"><img src="https://gist.githubusercontent.com/andremalveira/a08d99aab23e5e4b411e020017f2d27d/raw/ed21c252086b5492c52ca5f64d75ab65d9a1fc0f/astronaut-preview-gif.gif" alt="Astronaut Library.js"/></a>
 </p>
 
 <br>
