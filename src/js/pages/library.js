@@ -17,8 +17,7 @@
               <img class="home-astronaut jumping" src="./src/img/svg/astronaut-hi.svg" alt="astronaut-hi">
               <div class="svg bg home-background"></div>
               <div class="svg bg home-planet"></div>
-              <div class="home-name"></div>
-              <h1 accessibility>Astronaut Library .js</h1>
+              <div class="home-name"><h1 accessibility>Astronaut Library .js</h1></div>
               <p>A small Library Javascript with useful resources for Developers.</p>
 
             </div>
