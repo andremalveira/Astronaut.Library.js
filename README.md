@@ -76,9 +76,6 @@ The extension would just change the default parsing of localhost, but as the pro
 ![Live%20Server%20VSCode%20Extension](https://img.shields.io/badge/Live%20Server%20VSCode%20Extension-✔-7dce35?style=flat)&nbsp;&nbsp; 
 
 </a>
-<p align="center">
-  <a href="#extension-preview"><img src="https://gist.githubusercontent.com/andremalveira/a08d99aab23e5e4b411e020017f2d27d/raw/ed21c252086b5492c52ca5f64d75ab65d9a1fc0f/astronaut-preview-gif.gif" alt="Astronaut Library.js"/></a>
-</p>
 
 <br>
 
