@@ -19,13 +19,8 @@
               <div class="svg bg home-planet"></div>
               <div class="home-name"></div>
               <h1 accessibility>Astronaut Library .js</h1>
-              <p>A small Library with useful resources for Developers.</p>
-              <div accessibility itemscope itemtype="http://schema.org/Person">
-                <span itemprop="name">Joe Doe</span>
-                <span itemprop="company">The Example Company</span>
-                <span itemprop="tel">604-555-1234</span>
-                <a itemprop="email" href="mailto:joe.doe@example.com">joe.doe@example.com</a>
-              </div>
+              <p>A small Library Javascript with useful resources for Developers.</p>
+
             </div>
           </div>
         `;

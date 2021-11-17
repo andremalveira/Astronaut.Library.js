@@ -13,7 +13,7 @@
 # About
 ## The Extension
 
-Astronaut Library.js is a small library with useful resources for developers created by André Malveira.
+Astronaut Library.js is a small library javascript with useful resources for developers created by André Malveira.
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
 
