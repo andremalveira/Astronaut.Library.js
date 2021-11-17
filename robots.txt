@@ -3,4 +3,3 @@ Disallow: /api/
 Disallow: /src/
 
 Sitemap: https://astlibjs.ga/sitemap.xml
-Sitemap: https://www.astlibjs.ga/sitemap.xml
