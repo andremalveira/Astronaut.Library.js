@@ -68,7 +68,7 @@ The extension would just change the default parsing of localhost, but as the pro
 </a>
 
 ## Compatible Servers
-<a>
+<a href="#compatible-servers">
 
 ![WampServer](https://img.shields.io/badge/WampServer-✔-7dce35?style=flat)&nbsp;&nbsp; 
 ![Xampp](https://img.shields.io/badge/Xampp-✔-7dce35?style=flat)&nbsp;&nbsp; 
@@ -76,6 +76,9 @@ The extension would just change the default parsing of localhost, but as the pro
 ![Live%20Server%20VSCode%20Extension](https://img.shields.io/badge/Live%20Server%20VSCode%20Extension-✔-7dce35?style=flat)&nbsp;&nbsp; 
 
 </a>
+<p align="center">
+  <a href="#extension-preview"><img src="https://gist.githubusercontent.com/andremalveira/a08d99aab23e5e4b411e020017f2d27d/raw/49e69b91e90a712043de68b1e1a13c8c9f995d23/astronaut-preview-gif.gif" alt="Astronaut Library.js"/></a>
+</p>
 
 <br>
 
