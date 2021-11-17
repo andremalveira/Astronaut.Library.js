@@ -1,0 +1,33 @@
+{
+  "short_name": "Weather",
+  "name": "Weather: Do I need an umbrella?",
+  "description": "Weather forecast information",
+  "icons": [
+    {
+      "src": "/src/img/icon/128x128.png",
+      "type": "image/svg+xml",
+      "sizes": "128x128"
+    },
+  ],
+  "start_url": "/",
+  "background_color": "#22272e",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#22272e",
+  "shortcuts": [
+    {
+      "name": "About Astronaut Library",
+      "short_name": "About",
+      "description": "Learn a little about this library and its features.",
+      "url": "/?p=about",
+      "icons": [{ "src": "/src/img/icon/128x128.png", "sizes": "128x128" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/src/img/png/ast-banner.png",
+      "type": "image/png",
+      "sizes": "830x365"
+    },
+  ]
+}

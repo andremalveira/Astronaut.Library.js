@@ -106,7 +106,7 @@
   background: var(--bg-second);
 }
 [themecolor="github"] body .container #content .navbar .bar-search .search {
-  color: var(--font-second);
+  color: var(--font-primary);
 }
 [themecolor="github"] body .container #content .navbar .options .icon:hover {
   background: var(--btn-primary);

@@ -1116,6 +1116,7 @@ window.addEventListener('load', () => {
          menuLibrary = listItems.getAll('.item a[data-type="library"]');                       
       menuDocs.forEach(a => {
         a.addEventListener('click', e => {
+          e.preventDefault()
           newPage({listItems, id:a.dataset.id, selector: preview, varParam:docs, nameParam:'docs'})
         })
       })

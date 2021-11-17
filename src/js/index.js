@@ -50,7 +50,7 @@ var structure = `
               <div class="close-list">${icons.close}</div>
             </div>
             <div id="list-items">
-              <div class="item"><a flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
+              <div class="item"><a href="/?docs=notify" flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
               <div break></div>
             </div>
 
