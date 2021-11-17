@@ -7,6 +7,12 @@
       "src": "/src/img/icon/128x128.png",
       "type": "image/png",
       "sizes": "128x128"
+    },
+    {
+      "src": "/src/img/icon/128x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
