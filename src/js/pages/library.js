@@ -14,7 +14,7 @@
           <div class="home-body space">
             <div class="astronaut">
               <div class="home-stars"><div class="small"></div><div class="medium"></div><div class="big"></div></div>
-              <img class="home-astronaut jumping" src="./src/img/svg/astronaut-hi.svg">
+              <img class="home-astronaut jumping" src="./src/img/svg/astronaut-hi.svg" alt="astronaut-hi">
               <div class="svg bg home-background"></div>
               <div class="svg bg home-planet"></div>
               <div class="home-name"></div>
