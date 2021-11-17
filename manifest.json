@@ -7,7 +7,7 @@
       "src": "/src/img/icon/128x128.png",
       "type": "image/svg+xml",
       "sizes": "128x128"
-    },
+    }
   ],
   "start_url": "/",
   "background_color": "#22272e",
