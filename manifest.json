@@ -1,11 +1,11 @@
 {
-  "short_name": "Weather",
-  "name": "Weather: Do I need an umbrella?",
-  "description": "Weather forecast information",
+  "short_name": "astlibjs.ga",
+  "name": "Astronaut Library .js",
+  "description": "Astronaut Library.js is a small library javascript with useful resources for developers!",
   "icons": [
     {
       "src": "/src/img/icon/128x128.png",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "sizes": "128x128"
     }
   ],
@@ -28,6 +28,6 @@
       "src": "/src/img/png/ast-banner.png",
       "type": "image/png",
       "sizes": "830x365"
-    },
+    }
   ]
 }
