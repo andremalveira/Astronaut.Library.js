@@ -168,7 +168,7 @@
 
   const titleTab = {
     change(title) {
-      document.title = TITLE_DEFAULT + ` - ${title.capitalize()}`
+      document.title = ` ${title.capitalize()} - ${TITLE_DEFAULT}`
       document.head.querySelector('meta[property="og:title"]').setAttribute('content', TITLE_DEFAULT + ` - ${title.capitalize()}`)
     },
     default(){

@@ -2,6 +2,7 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr;
+  user-select: text;
 }
 #new-page .page {
   overflow: auto;
@@ -83,6 +84,7 @@
   display: grid;
   column-gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
+  width: 100%;
   height: 95%;
 }
 #new-page .page section:not(#intro) {
@@ -97,7 +99,7 @@
 
 #new-page .page section .grid-rows {
   display: grid;
-  grid-template-rows: 25% auto;
+  grid-template-rows: max-content auto;
   padding: 0 0.5rem;
 }
 #new-page .page :is(h1, h2, h3) {
@@ -144,6 +146,11 @@ section:hover .s-hyperlink {
 }
 
 /*btn*/
+#new-page .page .btns-container {
+  display: flex;
+  column-gap: 1rem;
+  margin: 0.5rem 0;
+}
 #new-page .page .btn-download {
   display: flex;
 }
@@ -197,6 +204,9 @@ section:hover .s-hyperlink {
 }
 #new-page .page [obj] {
   color: #4ec9b0;
+}
+#new-page .page [color="warn"] {
+  color: #D0BE53;
 }
 #new-page .page [opacity] {
   opacity: 0.6;

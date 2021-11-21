@@ -720,22 +720,13 @@ window.addEventListener('load', () => {
           
           formSettings = `
             <div class="form">
-              <div class="row col-4">
+              <div class="row col">
                 <div class="column">
                   <label><span>${(storedSettings.language) ? lang(storedSettings.language).language : langText.language}</span></label>
                   <div class="input select">
                     <input type="button" name="language" lang="" value="${SSLanguage}">
                   </div>
                 </div>
-                <div class="column">
-                  <label><span>${(storedSettings.language) ? lang(storedSettings.language).theme : langText.theme}</span></label>
-                  <div class="input select">
-                    <input type="button" name="theme" value="${SSTheme}">
-                  </div>
-                </div>
-              </div>
-              <div class="row col-4">
-               
               </div>
             </div>
             <div class="row column">
@@ -748,7 +739,7 @@ window.addEventListener('load', () => {
           `
           newModal.start({
             contentModal: formSettings,
-            id: id, style:'width:50%;', btn
+            id: 'language', style:'width:auto;height:25rem;', btn
           })
 
           var newModalSelector = content.get('#new-modal'), urlBar = newModalSelector.get('.bar-search #url'),
@@ -830,16 +821,6 @@ window.addEventListener('load', () => {
               options: `
                 <button class="btn" value='pt-br' title="Português"><i></i><span>Português</span></button>
                 <button class="btn" value='en-us' title="English"><i></i><span>English</span></button>
-              `
-            })
-          })
-          inputTheme.addEventListener('click', () => {
-            selectOpen({
-              input: inputTheme,
-              valueDefault: 'github',
-              nameVariableValue: 'themeValue' ,
-              options: `
-                <button class="btn" value='github' title="Github"><i></i><span>Github</span></button>
               `
             })
           })
@@ -1045,7 +1026,6 @@ window.addEventListener('load', () => {
       }
       const _HOME = () => {
         newPage({id:'home', selector: preview, varParam:page, nameParam:'p', changeUrl:false})
-        viewList.close()
         if(listItems.get('.item.active')){
           listItems.get('.item.active').classList.remove('active')
         }
@@ -1065,7 +1045,7 @@ window.addEventListener('load', () => {
   //================================================================//
 
       //NAV/MENU LEFT [event listener ]
-      nav.getAll('.menu .icons').forEach( btn => {
+      nav.getAll('.menu :not(a).icons').forEach( btn => {
         btn.addEventListener('click', () => {
           btnSrc = btn.attributes['src'];
           btnPage = btn.attributes['p'];
@@ -1135,11 +1115,6 @@ window.addEventListener('load', () => {
         viewList.init()
       })
 
-
-
-
-
-
       console.log(
       `%c 👨🏿‍🚀 Astronaut Library .js - Started! 👨🏿‍🚀`,
       ` color: #adbac7; 
@@ -1149,7 +1124,6 @@ window.addEventListener('load', () => {
         font-size:1rem;
       `);
       
-  
 })
 
 

@@ -25,7 +25,6 @@ var structure = `
     <nav>
       <div class="menu">
         <div id="localhost" class="icons" title="${langText.documentation}">${icons.book}</div>
-
         <span hr></span>
       </div>
       <div class="menu">
@@ -33,9 +32,10 @@ var structure = `
         <div id="" data-id="downloads" class="icons text-vertical" title="Downloads">Downloads</div>
         <span hr></span>
         <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js" class="icons" title="Github Repository"><i class="icon-github">${icons.github}</i></a>
-        <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5B+Enter+here+the+type+of+label+⚠+%5D+-+Insert+the+title+here+⚠" class="icons" title="Report Error!"><i class="icon-github">${icons.flag}</i></a>
+        <a target="_blank" href="https://github.com/andremalveira/Astronaut.Library.js/issues/new/choose" class="icons" title="Report Error!"><i class="icon-github">${icons.flag}</i></a>
         <div id="author" class="icons" title="${langText.coffee}"><i class="icon-coffee">${icons.coffee}</i></div>
-        <div id="settings" class="icons" title="${langText.settings}">${icons.gear}</div>
+        <span hr></span>
+        <div id="settings" class="icons" title="${langText.language}">${icons.translate}</div>
       </div>
     </nav>
     <div id="content">
@@ -51,6 +51,8 @@ var structure = `
             </div>
             <div id="list-items">
               <div class="item"><a href="/?docs=notify" flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
+              <div class="item"><a href="/?docs=insert" flex data-type="docs" data-id="insert"><span>Insert</span></a></div>
+              <div class="item"><a href="/?docs=codeviewer" flex data-type="docs" data-id="codeviewer"><span>CodeViewer</span></a></div>
               <div break></div>
             </div>
 

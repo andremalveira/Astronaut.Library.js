@@ -1,12 +1,12 @@
-//---------------------------------------------------//
-//           Astronaut Library.js - Codeview         //
-//                                                   //
-// Author: André Malveira.                           //
-// Github: https://github.com/andremalveira          //
-// Site:   https://astlibjs.ga/                      //
-//---------------------------------------------------//
+//---------------------------------------------------------------------------//
+//                    Astronaut Library.js - CodeViewer v1.0                 //
+// License: MIT                                                              //
+// Author: André Malveira.                                                   //
+// Github: https://github.com/andremalveira                                  //
+// Docs:   https://astlibjs.ga/?docs=codeviewer                              //
+//---------------------------------------------------------------------------//
 
-/*/CodeView Settings
+/*/CodeViewer Settings
   lineNumber : true || { 
     color: string type color,
     separator: boolean,
@@ -32,7 +32,7 @@
   
 */
 
-let codeview = {
+let __codeviewer = {
   name: 'astronaut',
   insert: {
     css(css, id, currentScript) {
@@ -125,7 +125,7 @@ let codeview = {
       }, 500);
     }, 1500);
   },
-  codeview(params) {
+  codeviewer(params) {
     var e = params,
         lineNumber   = (e && e.lineNumber)         ? e.lineNumber      : false,
         fontSize     = (e && e.fontSize)           ? e.fontSize        : '0.9rem',
@@ -145,7 +145,7 @@ let codeview = {
         opColor     = (options && options.color)        ? options.color        : '#939da5',
         opBg        = (options && options.background )  ? options.background   : '#232a2f',
 
-        windowBar   = (e && e.windowBar == false || e.windowBar != undefined) 
+        windowBar   =  (e && e.windowBar == false || e && e.windowBar != undefined) 
         ? e.windowBar : true;
         if(!windowBar){opPosition = 'right'}
 
@@ -164,7 +164,7 @@ let codeview = {
   
           astronaut.insert.css(`
   /*Astronaut Library.js - CodeView*/
-  .ast-codeview {
+  .ast-codeviewer {
     width: ${width};
     height: ${height};
     border-radius: ${borderRadius};
@@ -175,10 +175,10 @@ let codeview = {
     ${(boxShadow) ? `box-shadow: ${boxShadow};` : ''}
     ${(blur) ? `backdrop-filter: blur(${blur});` : ''}
   }
-  .ast-codeview[data-blur] {
+  .ast-codeviewer[data-blur] {
     backdrop-filter: blur(2rem);
   }
-  .ast-codeview .astcw-window {
+  .ast-codeviewer .astcw-window {
     width: 100%;
     display: grid;
     grid-template-rows: ${(wb) ? 'auto' : ''} 1fr;
@@ -186,29 +186,29 @@ let codeview = {
     border-radius: ${borderRadius};
     position: relative;
   }
-  script[type="text/plain"].ast-codeview,
-  .ast-codeview i, .ast-codeview a {
+  script[type="text/plain"].ast-codeviewer,
+  .ast-codeviewer i, .ast-codeviewer a {
     display: flex;
   }
-  .ast-codeview :is(.astcw-container)::-webkit-scrollbar {
+  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar {
     width: 8px;
     height: 0px;
     border-radius: ${borderRadius};
     background: transparent;
 
   }
-  .ast-codeview :is(.astcw-container)::-webkit-scrollbar-thumb {
+  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-thumb {
     height: 5px;
     border-radius: ${borderRadius};
     margin: 1rem;
   }
-  .ast-codeview :is(.astcw-container)::-webkit-scrollbar-track {
+  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-track {
     border-radius: ${borderRadius};
   }
-  .ast-codeview :is(.astcw-container)::-webkit-scrollbar-corner {
+  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-corner {
     background: transparent;
   }
-  .ast-codeview .astcw-container {
+  .ast-codeviewer .astcw-container {
     position: relative;
     padding: 1rem;
     overflow: auto;
@@ -217,7 +217,7 @@ let codeview = {
     grid-auto-flow: dense;
   }
 
-  .ast-codeview :is(.astvw-options) {
+  .ast-codeviewer :is(.astvw-options) {
     ${(opPosition && opPosition == 'window' ) 
     ? '' : 'position: absolute;display: flex;flex-direction: column;'}
     ${(opPosition && opPosition == 'left' || opPosition == 'right') ? opPosition : 'right'}: -35px;
@@ -228,7 +228,7 @@ let codeview = {
     transition: ease 0.2s;
     opacity: 0;
   }
-  .ast-codeview :is(.op) {
+  .ast-codeviewer :is(.op) {
     ${(opPosition && opPosition == 'window' ) 
     ? 'width: 20px;height:20px;border-radius: 0.3rem;padding: 0.1rem;' 
     : 'border-radius: 50%;width: 30px;height:30px;'}
@@ -237,17 +237,17 @@ let codeview = {
     align-items: center;
     cursor: pointer;
   }
-  .ast-codeview :is(.op):hover {
+  .ast-codeviewer :is(.op):hover {
     background: ${opBg};
   }
-  .ast-codeview:hover .astvw-options {
+  .ast-codeviewer:hover .astvw-options {
     opacity: 1;
   }
-  .ast-codeview :is(.op) a {
+  .ast-codeviewer :is(.op) a {
     color: ${opColor};
     ${(opPosition && opPosition == 'window' ) ? '' : 'padding: 0.3rem;'}
   }
-  .ast-codeview .op.hyperlink a svg, {
+  .ast-codeviewer .op.hyperlink a svg, {
     margin-top: 1px;
   }
   .code-nav-bar {
@@ -283,20 +283,20 @@ let codeview = {
     display: flex;
     justify-content: flex-end;
   }
-  .ast-codeview :is(pre, code, .line-numbers .line-numbers-rows) {
+  .ast-codeviewer :is(pre, code, .line-numbers .line-numbers-rows) {
     font-family: ${ff};
     font-size: ${fs};
     outline: none;
     line-height: 1.5;
   }
   /*LINE-NUMBERS*/
-  .ast-codeview .line-numbers .line-numbers-rows {
+  .ast-codeviewer .line-numbers .line-numbers-rows {
     ${(lnSeparator) ? 'border-right: 1px solid currentColor;' : ''}
     ${(lnOpacity) ? `opacity: ${lnOpacity};` : ''}
     color: ${lnColor};
   
   }
-  .ast-codeview .line-numbers-rows>span {
+  .ast-codeviewer .line-numbers-rows>span {
     counter-increment: linenumber;
     display: flex;
     align-items: center;
@@ -330,7 +330,7 @@ let codeview = {
       white-space: normal
   }
   pre[class*="language-"].line-numbers {
-      margin: 0 0 2rem 2.4em;
+      margin: 0 0 0rem 2.4em;
       counter-reset: linenumber;
       grid-column: 2;
   }
@@ -370,14 +370,15 @@ let codeview = {
     (th == 'copilot') 
     ? `
   /*blur */
-  [data-theme="copilot"][data-blur].ast-codeview, .ast-codeview .line-numbers-rows {background: #232a2f73}
-  [data-theme="copilot"][data-blur].ast-codeview .code-nav-bar                     {background: #1a202363}
+  [data-theme="copilot"][data-blur].ast-codeviewer                                   {background: #232a2f73}
+  [data-theme="copilot"][data-blur].ast-codeviewer .line-numbers-rows                {background: transparent}
+  [data-theme="copilot"][data-blur].ast-codeviewer .code-nav-bar                     {background: #1a202363}
 
-  [data-theme="copilot"].ast-codeview, .ast-codeview .line-numbers-rows               {background: ${(background) ? background : (blur) ? '#232a2f73' : '#232A2F'}}
-  [data-theme="copilot"].ast-codeview .code-nav-bar                                   {background: ${(wb.constructor.name === 'String') ? wb : '#1a202363'}}
-  [data-theme="copilot"].ast-codeview :is(.astcw-container)::-webkit-scrollbar-thumb  {background: #444267}
-  [data-theme="copilot"].ast-codeview :is(pre, code, span) ::selection                {background: #204062}
-  [data-theme="copilot"].ast-codeview[visible]                                             {color: #939da5}
+  [data-theme="copilot"].ast-codeviewer, .ast-codeviewer .line-numbers-rows               {background: ${(background) ? background : (blur) ? '#232a2f73' : '#232A2F'}}
+  [data-theme="copilot"].ast-codeviewer .code-nav-bar                                   {background: ${(wb.constructor.name === 'String') ? wb : '#1a202363'}}
+  [data-theme="copilot"].ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-thumb  {background: #444267}
+  [data-theme="copilot"].ast-codeviewer :is(pre, code, span) ::selection                {background: #204062}
+  [data-theme="copilot"].ast-codeviewer[visible]                                             {color: #939da5}
   
   [data-theme="copilot"] .token:is(.block-comment, .cdata, .comment, .doctype, .prolog)    {color: #707a84}
   [data-theme="copilot"] .token:is(.punctuation)                                           {color: #939da5}
@@ -449,7 +450,7 @@ let codeview = {
 
     }
     function codeViewEach(e) {
-      document.querySelectorAll('.ast-codeview').forEach(codeview => {
+      Array.prototype.forEach.call(document.querySelectorAll('.ast-codeviewer'), codeview => {
         e(codeview)
       })
     }
@@ -485,7 +486,8 @@ let codeview = {
             blur = (e.dataset.blur != '') ? e.dataset.blur : false,
             lang = e.dataset.lang, 
             hyperlink = (e.dataset.hyperlink == 'false') ? false : (e.dataset.hyperlink == 'true') ? true : undefined,
-            run = (e.dataset.run) ? e.dataset.run : false;
+            run = (e.dataset.run) ? e.dataset.run : false,
+            isCopy = (e.dataset.copy === 'false') ? false : true;
 
 
         if(width){e.style.width=width} 
@@ -506,7 +508,7 @@ let codeview = {
                 </a>
               </div>
             ` : ''}
-            ${(opCopy) ? `
+            ${(opCopy && isCopy) ? `
               <div class="op copy" title="Copy Code">
                 <a>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -537,7 +539,7 @@ let codeview = {
 
           if(opHyperlink && hyperlink == undefined || hyperlink){
             if(e.id == '') {
-              console.warn(`😊 ${astronaut.name}.codeview({hyperLink:})! Warning ! You enabled hyperlinking but did not provide an id attribute, enter an id="" in <div class="ast-codeview"> </div>. ')}`)
+              console.warn(`😊 ${astronaut.name}.codeview({hyperLink:})! Warning ! You enabled hyperlinking but did not provide an id attribute, enter an id="" in <div class="ast-codeviewer"> </div>. ')}`)
             } else {
               e.querySelector('.astvw-options .hyperlink a').addEventListener('click', a => {
                 a.preventDefault()
@@ -547,11 +549,11 @@ let codeview = {
             }
 
           }
-          if(opCopy){
+          if(opCopy && isCopy){
             var btnCopy = e.querySelector('.astvw-options .copy');
             btnCopy.addEventListener('click', a => {
               a.preventDefault()
-              var codeText = btnCopy.closest('.ast-codeview').querySelector('pre code').textContent
+              var codeText = btnCopy.closest('.ast-codeviewer').querySelector('pre code').textContent
               astronaut.copy(codeText, e.querySelector('.astcw-window'))
             
             })
@@ -560,7 +562,7 @@ let codeview = {
             var btnRun = e.querySelector('.astvw-options .run');
             btnRun.addEventListener('click', a => {
               a.preventDefault()
-              var codeText = btnRun.closest('.ast-codeview').querySelector('pre code').textContent,
+              var codeText = btnRun.closest('.ast-codeviewer').querySelector('pre code').textContent,
                   newScript = document.createElement('script');
                   newScript.textContent = codeText
               document.body.appendChild(newScript)
@@ -572,6 +574,11 @@ let codeview = {
   //==================================START PRISM.JS=========================================//
 
   //==================================FINAL PRISM.JS=========================================//
+    codeViewEach((e) => {
+      if(e.getAttribute('visible') == ''){
+        e.textContent = e.querySelector('.astcw-container pre code').textContent
+      }
+    })
 
     init(), prismjs()
   }
@@ -579,7 +586,7 @@ let codeview = {
 var howtouse = 'call the function this way: astronaut.codeview({})'
 try{$astronautType
 try{original=astronaut
-astronaut='anything';astronaut=original;console.log('is var')}catch(err){console.log(`%cIt looks like you already have the full astronaut library in your project, to avoid mistakes, if you are not using the full library and you only want to use a specific library, remove the full library! 🤔 `,` color: #ff8080;background-color: #290000;padding: 0.3rem 1.8rem 0.3rem 0.3rem;
+astronaut='anything';astronaut=original;}catch(err){console.log(`%cIt looks like you already have the full astronaut library in your project, to avoid mistakes, if you are not using the full library and you only want to use a specific library, remove the full library! 🤔 `,` color: #ff8080;background-color: #290000;padding: 0.3rem 1.8rem 0.3rem 0.3rem;
     font-size:0.8rem;border-radius:0.2rem;border: solid 1px #5c0000;
-    `);codeview=howtouse}}catch(error){if(typeof astronaut==='undefined'){window.astronaut=codeview
-codeview=howtouse}else{astronaut=Object.assign(astronaut,codeview);codeview=howtouse}}
+    `);__codeviewer=howtouse}}catch(error){if(typeof astronaut==='undefined'){window.astronaut=__codeviewer;window.ast=__codeviewer;window.astlibjs=__codeviewer
+__codeviewer=howtouse}else{astronaut=Object.assign(astronaut,__codeviewer);__codeviewer=howtouse}}

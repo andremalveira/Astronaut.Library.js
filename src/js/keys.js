@@ -10,4 +10,7 @@
   URL_CONNECTION = DIRECTORY_API('connection.json');
 
   //Libray versions 
+  V_LIBRARY_COMPLETE = 'v1.0'
   V_NOTIFY = 'v1.0'
+  V_INSERT = 'v1.0'
+  V_CODEVIEWER = 'v1.0'

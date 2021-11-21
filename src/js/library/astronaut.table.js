@@ -1,10 +1,10 @@
-//---------------------------------------------------//
-//           Astronaut Library.js - Table            //
-//                                                   //
-// Author: André Malveira.                           //
-// Github: https://github.com/andremalveira          //
-// Site:   https://astlibjs.ga/ //
-//---------------------------------------------------//
+//---------------------------------------------------------------------------//
+//                    Astronaut Library.js - Table v1.0                      //
+// License: MIT                                                              //
+// Author: André Malveira.                                                   //
+// Github: https://github.com/andremalveira                                  //
+// Docs:   https://astlibjs.ga/?docs=notify                                  //
+//---------------------------------------------------------------------------//
 
 /*
 
@@ -218,9 +218,9 @@ let table = {
 var howtouse = 'call the function this way: astronaut.table({})'
 try{$astronautType
 try{original=astronaut
-astronaut='anything';astronaut=original;console.log('is var')}catch(err){console.log(`%cIt looks like you already have the full astronaut library in your project, to avoid mistakes, if you are not using the full library and you only want to use a specific library, remove the full library! 🤔 `,` color: #ff8080;background-color: #290000;padding: 0.3rem 1.8rem 0.3rem 0.3rem;
+astronaut='anything';astronaut=original;}catch(err){console.log(`%cIt looks like you already have the full astronaut library in your project, to avoid mistakes, if you are not using the full library and you only want to use a specific library, remove the full library! 🤔 `,` color: #ff8080;background-color: #290000;padding: 0.3rem 1.8rem 0.3rem 0.3rem;
     font-size:0.8rem;border-radius:0.2rem;border: solid 1px #5c0000;
-    `);table=howtouse}}catch(error){if(typeof astronaut==='undefined'){window.astronaut=table
+    `);table=howtouse}}catch(error){if(typeof astronaut==='undefined'){window.astronaut=table;window.ast=notify;window.astlibjs=notify
 table=howtouse}else{astronaut=Object.assign(astronaut,table);table=howtouse}}
 
 

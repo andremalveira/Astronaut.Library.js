@@ -45,6 +45,7 @@ const lang = (lang) => {
     openNewTab: 'Abrir em nova Guia',
     openInVscode: 'Abrir no VSCode',
     pageNotFound: 'Página não Encontrada!',
+    astronautVariableWarn: "'astronaut.', 'astlibjs.' ou 'ast.' podem ser usadas!",
 
     //cnect
     cnectOnline: 'Você está Online!',
@@ -94,7 +95,7 @@ const lang = (lang) => {
     //ABOUT
     aboutText: {
       p0: `A Extensão`,
-      p1: `Astronaut Library.js é uma pequena biblioteca com recursos úteis para desenvolvedores criada por <a author>André Malveira</a>.`,
+      p1: `Astronaut Library.js é uma pequena biblioteca javascript com recursos úteis para desenvolvedores criada por <a author>André Malveira</a>.`,
       p2: `Desenvolvida totalmente em Javascript Pure, a biblioteca foi criada principalmente como uma extensão de navegador para 'localhost' dos servidores Apache, Wamp e Xampp.`,
       p3: `A extensão apenas mudaria a parência padrão de localhost, mas conforme o processo avançava, eu vim com novas idéias que poderiam ser úteis para o desenvolvimento de aplicativos, como ter a visualização do projeto na mesma guia do host local mantendo a lista dos outros projetos ao lado, mas claro que não só com isso, mas com outras ferramentas.`,
       p5: `Ferramentas da Extensão`,
@@ -116,7 +117,7 @@ const lang = (lang) => {
     },
 
     //NOTIFY
-    ntAbout: 'Uma pequena biblioteca para mensagens de notificações em seus Projetos ou Aplicações Web, desenvolvido completamente em Javascript.',
+    ntAbout: 'Uma pequena biblioteca para mensagens de notificações em seus Projetos ou Aplicações Web.',
     ntMessageDescrip: 'Define a Mensagem',
     ntMessageDescripDot1: 'Defina a mensagem principal ',
     ntMessageDescripDot2: 'Use "->" para setar uma mensagem secundária',
@@ -139,6 +140,7 @@ const lang = (lang) => {
     ntThemeDescrip: 'Define tema escuro',
 
     ntStyleDescrip: 'Defina seu próprio estilo de notificação',
+    ntStyleDescripTip: 'Dica: Se desejar definir um style padrão para todas suas notificações, defina uma variavél em seu arquivo de script principal ou tag script antes de qualquer chamada notify. para armazenar os seus styles.',
     ntStyleDescripOp1: "Altera a posição da notificação na tela, <br> Outras opções: <span text fira>'top <i>-</i>> right'</span>,  <span text fira>'bottom <i>-</i>> right'</span> <br>or  <span text fira>'bottom <i>-</i>> left'</span>",
     ntStyleDescripOp2: "Altera cor de fundo, outra opção <span text fira> '<t viewcolor>#ffffff85</t> <i>-</i>> 2px' </span>, <br> O segundo parâmetro é opcional, ele declara desfoque de fundo",
     ntStyleDescripOp3: 'Altera a cor da fonte',
@@ -156,6 +158,25 @@ const lang = (lang) => {
     ntAutoCloseDescrip: 'Define o fechamento automático',
     ntAutoCloseDescripOp1: 'Você pode definir os valores como verdadeiro ou em tempo com milissegundos',
     ntAutoCloseDescripOp2: 'Value padrão: false, tempo padrão: 5000 = 5 segundos',
+
+    //INSERT
+    insAbout: 'Insira html, css e script dinamicamente via javascript.',
+    insCssDescrip: 'Insere código css dentro de <span><</span>head>.',
+
+    //CodeViewer
+    cdvwAbout: 'Torne a visualização de seus códigos mais atraente e bonitos em seus projetos.',
+    cdvwAttrDescri: 'Atributos HTML independentes <br> • <span style="font-size: 0.8rem">Efeitos será aplicado apenas na div.ast-codeviewer que inseriu esses atributos.</span>',
+    cdvwYourCodeHere: '//Seu código aqui',
+    cdvwLangDescr: 'Define a linguagem do código que será visualizado',
+    cdvwTitleDescr: 'Define um título, Ex: index.html',
+    cdvwWHDescr: 'Define a altura e largura',
+    cdvwCopyDescr: 'Habilita/Desabilita botão de copiar código',
+    cdvwLinkDescr: 'Habilita/Desabilita botão de copiar hiperlink',
+    cdvwLinkDescr2: 'Esse atributo requer um id=" " informado!',
+    cdvwBlurDescr: 'Habilita/Desabilita blur no background',
+    cdvwRunDescr: 'Habilita/Desabilita botão de executar código javascript',
+
+    cdvwLineNumberDescrip: 'Habilite o número de linhas e/ou defina o estilo',
    }
     
   } else if(lang == 'en-us') {
@@ -203,6 +224,7 @@ const lang = (lang) => {
     openNewTab: 'Open in New Tab',
     openInVscode: 'Open in VSCode',
     pageNotFound: 'Page not Found!',
+    astronautVariableWarn: "'astronaut.', 'astlibjs.' or 'ast.' can be used!",
 
     //cnect
     cnectOnline: 'You are Online!',
@@ -251,7 +273,7 @@ const lang = (lang) => {
      //ABOUT
      aboutText: {
        p0: `The Extension`,
-       p1: 'Astronaut Library.js is a small Library with useful resources for Developers created by <a author>André Malveira</a>.',
+       p1: 'Astronaut Library.js is a small Library Javascript with useful resources for Developers created by <a author>André Malveira</a>.',
        p2: 'Developed completely with Pure Javascript, the library was mainly created as a browser extension for "localhost" of the Apache, Wamp and Xampp servers.',
        p3: `The extension would just change the default parsing of localhost, but as the process progressed I came up with new ideas that could be useful for application development, like having the project view in the same tab as localhost keeping the list of other projects while side, but of course not only with that, but with other tools.`,
        p5: `Extension Tools`,
@@ -273,7 +295,7 @@ const lang = (lang) => {
      },
 
      //NOTIFY
-     ntAbout: 'A small library for notification messages in your Projects or Web Applications, developed completely in Javascript.',
+     ntAbout: 'A small library for notification messages in your Projects or Web Applications.',
      ntMessageDescrip: 'Define the Message',
      ntMessageDescripDot1: 'Set the main message',
      ntMessageDescripDot2: 'Use "->" to set a secondary message',
@@ -296,6 +318,7 @@ const lang = (lang) => {
      ntThemeDescrip: 'Define theme dark',
 
      ntStyleDescrip: 'Define your own notification style',
+     ntStyleDescripTip: 'Tip: If you want to define a default style for all your notifications, define a variable in your main script file or script tag before any notify call. to store your styles.',
      ntStyleDescripOp1: "Change the position of the notification on the screen, <br>Other options : <span text fira>'top <i>-</i>> right'</span>,  <span text fira>'bottom <i>-</i>> right'</span> <br>or  <span text fira>'bottom <i>-</i>> left'</span> ",
      ntStyleDescripOp2: "Change background color, other option  <span text fira>'<t viewcolor>#ffffff85</t> <i>-</i>> 2px'</span>, <br>Second parameter is optional, he declare  background blur ",
      ntStyleDescripOp3: 'Change font color',
@@ -313,6 +336,25 @@ const lang = (lang) => {
      ntAutoCloseDescrip: 'Sets automatic closing',
      ntAutoCloseDescripOp1: 'You can set the values to true or in milliseconds',
      ntAutoCloseDescripOp2: 'Default value: false, default time: 5000 = 5 seconds',
+
+     //INSERT
+     insAbout: 'Insert html, css and script dynamically via javascript. ',
+     insCssDescrip: 'Insert css code inside <span><</span>head>.',
+
+     //CodeViewer
+     cdvwAbout: 'Make viewing your codes more attractive and beautiful in your projects.',
+     cdvwAttrDescri: 'Attributes HTML Independents <br> • <span style="font-size: 0.8rem">Effects will be applied only on div.ast-codeviewer that inserted these attributes.</span>',
+     cdvwYourCodeHere: '//your code here',
+     cdvwLangDescr: 'Defines the language of the code that will be displayed',
+     cdvwTitleDescr: 'Define a title, eg: index.html',
+     cdvwWHDescr: 'Set the height and width',
+     cdvwCopyDescr: 'Enable/Disable copy code button ',
+     cdvwLinkDescr: 'Enable/Disable copy hyperlink button ',
+     cdvwLinkDescr2: 'This attribute requires an id=" " entered! ',
+     cdvwBlurDescr: 'Enable/Disable blur in background',
+     cdvwRunDescr: 'Enable/Disable code javascript execute button',
+
+     cdvwLineNumberDescrip: 'Enable line numbers and/or set style',
    }
     
   }
