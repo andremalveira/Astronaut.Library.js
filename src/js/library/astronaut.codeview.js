@@ -22,6 +22,7 @@
   height: string,
   boxShadow: string,
   borderRadius: string,
+
   options: {
     hyperlink: boolean,
     copy: boolean,
@@ -99,6 +100,7 @@ let __codeviewer = {
   padding: 0.2rem 0.8rem;
   border-radius: 0.3rem;
   background: #2d333b;
+  color: #eee;
   box-shadow: 0px 0px 0px 0.03rem #00000030;
   animation: show_ast_warning 0.3s ease forwards;
   left: 50%;
@@ -107,12 +109,14 @@ let __codeviewer = {
   z-index: 1;
 }
 @keyframes show_ast_warning {
-  0% {opacity: 0;transform: translate(-50%, 100%);}
-  100% {opacity: 1;transform: translate(-50%, -50%);}
+  0% {opacity: 0;transform: translate(-50%, -50%) scale(0.7);}
+  40% {opacity: 1;transform: translate(-50%, -50%) scale(1.2);}
+  100% {opacity: 1;transform: translate(-50%, -50%) scale(1);}
 }
 @keyframes hide_ast_warning {
-  0% {opacity: 1;transform: translate(-50%, -50%);}
-  100% {opacity: 0;transform: translate(-50%, 100%);}
+  0% {opacity: 1;transform: translate(-50%, -50%) scale(1);}
+  40% {opacity: 1;transform: translate(-50%, -50%) scale(1.2);}
+  100% {opacity: 0;transform: translate(-50%, -50%) scale(0.7);}
 }
     `, 'warning')
    
@@ -122,31 +126,33 @@ let __codeviewer = {
       astWarn.style.animationName='hide_ast_warning'
       setTimeout(() => {
         astWarn.remove()
-      }, 500);
+      }, 500); 
     }, 1500);
   },
   codeviewer(params) {
-    var e = params,
-        lineNumber   = (e && e.lineNumber)         ? e.lineNumber      : false,
-        fontSize     = (e && e.fontSize)           ? e.fontSize        : '0.9rem',
-        fontFamily   = (e && e.fontFamily)         ? e.fontFamily      : 'Fira Code, "system-ui"',
-        theme        = (e && e.theme)              ? e.theme           : 'copilot',
-        background   = (e && e.background)         ? e.background      : false,
-        blur         = (e && e.blur)               ? e.blur            : false,
-        width        = (e && e.width)              ? e.width           : '100%',
-        height       = (e && e.height)             ? e.height          : 'auto',
-        options      = (e && e.options)            ? e.options         : false,
-        boxShadow    = (e && e.boxShadow)          ? e.boxShadow       : false,
-        borderRadius = (e && e.borderRadius)       ? e.borderRadius    : '0.6rem',
+    var e = params,s = e.style,
+        lineNumber   = (e && e.lineNumber)        ? e.lineNumber         : false,
+        fontSize     = (s && s.fontSize)          ? s.fontSize           : '0.9rem',
+        fontFamily   = (s && s.fontFamily)        ? s.fontFamily         : 'Fira Code, "system-ui"',
+        theme        = (s && s.theme)             ? s.theme              : 'copilot',
+        background   = (s && s.background)        ? s.background         : false,
+        color        = (s && s.color)             ? s.color              : false,
+        blurFilter   = (s && s.blur)              ? s.blur               : false,
+        width        = (s && s.width)             ? s.width              : '100%',
+        height       = (s && s.height)            ? s.height             : 'auto',
+        buttons      = (e && e.buttons)           ? e.buttons            : false,
+        boxShadow    = (s && s.boxShadow)         ? s.boxShadow          : false,
+        borderRadius = (s && s.borderRadius)      ? s.borderRadius       : '0.6rem',
 
-        opHyperlink = (options && options.hyperlink)    ? options.hyperlink    : false,
-        opCopy      = (options && options.copy)         ? options.copy         : false,
-        opPosition  = (options && options.position)     ? options.position     : 'window',
-        opColor     = (options && options.color)        ? options.color        : '#939da5',
-        opBg        = (options && options.background )  ? options.background   : '#232a2f',
+        b           = buttons,
+        opHyperlink = (b && b.hyperlink)    ? b.hyperlink    : false,
+        opCopy      = (b && b.copy)         ? b.copy         : false,
+        opPosition  = (b && b.position)     ? b.position     : 'window',
+        opColor     = (b && b.color)        ? b.color        : '#939da5',
+        opBg        = (b && b.backgroundHover )  ? b.backgroundHover   : '#adbac74a',
 
-        windowBar   =  (e && e.windowBar == false || e && e.windowBar != undefined) 
-        ? e.windowBar : true;
+        windowBar   =  (s && s.windowBar == false || s && s.windowBar != undefined) 
+        ? s.windowBar : true;
         if(!windowBar){opPosition = 'right'}
 
 
@@ -162,7 +168,7 @@ let __codeviewer = {
           th = params.theme,
           wb = params.windowBar,
   
-          astronaut.insert.css(`
+    astronaut.insert.css(`
   /*Astronaut Library.js - CodeView*/
   .ast-codeviewer {
     width: ${width};
@@ -173,7 +179,6 @@ let __codeviewer = {
     position: relative;
     display: flex;
     ${(boxShadow) ? `box-shadow: ${boxShadow};` : ''}
-    ${(blur) ? `backdrop-filter: blur(${blur});` : ''}
   }
   .ast-codeviewer[data-blur] {
     backdrop-filter: blur(2rem);
@@ -182,7 +187,6 @@ let __codeviewer = {
     width: 100%;
     display: grid;
     grid-template-rows: ${(wb) ? 'auto' : ''} 1fr;
-    overflow: hidden;
     border-radius: ${borderRadius};
     position: relative;
   }
@@ -190,33 +194,40 @@ let __codeviewer = {
   .ast-codeviewer i, .ast-codeviewer a {
     display: flex;
   }
-  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar {
+  .ast-codeviewer :is(.astcw-container, .astch-y)::-webkit-scrollbar {
     width: 8px;
     height: 0px;
     border-radius: ${borderRadius};
     background: transparent;
-
   }
-  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-thumb {
+  .ast-codeviewer :is(.astcw-container, .astch-y)::-webkit-scrollbar-thumb {
     height: 5px;
     border-radius: ${borderRadius};
     margin: 1rem;
   }
-  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-track {
+  .ast-codeviewer :is(.astcw-container, .astch-y)::-webkit-scrollbar-track {
     border-radius: ${borderRadius};
   }
-  .ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-corner {
+  .ast-codeviewer :is(.astcw-container, .astch-y)::-webkit-scrollbar-corner {
     background: transparent;
+  }
+  .ast-codeviewer .astch-y {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
   }
   .ast-codeviewer .astcw-container {
     position: relative;
-    padding: 1rem;
-    overflow: auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-auto-flow: dense;
+    padding: 1rem 0;
+    margin: 0 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
-
+  .ast-codeviewer .astch-y:not(.line-numbers) .astcw-container {
+    margin: 0 1rem;
+  }
   .ast-codeviewer :is(.astvw-options) {
     ${(opPosition && opPosition == 'window' ) 
     ? '' : 'position: absolute;display: flex;flex-direction: column;'}
@@ -231,7 +242,7 @@ let __codeviewer = {
   .ast-codeviewer :is(.op) {
     ${(opPosition && opPosition == 'window' ) 
     ? 'width: 20px;height:20px;border-radius: 0.3rem;padding: 0.1rem;' 
-    : 'border-radius: 50%;width: 30px;height:30px;'}
+    : 'border-radius: 0.3rem;width: 25px;height:25px;'}
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,8 +258,11 @@ let __codeviewer = {
     color: ${opColor};
     ${(opPosition && opPosition == 'window' ) ? '' : 'padding: 0.3rem;'}
   }
-  .ast-codeviewer .op.hyperlink a svg, {
+  .ast-codeviewer .op.hyperlink a svg {
     margin-top: 1px;
+  }
+  .ast-codeviewer .op.run a svg {
+    margin: 2px 0px 0px 2px;
   }
   .code-nav-bar {
     padding: 0.4rem 0.8rem;
@@ -330,10 +344,11 @@ let __codeviewer = {
       white-space: normal
   }
   pre[class*="language-"].line-numbers {
-      margin: 0 0 0rem 2.4em;
+      margin: 0;
       counter-reset: linenumber;
       grid-column: 2;
   }
+
   pre[class*="language-"]:not(.line-numbers) {
     margin: 0;
   }
@@ -341,12 +356,13 @@ let __codeviewer = {
       white-space: inherit;
   }
   .line-numbers .line-numbers-rows {
-    position: absolute;
+    margin: 1rem 0 1rem 1rem;
+    width: 2em;
+    height: max-content;
     pointer-events: none;
     top: 1rem;
     font-size: 100%;
     left: 0.8em;
-    width: 2em;
     /* works for line-numbers below 1000 lines */
     letter-spacing: -1px;
     -webkit-user-select: none;
@@ -371,17 +387,19 @@ let __codeviewer = {
     ? `
   /*blur */
   [data-theme="copilot"][data-blur].ast-codeviewer                                   {background: #232a2f73}
+  [data-theme="copilot"][data-blur].ast-codeviewer[visible],
+  [data-theme="copilot"][data-blur] .token:is(.punctuation)                          {color: #939da5}
   [data-theme="copilot"][data-blur].ast-codeviewer .line-numbers-rows                {background: transparent}
   [data-theme="copilot"][data-blur].ast-codeviewer .code-nav-bar                     {background: #1a202363}
 
-  [data-theme="copilot"].ast-codeviewer, .ast-codeviewer .line-numbers-rows               {background: ${(background) ? background : (blur) ? '#232a2f73' : '#232A2F'}}
-  [data-theme="copilot"].ast-codeviewer .code-nav-bar                                   {background: ${(wb.constructor.name === 'String') ? wb : '#1a202363'}}
-  [data-theme="copilot"].ast-codeviewer :is(.astcw-container)::-webkit-scrollbar-thumb  {background: #444267}
-  [data-theme="copilot"].ast-codeviewer :is(pre, code, span) ::selection                {background: #204062}
-  [data-theme="copilot"].ast-codeviewer[visible]                                             {color: #939da5}
+  [data-theme="copilot"].ast-codeviewer, .ast-codeviewer .line-numbers-rows                {background: ${(background) ? background : (blurFilter) ? '#232a2f73' : '#232A2F'}}
+  [data-theme="copilot"].ast-codeviewer .code-nav-bar                                      {background: ${(wb.constructor.name === 'String') ? wb : '#1a202363'}}
+  [data-theme="copilot"].ast-codeviewer :is(.astcw-container, .astch-y)::-webkit-scrollbar-thumb  {background: #444267}
+  [data-theme="copilot"].ast-codeviewer :is(pre, code, span) ::selection                   {background: #204062}
+  [data-theme="copilot"].ast-codeviewer[visible]                                           {color: ${(color) ? color : '#939da5'}}
   
   [data-theme="copilot"] .token:is(.block-comment, .cdata, .comment, .doctype, .prolog)    {color: #707a84}
-  [data-theme="copilot"] .token:is(.punctuation)                                           {color: #939da5}
+  [data-theme="copilot"] .token:is(.punctuation)                                           {color: ${(color) ? color : '#939da5'}}
   [data-theme="copilot"] .token:is(.attr-name)                                             {color: #ffa763}
   [data-theme="copilot"] .token:is(.deleted, .namespace, .tag)                             {color: #ff6a80}
   [data-theme="copilot"] .token:is(.function-name)                                         {color: #82aaff}
@@ -392,8 +410,7 @@ let __codeviewer = {
   [data-theme="copilot"] .token:is(.selector)                                              {color: #ffa763}
   [data-theme="copilot"] .token:is(.attr-value, .char, .regex, .string, .variable)         {color: #54cc84}
   [data-theme="copilot"] .token:is(.entity, .operator, .url)                               {color: #67cdcc}
-    `:''}`, 'codeview')
-  
+    `:''}`, 'codeviewer')
     }
     codeviewcss({lineNumber, fontSize, fontFamily, windowBar, theme})
 
@@ -414,12 +431,13 @@ let __codeviewer = {
           </div>
         </div>
       ` : ''}
-        
-        <div class="astcw-container">
-          ${(lang == 'html' || lang == 'markup') 
-            ? `<script type="text/plain" class="language-${lang} ${(lineNumber) ? 'line-numbers' : ''}" ></script>`
-            : `<pre><code class="language-${lang} ${(lineNumber) ? 'line-numbers' : ''}"></code></pre>`
-          }
+        <div class="astch-y">
+          <div class="astcw-container">
+            ${(lang == 'html' || lang == 'markup') 
+              ? `<script type="text/plain" class="language-${lang} ${(lineNumber) ? 'line-numbers' : ''}" ></script>`
+              : `<pre><code class="language-${lang} ${(lineNumber) ? 'line-numbers' : ''}"></code></pre>`
+            }
+          </div>
         </div>
       </div>
       `
@@ -481,6 +499,7 @@ let __codeviewer = {
   
       })
       codeViewEach((e) => {
+       /*  if(blurFilter) {e.setAttribute('data-blur', `${blurFilter}`)} */
         var width = e.dataset.width,
             height = e.dataset.height,
             blur = (e.dataset.blur != '') ? e.dataset.blur : false,
@@ -508,7 +527,7 @@ let __codeviewer = {
                 </a>
               </div>
             ` : ''}
-            ${(opCopy && isCopy) ? `
+            ${(!opCopy && isCopy || opCopy && isCopy) ? `
               <div class="op copy" title="Copy Code">
                 <a>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
@@ -549,7 +568,7 @@ let __codeviewer = {
             }
 
           }
-          if(opCopy && isCopy){
+          if(!opCopy && isCopy || opCopy && isCopy){
             var btnCopy = e.querySelector('.astvw-options .copy');
             btnCopy.addEventListener('click', a => {
               a.preventDefault()
@@ -563,9 +582,17 @@ let __codeviewer = {
             btnRun.addEventListener('click', a => {
               a.preventDefault()
               var codeText = btnRun.closest('.ast-codeviewer').querySelector('pre code').textContent,
+                  newDiv = document.createElement('div'), n
                   newScript = document.createElement('script');
+                  newDiv.id ="ScriptRunCodeViewer"
                   newScript.textContent = codeText
-              document.body.appendChild(newScript)
+
+                  if(document.querySelector('#ScriptRunCodeViewer')){
+                    ScriptRunCodeViewer.appendChild(newScript)
+                  } else {
+                    document.body.appendChild(newDiv)
+                    ScriptRunCodeViewer.appendChild(newScript)
+                  }
             })
           }
       })

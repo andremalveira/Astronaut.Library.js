@@ -305,7 +305,9 @@ const docs = {
 
       //CodeViewer
       astronaut.codeviewer({
-        width: '100%',
+        style: {
+          width: '100%'
+        },
         options: {
           hyperlink: false,
           copy: true,
@@ -486,7 +488,9 @@ const docs = {
   
         //CodeView
         astronaut.codeviewer({
-          width: '100%',
+          style: {
+            width: '100%'
+          },
           options: {
             hyperlink: false,
             copy: true,
@@ -559,21 +563,21 @@ const docs = {
                         </div>
                         <div class="install">
                           <h3>${langText.howto}:</h3>
-                          <div class="ast-codeviewer" data-blur="1.5rem" data-lang="html" data-title="index.html">
+                          <div class="ast-codeviewer" data-copy="true" data-blur="1.5rem" data-lang="html" data-title="index.html">
                             //Use with div tag
                             &lt;div class="ast-codeviewer" data-lang="LANGUAGE_HERE">
                               ${langText.cdvwYourCodeHere}
                             &lt;/div>
 
                             //OR use with script tag 
-                            &lt;script type="text/plain" class="ast-codeviewer" data-lang="">  &lt;/script>
+                            &lt;script type="text/plain" class="ast-codeviewer" data-lang=""> 
                               ${langText.cdvwYourCodeHere}
-                          
+                            &lt;/script>
                           </div>
-                          <div class="ast-codeviewer" data-blur="1.5rem" data-lang="html" data-title="index.html">
+                          <div class="ast-codeviewer" data-copy="true" data-blur="1.5rem" data-lang="html" data-title="index.html">
                             <script src="src/js/astronaut.codeviewer.js"></script>
                           </div>
-                          <div class="ast-codeviewer" data-blur="1.5rem" data-lang="js" data-title="script.js" >
+                          <div class="ast-codeviewer" data-copy="true" data-blur="1.5rem" data-lang="js" data-title="script.js" >
                             //${langText.astronautVariableWarn}
 
                             astronaut.codeviewer()
@@ -605,7 +609,7 @@ const docs = {
                         <div tab>
                           <p>${langText.cdvwLangDescr}</p>
                           <p>Values: <span text>html, css, js, php</span></p>
-                          <div class="ast-codeviewer" data-lang="html" data-title="HTML">
+                          <div class="ast-codeviewer" data-copy="true" data-lang="html" data-title="HTML">
                             &lt;div class="ast-codeviewer" data-lang="html">
                               <h1>Hello World</h1>
                             &lt;/div>
@@ -618,7 +622,7 @@ const docs = {
                         <h2 hyperlink="data-title">• data-title:</h2>
                         <div tab>
                           <p>${langText.cdvwTitleDescr}, HTML</p>
-                          <div class="ast-codeviewer" data-lang="html" data-title="HTML">
+                          <div class="ast-codeviewer" data-copy="true" data-lang="html" data-title="HTML">
                             &lt;div class="ast-codeviewer" data-lang="html" data-title="HTML">
                               <h1>Hello World</h1>
                             &lt;/div>
@@ -631,7 +635,7 @@ const docs = {
                         <h2 hyperlink="data-width-height">• data-width, data-height:</h2>
                         <div tab>
                           <p>${langText.cdvwWHDescr}, Values default: width: <span text>100%</span>,  height: <span text>auto</span></p>
-                          <div class="ast-codeviewer" data-lang="html" data-title="HTML" data-width="80%" data-height="200px" style="margin: auto auto">
+                          <div class="ast-codeviewer" data-copy="true" data-lang="html" data-title="HTML" data-width="80%" data-height="200px" style="margin: auto auto">
                             &lt;div class="ast-codeviewer" data-lang="html" data-width="80%" data-height="200px">
                               <h1>Hello World</h1>
                             &lt;/div>
@@ -644,7 +648,7 @@ const docs = {
                         <h2 hyperlink="data-copy">• data-copy:</h2>
                         <div tab>
                           <p>${langText.cdvwCopyDescr}</p>
-                          <div class="ast-codeviewer" data-lang="html"  data-title="HTML">
+                          <div class="ast-codeviewer" data-copy="true" data-lang="html"  data-title="HTML">
                             &lt;div class="ast-codeviewer" data-lang="html" data-copy="true">
                               <h1>Hello World</h1>
                             &lt;/div>
@@ -657,7 +661,7 @@ const docs = {
                         <h2 hyperlink="data-hyperlink">• data-hyperlink:</h2>
                         <div tab>
                           <p>${langText.cdvwLinkDescr} - <sapn color="warn">${langText.cdvwLinkDescr2}</span></p>
-                          <div id="hyperlink" class="ast-codeviewer" data-lang="html"  data-hyperlink="true" data-title="HTML">
+                          <div id="hyperlink" class="ast-codeviewer" data-copy="true" data-lang="html"  data-hyperlink="true" data-title="HTML">
                             &lt;div class="ast-codeviewer" data-lang="html" id="hyperlink" data-hyperlink="true">
                               <h1>Hello World</h1>
                             &lt;/div>
@@ -665,12 +669,12 @@ const docs = {
                         </div>                      
                       </section>
                     </div>
-                    <div class="column-1-center" style="background: url(src/img/bg/4851071.jpg); background-size: cover;border-radius:0.5rem">
+                    <div class="column-1-center" style="background: url(src/img/bg/4859471.jpg); background-size: cover;border-radius:0.5rem">
                       <section id="data-blur">
                         <h2 hyperlink="data-blur">• data-blur:</h2>
                         <div tab>
                           <p>${langText.cdvwBlurDescr}</p>
-                          <div class="ast-codeviewer" data-lang="html" data-blur="true" data-title="HTML">
+                          <div class="ast-codeviewer" data-copy="true" data-lang="html" data-blur="true" data-title="HTML">
                             &lt;div class="ast-codeviewer" data-lang="html"  data-blur="true">
                               <h1>Hello World</h1>
                             &lt;/div>
@@ -683,14 +687,14 @@ const docs = {
                         <h2 hyperlink="data-run">• data-run:</h2>
                         <div tab>
                           <p>${langText.cdvwRunDescr}</p>
-                          <div class="ast-codeviewer" data-lang="html" data-run="true" data-title="HTML">
+                          <div class="ast-codeviewer" data-copy="true" data-lang="html" data-run="true" data-title="HTML">
                             &lt;div class="ast-codeviewer" data-lang="js"  data-run="true">
                               alert('Hello World')
                               console.log('Hello World')
                             &lt;/div>
                           </div>
                           <p>Result</p>
-                          <div class="ast-codeviewer" data-lang="js" data-run="true" >
+                          <div class="ast-codeviewer" data-copy="true" data-lang="js" data-run="true" >
                               alert('Hello World')
                               console.log('Hello World')
                           </div>
@@ -704,9 +708,72 @@ const docs = {
                         <h2 hyperlink="lineNumber">• lineNumber:</h2>
                         <div tab>
                           <p>${langText.cdvwLineNumberDescrip}</p>
-                          <div class="ast-codeviewer" data-run="true" data-lang="js" data-title="Javascript">
+                          <div class="ast-codeviewer" data-copy="true" data-run="true" data-lang="js" data-title="Javascript">
                             astronaut.codeviewer({
                               lineNumber: true
+                            })
+                          </div>
+                          <p>Others Options</p>
+                          <div class="${namePage}-table-linenumber"></div>
+                        </div>                      
+                      </section>
+                    </div>
+                    <div class="column-1-center">
+                      <section id="style">
+                        <h2 hyperlink="style">• style:</h2>
+                        <div tab>
+                          <p>${langText.cdvwStyleDescrip}</p>
+                          <div class="${namePage}-table-style"></div>
+                          <p>Examples: </p>
+                          <div class="ast-codeviewer" data-copy="true" data-run="true" data-lang="js" data-title="Javascript">
+                            astronaut.codeviewer({
+                              style: {
+                                fontSize: '0.7rem',
+                                background: "#000",
+                                color: '#cfcfcf',
+                              }
+                            })
+                          </div>
+                          <div class="ast-codeviewer" data-copy="true" data-run="true" data-lang="js" data-title="Javascript">
+                            astronaut.codeviewer({
+                              style: {
+                                windowBar: false
+                              }
+                            })
+                          </div>
+                          <div class="ast-codeviewer" data-copy="true" data-run="true" data-lang="js" data-title="Javascript">
+                            astronaut.codeviewer({
+                              style: {
+                                fontFamily: 'monospace',
+                                borderRadius: '1.5rem',
+                                windowBar: 'transparent'
+                              }
+                            })
+                          </div>
+                        </div>                      
+                      </section>
+                    </div>
+                    <div class="column-1-center">
+                      <section id="buttons">
+                        <h2 hyperlink="buttons">• buttons:</h2>
+                        <div tab>
+                          <p>${langText.cdvwButtonsDescrip}</p>
+                          <div class="${namePage}-table-buttons"></div>
+                          <p>Examples:</p>
+                          <div id="example_hyperlink" class="ast-codeviewer" data-copy="true" data-run="true" data-lang="js" data-title="Javascript">
+                            astronaut.codeviewer({
+                              buttons: {
+                                hyperlink: true,
+                                color: '#fe2343',
+                                backgroundHover: '#202'
+                              }
+                            })
+                          </div>
+                          <div id="example_hyperlink" class="ast-codeviewer" data-copy="true" data-run="true" data-lang="js" data-title="Javascript">
+                            astronaut.codeviewer({
+                              buttons: {
+                                position: 'left'
+                              }
                             })
                           </div>
                         </div>                      
@@ -721,7 +788,7 @@ const docs = {
         //======================== CSS =======================//
         var css = `
           .${namePage}-body {
-            background: url(src/img/bg/4851071.jpg);
+            background: url(src/img/bg/4859471.jpg);
             background-size: cover;
           }
         `;
@@ -737,27 +804,10 @@ const docs = {
         var sHeight = selector.offsetHeight
   
         //CodeView
-        astronaut.codeviewer({
-          width: '100%',
-          lineNumber: true,
-          options: {
-            hyperlink: false,
-            copy: true,
-          },
-        })
+        astronaut.codeviewer({})
   
-        //Table
-        astronaut.table({
-          selector: `#new-page .${namePage}-table`,
-          thead:['Func','Type',	'Params',	'Description'],
-          tbody:[ 
-            ['<a smooth attr href="#lineNumber">lineNumber</a>',	"Boolean/Object -> attr:obj",	"<span boolean>true</span>/{object}",	`${langText.cdvwLineNumberDescrip}`],
-          ],
-          style: {
-            blur: '2rem',
-            border: false
-          }
-        })
+        //Tables
+        //Atributes
         astronaut.table({
           selector: `#new-page .${namePage}-table-attr`,
           thead:['Name','Values',	'Description'],
@@ -776,6 +826,70 @@ const docs = {
           }
         })
 
+        //Options
+        astronaut.table({
+          selector: `#new-page .${namePage}-table`,
+          thead:['Func','Type',	'Params',	'Description'],
+          tbody:[ 
+            ['<a smooth attr href="#lineNumber">lineNumber:</a>',	"Boolean/Object -> attr:obj",	"<span boolean>true</span>/{object}",	`${langText.cdvwLineNumberDescrip}`],
+            ['<a smooth attr href="#style">style:</a>',	"Object -> attr:obj",	"{object}",	`${langText.cdvwStyleDescrip}`],
+            ['<a smooth attr href="#buttons">buttons:</a>',	"Object -> attr:obj",	"{object}",	`${langText.cdvwButtonsDescrip}`],
+          ],
+          style: {
+            blur: '2rem',
+            border: false
+          }
+        })
+
+        //lineNumber
+        astronaut.table({
+          selector: `#new-page .${namePage}-table-linenumber`,
+          thead:['Option','Type',	'Default',	'Description'],
+          tbody:[ 
+            ['color -> attr:attr',	"String -> attr:obj",	"<t viewcolor >#adbac74a</t>",	`Change the color of the line numbers`],
+            ['separator -> attr:attr',	"Boolean -> attr:obj",	"true -> attr:boolean",	`Show or hide separator`],
+            ['opacity -> attr:attr',	"Number -> attr:obj",	"1 -> attr:number",	`Apply opacity`],
+          ],
+          style: {
+            border: false
+          }
+        })
+        //style
+        astronaut.table({
+          selector: `#new-page .${namePage}-table-style`,
+          thead:['Option','Type',	'Default',	'Description'],
+          tbody:[ 
+            ['fontSize: -> attr:attr',	"String -> attr:obj",	"0.9rem -> attr:text",	`${langText.cdvwStyleDescripOp1}`],
+            ['fontFamily: -> attr:attr',	"String -> attr:obj",	"Fira Code, 'system-ui' -> attr:text",	`${langText.cdvwStyleDescripOp2}`],
+            ['background: -> attr:attr',	"String -> attr:obj",	"<t viewcolor='#fff' >#232A2F</t>",	`${langText.cdvwStyleDescripOp3}`],
+            ['color: -> attr:attr',	"String -> attr:obj",	"<t viewcolor >#939da5</t>",	`${langText.cdvwStyleDescripOp4}`],
+            ['windowBar: -> attr:attr',	"Boolean/String -> attr:obj",	"<t viewcolor='#fff' >#1a202363</t>",	`${langText.cdvwStyleDescripOp5}`],
+            ['blur: -> attr:attr',	"String -> attr:obj",	"0 -> attr:text",	`${langText.cdvwStyleDescripOp6}`],
+            ['width: -> attr:attr',	"String -> attr:obj",	"100% -> attr:text",	`${langText.cdvwStyleDescripOp7}`],
+            ['height: -> attr:attr',	"String -> attr:obj",	"auto -> attr:text",	`${langText.cdvwStyleDescripOp8}`],
+            ['boxShadow: -> attr:attr',	"String -> attr:obj",	"none -> attr:text",	`${langText.cdvwStyleDescripOp9}`],
+            ['borderRadius: -> attr:attr',	"String -> attr:obj",	"0.6rem -> attr:text",	`${langText.cdvwStyleDescripOp10}`],
+            ['theme: -> attr:attr',	"String -> attr:obj",	"copilot -> attr:text",	`${langText.cdvwStyleDescripOp11}`],
+          ],
+          style: {
+            border: false
+          }
+        })
+        //buttons
+        astronaut.table({
+          selector: `#new-page .${namePage}-table-buttons`,
+          thead:['Option','Type',	'Default',	'Description'],
+          tbody:[ 
+            ['hyperlink -> attr:attr',	"Boolean -> attr:obj",	"false -> attr:boolean",	`${langText.cdvwButtonsDescripOp1}`],
+            ['copy -> attr:attr',	"Boolean -> attr:obj",	"false -> attr:boolean",	`${langText.cdvwButtonsDescripOp2}`],
+            ['position -> attr:attr',	"String -> attr:obj",	"window -> attr:text",	`${langText.cdvwButtonsDescripOp3}`],
+            ['color -> attr:attr',	"String -> attr:obj",	"<t viewcolor>#939da5</t>",	`${langText.cdvwButtonsDescripOp4}`],
+            ['backgroundHover -> attr:attr',	"String -> attr:obj",	"<t viewcolor='#cfcfcf'>#adbac74a</t>",	`${langText.cdvwButtonsDescripOp5}`],
+          ],
+          style: {
+            border: false
+          }
+        })
         scrooll.smooth(selector.firstElementChild)
         hyperlink()
   
@@ -795,8 +909,10 @@ const docs = {
         });
   
         document.querySelectorAll('[viewcolor]').forEach(viewcolor => {
+          viewcolorValue = viewcolor.getAttribute('viewcolor')
+
           viewcolor.style.background=viewcolor.textContent
-          viewcolor.style.color='#000'
+          viewcolor.style.color=(viewcolorValue != '') ? viewcolorValue : '#000'
         })
   }
 

@@ -177,6 +177,25 @@ const lang = (lang) => {
     cdvwRunDescr: 'Habilita/Desabilita botão de executar código javascript',
 
     cdvwLineNumberDescrip: 'Habilite o número de linhas e/ou defina o estilo',
+    cdvwStyleDescrip: 'Define suas estilizações',
+    cdvwStyleDescripOp1: 'Define o tamanho da font',
+    cdvwStyleDescripOp2: 'Define o tipo de font',
+    cdvwStyleDescripOp3: 'Define uma cor de background',
+    cdvwStyleDescripOp4: 'Define a cor  de font padrão',
+    cdvwStyleDescripOp5: 'Mostra/esconde a barra da janela e define a cor de background',
+    cdvwStyleDescripOp6: 'Aplica blur no background',
+    cdvwStyleDescripOp7: 'Define a largura da janela',
+    cdvwStyleDescripOp8: 'Define a altura da janela',
+    cdvwStyleDescripOp9: 'Define um Box-Shadow',
+    cdvwStyleDescripOp10: 'Define a borda arredondada',
+    cdvwStyleDescripOp11: 'Define um Tema',
+
+    cdvwButtonsDescrip: 'Ativa/desativa os botões de ações',
+    cdvwButtonsDescripOp1: 'Habilitar/Desabilitar botão de hyperkink da janela de código,  necessário que a janela tenha um <t attr>id</t>=<t text>" "</t>',
+    cdvwButtonsDescripOp2: 'Habilitar / Desabilitar botão de copiar código',
+    cdvwButtonsDescripOp3: 'Define a posição dos botões, <t text>"left"</t>, <t text>"right"</t> e <t text>"window"</t>',
+    cdvwButtonsDescripOp4: 'Define a cor dos ícones',
+    cdvwButtonsDescripOp5: 'Define a cor do background hover',
    }
     
   } else if(lang == 'en-us') {
@@ -355,6 +374,25 @@ const lang = (lang) => {
      cdvwRunDescr: 'Enable/Disable code javascript execute button',
 
      cdvwLineNumberDescrip: 'Enable line numbers and/or set style',
+     cdvwStyleDescrip: 'Define your stylizations',
+     cdvwStyleDescripOp1: 'Set font size',
+     cdvwStyleDescripOp2: 'Defines the font type',
+     cdvwStyleDescripOp3: 'Set a background color',
+     cdvwStyleDescripOp4: 'Set the default font color',
+     cdvwStyleDescripOp5: 'Show/Hide Window Bar and Set Background Color',
+     cdvwStyleDescripOp6: 'Apply blur in the background',
+     cdvwStyleDescripOp7: 'Defines the width of the window',
+     cdvwStyleDescripOp8: 'Defines the height of the window',
+     cdvwStyleDescripOp9: 'Define a Box-Shadow',
+     cdvwStyleDescripOp10: 'Defines the rounded edge',
+     cdvwStyleDescripOp11: 'Define a Theme',
+
+     cdvwButtonsDescrip: 'Enable/Disable Action Buttons',
+     cdvwButtonsDescripOp1: 'Enable/Disable code window hyperkink button, required window to have <t attr>id</t>=<t text>" "</t>',
+     cdvwButtonsDescripOp2: 'Enable / Disable Copy Code Button',
+     cdvwButtonsDescripOp3: 'Set the position of the buttons, <t text>"left"</t>, <t text>"right"</t> e <t text>"window"</t>',
+     cdvwButtonsDescripOp4: 'Sets the color of the icons',
+     cdvwButtonsDescripOp5: 'Set hover background color',
    }
     
   }
