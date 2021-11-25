@@ -227,15 +227,15 @@
               <div class="${namePage}-container library">
                 <i>${icons.braces}</i>
                 <div class="center">
-                  <h3>Astronaut Library.js</h3>
-                  <h5>Complete</h5>
+                  <h3>Astronaut Library.js </h3>
+                  <h5>Full Version ${V_LIBRARY_COMPLETE} </h5>
                 </div>
-                <a href="${DOMINIO_MAIN}/${REPO}/src/download/astronaut.library.zip" download class="btn" >Download Zip</a>
+                <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn" >Download Zip</a>
                 <div class="footer">
-                  <div class="links">
+                  <!--<div class="links">
                     <div data-copy="${DOMINIO_MAIN}/cdnjs">${icons.link} ${langText.copy} Link</div>
                     <div data-copy="<script src='${DOMINIO_MAIN}/cdnjs'></script>">${icons.slash} ${langText.copy} Script Tag</div>
-                  </div>
+                  </div>-->
                 </div>
               </div>
             

@@ -52,8 +52,8 @@ var structure = `
             <div id="list-items">
               <div class="item"><a href="/?docs=notify" flex data-type="docs" data-id="notify"><span>Notify</span></a></div>
               <div class="item"><a href="/?docs=insert" flex data-type="docs" data-id="insert"><span>Insert</span></a></div>
-              <div class="item"><a href="/?docs=codeviewer" flex data-type="docs" data-id="codeviewer"><span>CodeViewer</span></a></div>
               <div class="item"><a href="/?docs=table" flex data-type="docs" data-id="table"><span>Table</span></a></div>
+              <div class="item"><a href="/?docs=codeviewer" flex data-type="docs" data-id="codeviewer"><span>CodeViewer</span></a></div>
               <div break></div>
             </div>
 

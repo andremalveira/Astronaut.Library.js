@@ -24,7 +24,7 @@ const docs = {
                             <a href="/src/download/only/astronaut.notify.${V_NOTIFY}.zip" class="btn-2" title="Notify Version ${V_NOTIFY.split('v')[1]}" >Download Notify ${V_NOTIFY}</a>
                           </div>
                           <div class="btn-download">
-                          <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                          <a href="/src/download/complete/astronaut.library_full_version.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                           </div>
                         </div>
                       </div>
@@ -410,7 +410,7 @@ const docs = {
                               <a href="/src/download/only/astronaut.insert.${V_INSERT}.zip" class="btn-2" title="Insert Version ${V_INSERT.split('v')[1]}" >Download Insert ${V_INSERT}</a>
                             </div>
                             <div class="btn-download">
-                            <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                            <a href="/src/download/complete/astronaut.library_full_version.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                             </div>
                           </div>
                         </div>
@@ -449,7 +449,7 @@ const docs = {
                           <p>${langText.insCssDescrip}</p>
                           <div data-run="true" class="ast-codeviewer" data-lang="js" data-title="script.js">
                             astronaut.insert.css(\`
-                            
+
                               section#css {
                                 background: #000;
                                 box-shadow: 0px 0px 25px #00000090;
@@ -565,7 +565,7 @@ const docs = {
                               <a href="/src/download/only/astronaut.codeviewer.${V_CODEVIEWER}.zip" class="btn-2" title="CodeViewer Version ${V_CODEVIEWER.split('v')[1]}" >Download CodeViewer ${V_CODEVIEWER}</a>
                             </div>
                             <div class="btn-download">
-                              <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                              <a href="/src/download/complete/astronaut.library_full_version.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                             </div>
                           </div>
                         </div>
@@ -936,10 +936,10 @@ const docs = {
                           <p>${langText.tabAbout}</p>
                           <div class="btns-container">
                             <div class="btn-download">
-                              <a href="/src/download/only/astronaut.table.${V_INSERT}.zip" class="btn-2" title="Table Version ${V_INSERT.split('v')[1]}" >Download Table ${V_INSERT}</a>
+                              <a href="/src/download/only/astronaut.table.${V_TABLE}.zip" class="btn-2" title="Table Version ${V_TABLE.split('v')[1]}" >Download Table ${V_TABLE}</a>
                             </div>
                             <div class="btn-download">
-                            <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                            <a href="/src/download/complete/astronaut.library_full_version.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                             </div>
                           </div>
                         </div>

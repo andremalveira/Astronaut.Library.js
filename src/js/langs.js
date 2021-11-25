@@ -113,7 +113,8 @@ const lang = (lang) => {
       p9: `Das outras Ferramentas`,
       ps10: `
         <p><i dot>●</i><a opendoc="notify"> Notify</a> -> Um alerta personalizado para notificações push.</p>
-        <p><i dot>●</i><a opendoc="insert"> Insert</a> -> Insira código html, css e javascript.</p>
+        <p><i dot>●</i><a opendoc="insert"> Insert</a> -> Insira css e script ao DOM via javascript.</p>
+        p><i dot>●</i><a opendoc="table"> Table</a> -> Crie tabelas e insira no html via javascript.</p>
         <p><i dot>●</i><a opendoc="codeviewer"> CodeViewer</a> -> Destaque de código personalizado para html.</p>
       `,
     },
@@ -334,7 +335,8 @@ const lang = (lang) => {
        p9: `Other Tools`,
        ps10: `
          <p><i dot>●</i><a opendoc="notify"> Notify</a> -> A custom alert for push notifications.</p>
-         <p><i dot>●</i><a opendoc="insert"> Insert</a> -> Insert html, css and javascript code.</p>
+         <p><i dot>●</i><a opendoc="insert"> Insert</a> -> Insert css and script to DOM via javascript.</p>
+         <p><i dot>●</i><a opendoc="table"> Table</a> -> Create tables and insert into html via javascript.</p>
          <p><i dot>●</i><a opendoc="codeviewer"> CodeViewer</a> -> Custom code highlighting for html.</p>
        `,
      },

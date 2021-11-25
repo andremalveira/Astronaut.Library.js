@@ -35,7 +35,10 @@ The extension would just change the default parsing of localhost, but as the pro
 
 <br>
 
-## Other Library Resources
-Besides the extension, the library also has other tools to use in websites or applications that use javascript.
+## Library Resources
+Resources to websites or applications that use javascript.
 
-- Notify -> A custom alert for push notifications.
+- [Notify](https://astlibjs.ga/?docs=notify) -> A custom alert for push notifications.
+- [Insert](https://astlibjs.ga/?docs=insert) -> Insert css and script to DOM via javascript.
+- [Table](https://astlibjs.ga/?docs=table) -> Create tables and insert into html via javascript.
+- [CodeViewer](https://astlibjs.ga/?docs=codeviewer) -> Custom code highlighting for html.
