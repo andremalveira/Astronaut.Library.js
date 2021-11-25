@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://astlibjs.ga/">Website</a> •
   <a href="https://astlibjs.ga/?p=about#extension-preview">Extension Preview</a> •
-  <a href="#">Download Zip</a> •
+  <a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.0.zip">Download Zip</a> •
   <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here">Support</a> 
 </p>
 <p align="center">
