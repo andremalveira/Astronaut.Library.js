@@ -20,7 +20,7 @@ A small library with useful resources for developers created by <a href="https:/
   <a href="https://astlibjs.ga/">Website</a> •
   <a href="https://astlibjs.ga/?p=about#extension-preview">Extension Preview</a> •
   <a href="https://astlibjs.ga/?p=downloads">Downloads</a> •
-  <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here">Support</a> 
+  <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new/choose">Support</a> 
 </p>
 
 <br>
@@ -29,6 +29,9 @@ A small library with useful resources for developers created by <a href="https:/
 Resources to websites or applications that use javascript.
 
 - [Notify](https://astlibjs.ga/?docs=notify) -> A custom alert for push notifications.
+- [Insert](https://astlibjs.ga/?docs=insert) -> Insert css and script to DOM via javascript.
+- [Table](https://astlibjs.ga/?docs=table) -> Create tables and insert into html via javascript.
+- [CodeViewer](https://astlibjs.ga/?docs=codeviewer) -> Custom code highlighting for html.
 
 <br>
 
