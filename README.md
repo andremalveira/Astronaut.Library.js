@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  <a href="#">Website</a> •
+  <a href="https://astlibjs.ga/">Website</a> •
   <a href="https://astlibjs.ga/?p=about#extension-preview">Extension Preview</a> •
-  <a href="#">Download</a> •
+  <a href="#">Download Zip</a> •
   <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here">Support</a> 
 </p>
 <p align="center">
-  <img src="./src/img/png/preview.png" alt="Astronaut Library.js"/>
+  <img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/>
 </p>
 
 ## Browser Compatibility

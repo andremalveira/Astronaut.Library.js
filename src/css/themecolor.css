@@ -53,6 +53,7 @@
 [themecolor] body a {
   color: var(--link-primary);
   text-decoration: none;
+  background-color: transparent;
 }
 
 [themecolor] body .container nav {

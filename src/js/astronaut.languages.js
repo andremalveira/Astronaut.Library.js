@@ -92,8 +92,8 @@ const lang = (lang) => {
     tgInfoTextOne: 'Visualize seu texto digitando nos inputs acima!',
 
     //credits
-    creditText1: 'Bibliotecas externas usadas nesta extensão.',
-    creditText2: 'Bibliotecas externas usadas nesta extensão <br> Créditos para:',
+    creditText1: 'Bibliotecas externas usadas nesta extensão',
+    creditText2: 'Bibliotecas externas usadas nesta extensão.',
 
    }
     
@@ -188,8 +188,8 @@ const lang = (lang) => {
     tgInfoTextOne: 'View your text by typing in the inputs above!',
 
     //credits
-    creditText1: 'External libraries used in this extension.',
-    creditText2: 'External libraries used in this extension <br> Credits to:',
+    creditText1: 'External libraries used in this extension',
+    creditText2: 'External libraries used in this extension.',
 
 
    }

@@ -30,7 +30,7 @@
   overflow: hidden;
   position: relative;
 }
-[astronaut] body::before {
+[astronaut] body[main]::before {
   content: '';
   position: absolute; 
   width: 100%;

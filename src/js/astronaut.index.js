@@ -20,7 +20,7 @@ if(SERVER_APACHE){
   `
   menuApacheHTML = `
     <div id="localhost" class="btn icons" title="Localhost">${icons.files}</div>
-    <div id="database" src="/phpmyadmin/" class="btn icons" title="${langText.database}">${icons.server}</div>
+    <div id="database" src="/${(SERVER_APACHE.wmxm) ? 'phpmyadmin' : 'phpMyAdmin'}/" class="btn icons" title="phpMyAdmin">${icons.server}</div>
     <span hr></span>
   `
 } else {SSListIsDisplayed = ''}
@@ -35,7 +35,7 @@ var INDEX = `
         <div id="typography" page class="btn icons" title="${langText.typography}">${icons.typography}</div>
       </div>
       <div class="menu">
-        <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here" target="_blank" class="icons" title="Support"><i class="icon-star">${icons.flag}</i></a>
+        <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new?assignees=&labels=Astronaut+Extension&template=astronaut-extension.md&title=%5BEnter+here+the+type+of+label%5D+-+Insert+the+title+here" target="_blank" class="icons" title="Report Error!"><i class="icon-star">${icons.flag}</i></a>
         <div id="credits" class="btn icons" title="${langText.creditText1}"><i class="icon-star">${icons.star}</i></div>
         <div id="author" class="btn icons" title="${langText.coffee} ❤☕"><i class="icon-coffee">${icons.coffee}</i></div>
         <div id="settings" class="btn icons" title="${langText.settings}">${icons.gear}</div>

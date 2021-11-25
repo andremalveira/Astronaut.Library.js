@@ -271,7 +271,7 @@ function palettecolor(params) {
       //execute and get data json in astronaut/api/palettecolor/ with fetch 
       CONNECTION({
         online: () => {
-          fetch(DIRECTORY_API('palettecolor.json'), {cache})
+          fetch(API('palettecolor.json'), {cache})
           .then(response => response.json())
           .then(data => {
             start(data)

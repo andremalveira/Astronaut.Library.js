@@ -22,7 +22,7 @@ if(!DOCUMENT_MAIN){
 
 window.addEventListener('load', () => {
   if(isAstExt) enableRefreshWindows()
-  if(DOCUMENT_MAIN && PATHNAME_EMPTY){
+  if(DOCUMENT_MAIN && IS_COMPATIBLE && PATHNAME_EMPTY){
     storageLocal.update()
     if(isAstExt){
       ASTRONAUT_LOCALHOST.build()

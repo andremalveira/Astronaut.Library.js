@@ -2,23 +2,22 @@ const ASTRONAUT_LOCALHOST = {
   build() {
     //initial changes
     if(SERVER_APACHE){
-      var apacheaddress = document.querySelector('address');
-      if (location.search != '?C=S') { location.href = location.href + '?C=S' }
-      var apachetable = BODY.get('table');
-      apacheaddress.style.display = 'none';
-      apachetable.style.display = 'none'
+
+      var apacheaddress = document.querySelector('address'), apachetable = BODY.get('table'), mampUl = BODY.get('ul');
+      if (apachetable && location.search != '?C=S') { location.href = location.href + '?C=S' }
+      if(mampUl) mampUl.style.display = 'none'
+      if(apacheaddress) apacheaddress.style.display = 'none'
+      if(apachetable) apachetable.style.display = 'none'
       GET('body h1').remove()
       GET_ALL('table tr th').forEach(e => { e.parentElement.remove() })
-    } else if(SERVER_LIVE){
-      var inputSearch = document.querySelector('input#search')
-      if(inputSearch) inputSearch.remove()
-      
+    } else if(SERVER_LIVE){     
       HEAD.innerHTML=''
       BODY.innerHTML=''
     }
 
     
     HTML.setAttribute('astronaut', '')
+    BODY.setAttribute('main', '')
     themeColor.check()
     titleTab.default()
 
@@ -74,8 +73,11 @@ const ASTRONAUT_LOCALHOST = {
         layoutMode.appearanceMoblie('add', layout.get(`.preview-mobile`))
 
       },
-      for(modevalue) {
+      for(modevalue, isLMFS) {
+        var isLMFS = (isLMFS === false) ? isLMFS : true;
         (layout.attributes['layout'].value == `${modevalue}`) ? null : layoutMode[modevalue](modevalue)
+        layoutMode.iconLayout(modevalue)
+        if(isLMFS) storageLocal.set('layoutModeFullScreen', modevalue)
         storageLocal.update()
       },
       iconLayout(modevalue) {
@@ -121,56 +123,56 @@ const ASTRONAUT_LOCALHOST = {
         chrome.storage.local.get('layoutMode', (result) => {
           if (result.layoutMode != undefined) {
             if (result.layoutMode != 'desktop') {
-              layoutMode[result.layoutMode](result.layoutMode)
-              layoutMode.iconLayout(result.layoutMode)
-
-              var message = true;
-              function checkMinimunResolution() {
-                if(window.innerWidth < 1280 || window.innerHeight < 825){
-                  document.querySelector('.container').style.display='none'
-                  if(apacheaddress && apachetable){
-                    apacheaddress.style.display = '';
-                    apachetable.style.display = ''
-                  }
-                  if(message){
-                    document.body.insertAdjacentHTML('beforeend', '<h1>Resolution no Suported!</h1><h2>Minimum resolution 1280x825 </h2>')
-                    message = false;
-                  }
-                } else {
-                  document.querySelector('.container').style.display=''
-                  if(apacheaddress && apachetable){
-                    apacheaddress.style.display = 'none';
-                    apachetable.style.display = 'none'
-                  }
-                }
-              }
-              checkMinimunResolution()
-              window.addEventListener('resize', () => {
-                //1280x825 
-                var heightBody = content.offsetHeight;
-                var  heightBody = heightBody - 90,
-                  heightBody = heightBody / 16;
-                  GET_ALL('#layout [window]:not([model])').forEach(window => {
-                    window.style.height = heightBody + 'rem'
-                  })  
-                  checkMinimunResolution()
-              })
+              layoutMode.for((result.layoutMode))
             }
           }
         });
+        function checkMinimunResolution() {
+          const warnR = {
+            open() {
+              document.querySelector('.container').style.display='none'
+              if(document.querySelector('#warnResolution')) warnResolution.remove()
+              document.body.insertAdjacentHTML('beforeend', '<div id="warnResolution"><h1>Resolution no Suported!</h1><h2>Minimum resolution 490x825 </h2></div>')
+            },
+            close() {
+              document.querySelector('.container').style.display=''
+              if(document.querySelector('#warnResolution')) warnResolution.remove()
+            }
+          }
+          if(window.innerWidth < 1280 && window.innerWidth > 980 || window.innerHeight < 825){
+            layoutMode.for('desktop', false)
+          } else if(window.innerWidth < 980 || window.innerHeight < 825){
+            layoutMode.for('mobile', false)
+            if(window.innerWidth < 760) listProjects.close()
+            if(window.innerWidth < 490) warnR.open() 
+            else warnR.close()
+          } else {
+            layoutMode.for(storageLocal.get('layoutModeFullScreen'), false)
+            warnR.close()
+          }
+        }
+        checkMinimunResolution()
+        window.addEventListener('resize', () => {
+          //1280x825 
+          var heightBody = content.offsetHeight;
+          var  heightBody = heightBody - 90,
+            heightBody = heightBody / 16;
+            GET_ALL('#layout:not([layout="desktop"]) [window]:not([model])').forEach(window => {
+              window.style.height = heightBody + 'rem'
+            })  
+            checkMinimunResolution()
+        })
       }
     }
     const listProjects = {
       create() {
         //CREATE LIST ITEMS/PROJECTS - Items
-        apachetable.getAll('tr').forEach(tr => {
-          tr = tr.childNodes
-          obj = {
-            icon: tr[0],
-            link: tr[1],
-            modified: tr[2].innerHTML,
-            size: tr[3].innerText,
-          }
+        var allItems = (apachetable && !mampUl) ? apachetable.getAll('tr') : (mampUl && !apachetable) ? mampUl.getAll('li') : false
+         if(allItems) allItems.forEach(tr => {
+          if(apachetable) tr = tr.childNodes
+       
+          if(apachetable) obj = {icon: tr[0],link: tr[1],modified: tr[2].innerHTML,size: tr[3].innerText}
+          if(mampUl) obj = {link: tr}
           iconExt = {
             js: `<i>${icons.language.js}</i>`,
             json: `<i>${icons.language.json}</i>`,
@@ -190,7 +192,7 @@ const ASTRONAUT_LOCALHOST = {
               : (ext == 'zip' || ext == 'rar') ? 'compact'
                 : ext;
 
-          if (obj.icon.get('img').alt == '[PARENTDIR]') {
+          if (obj.icon && obj.icon.get('img').alt == '[PARENTDIR]') {
             itemHTML = `
               <a src="${obj.link.get('a').href}">
                 <div class="item">
@@ -598,7 +600,6 @@ const ASTRONAUT_LOCALHOST = {
               btnlayoutmode.addEventListener('click', () => {
                 modevalue = btnlayoutmode.attributes['layoutmode'].value
                 layoutMode.for(modevalue)
-                layoutMode.iconLayout(modevalue)
                 btndevices.get('#contextMenu').remove()
                 BODY.get('#overlay').remove()
               })
@@ -1269,7 +1270,6 @@ const ASTRONAUT_LOCALHOST = {
           if(backgroundValue.length > 0 && inputBlurBackground.parentElement.getAttribute('disabled') == ''){
             inputBlurBackground.parentElement.removeAttribute('disabled')} 
           else if(backgroundValue.length == 0){
-            console.log(backgroundValue.length)
             inputBlurBackground.parentElement.setAttribute('disabled','')
           }
           btns.unlock()
@@ -1390,7 +1390,7 @@ const ASTRONAUT_LOCALHOST = {
         <div class="nav"></div>
         <div class="left"></div>
         <div class="right">
-          <div>${apacheaddress.innerText}</div>
+          <div>${(apacheaddress) ? apacheaddress.innerText : 'No data!'}</div>
         </div>
         `;
 
@@ -1498,19 +1498,16 @@ const ASTRONAUT_LOCALHOST = {
               case 'desktop':
                 var modevalue = 'mobile'
                 layoutMode.for(modevalue)
-                layoutMode.iconLayout(modevalue)
                 wclmsg('Layout Changed for Mobile', icons.layout.mobile)
               break;
               case 'mobile':
                 var modevalue = 'double'
                 layoutMode.for('double')
-                layoutMode.iconLayout(modevalue)
                 wclmsg('Layout Changed for Double', icons.layout.double)
               break;
               case 'double':
                 var modevalue = 'desktop'
                 layoutMode.for('desktop')
-                layoutMode.iconLayout(modevalue)
                 wclmsg('Layout Changed for Desktop', icons.layout.desktop)
               break;
             }

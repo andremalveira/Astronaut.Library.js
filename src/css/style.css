@@ -332,10 +332,12 @@
   overflow: hidden;
 /*   border-top: 0!important; */
 }
+[astronaut] body .container main #layout [window]{
+  min-width: 25rem;
+}
 [astronaut] body .container main #layout[layout="mobile"] #preview,
 [astronaut] body .container main #layout[layout="double"] .preview-mobile {
   width: 25rem;
-  min-width: 25rem;
   height: 90%;
   border-radius: 1rem;
   box-shadow: rgb(0 0 0 / 48%) 0px 0px 15px 0px;
@@ -1126,6 +1128,14 @@
   display: inherit!important;
 }
 
+#warnResolution {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#warnResolution :is(h1, h2){font-weight: normal; margin: 0;}
 
 
 

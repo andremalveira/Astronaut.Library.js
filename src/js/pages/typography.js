@@ -259,7 +259,7 @@ function typography(params) {
 
     CONNECTION({
       online: () => {
-        fetch(DIRECTORY_API('typography.json'), {cache})
+        fetch(API('typography.json'), {cache})
         .then(response => response.json())
         .then(data => {
           start(data)

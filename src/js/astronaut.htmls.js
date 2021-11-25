@@ -8,8 +8,8 @@ const htmls = {
     ${langText.pcInfoTextOne}
   </div>
     <img 
-      style="width: 100%; margin: auto 0; " 
-      src="https://andremalveira.github.io/astronaut/src/img/gif-information-palettecolor.gif"
+      style="width: 100%; margin: auto 0; box-shadow: 0px 0px 12px 0px #00000059; border-radius: 0.3rem;" 
+      src="${URL_WEB_SITE}/src/img/gif-information-palettecolor.gif"
     >
   `,
   typography:`
@@ -19,8 +19,8 @@ const htmls = {
     ${langText.tgInfoTextOne}
   </div>
     <img 
-      style="width: 100%; margin: auto 0; " 
-      src="https://andremalveira.github.io/astronaut/src/img/gif-information-typegraphy.gif"
+    style="width: 100%; margin: auto 0; box-shadow: 0px 0px 12px 0px #00000059; border-radius: 0.3rem;" 
+      src="${URL_WEB_SITE}/src/img/gif-information-typegraphy.gif"
     >
   `,
   author(connection) { return`

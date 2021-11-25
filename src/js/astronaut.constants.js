@@ -413,7 +413,7 @@
       <meta name="viewport"                content="width=device-width, initial-scale=1.0">
       <meta property="og:site_name"        content="Astronaut Library.js"> 
       <meta property="og:type"             content="website" />
-      <meta property="og:url"              content="https://andremalveira.github.io/astronaut/" />
+      <meta property="og:url"              content="${URL_WEB_SITE}"/>
       <meta property="og:title"            content="Astronaut Library.js"/>
       <meta property="og:description"      content="Astronaut is a small Library with useful resources for Developers!" />
       <meta property="og:image"            content="src/img/svg/astronaut.svg" />
@@ -445,7 +445,7 @@
   const background = {
     insert(url, blurValue){
       astronaut.insert.css(`
-[astronaut] body::before {
+[astronaut] body[main]::before {
   animation: background 0.5s;
   background: var(--bg-primary) ${(url)? `url(${url})` : ''} no-repeat center;
   background-size: cover; 
