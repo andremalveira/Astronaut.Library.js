@@ -12,7 +12,7 @@ A small library with useful resources for developers created by <a href="https:/
 
 <p align="center">
 <a href="#details">
-<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/></a>
+<img src="https://img.shields.io/badge/License-MIT-319046?" alt="License-MIT"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Main-319046" alt="Branche Main"/></a>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Latest%20Release-v1.0.0-319046" alt="Release"/></a>
 
 </p>
 
@@ -59,7 +59,7 @@ The extension would just change the default parsing of localhost, but as the pro
 ## Version/Branche/Download
 <a href="#version">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
 <a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
-<a href="https://astlibjs.ga/" target="_blank"><img src="https://img.shields.io/badge/Download-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
+<a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.0.zip" target="_blank"><img src="https://img.shields.io/badge/Download%20Zip-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
 ## Browsers Compatibility
 <a href="#browsers-compatibility">
 
@@ -93,4 +93,8 @@ This extension is licensed under the [MIT License](https://github.com/andremalve
 [Bootstrap Icons](https://icons.getbootstrap.com) • 
 [Devicon](https://devicon.dev) • 
 [Font Awesome](https://fontawesome.com/v5.15/icons) • 
-[Live Server Web Extension](https://github.com/ritwickdey/live-server-web-extension)
+[Live Server Web Extension](https://github.com/ritwickdey/live-server-web-extension) •
+[Prismjs](https://prismjs.com)
+
+
+
