@@ -17,7 +17,7 @@ A small library with useful resources for developers created by <a href="https:/
 </p>
 
 <p align="center">
-  <a href="https://astlibjs.ga/">Website</a> •
+  <a href="https://astlibjs.ga/">Documentation</a> •
   <a href="https://astlibjs.ga/?p=about#extension-preview">Extension Preview</a> •
   <a href="https://astlibjs.ga/?p=downloads">Downloads</a> •
   <a href="https://github.com/andremalveira/Astronaut.Library.js/issues/new/choose">Support</a> 
@@ -85,8 +85,6 @@ The extension would just change the default parsing of localhost, but as the pro
 
 # License
 This extension is licensed under the [MIT License](https://github.com/andremalveira/Astronaut.Library.js/blob/extension/LICENSE)
-
-<br>
 
 # External libraries used in this project
 [Catalyststuff](https://www.freepik.com/catalyststuff) • 
