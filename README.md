@@ -42,3 +42,5 @@ Resources to websites or applications that use javascript.
 - [Insert](https://astlibjs.ga/?docs=insert) -> Insert css and script to DOM via javascript.
 - [Table](https://astlibjs.ga/?docs=table) -> Create tables and insert into html via javascript.
 - [CodeViewer](https://astlibjs.ga/?docs=codeviewer) -> Custom code highlighting for html.
+
+

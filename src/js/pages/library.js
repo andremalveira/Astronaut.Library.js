@@ -211,16 +211,16 @@
                 <i>${icons.box}</i>
                 <div class="center">
                   <h3>Astronaut Extension</h3>
-                  <h5>Custom Localhost</h5>
+                  <h5>Custom Localhost ${V_EXTENSION}</h5>
                 </div>
-                <a class="btn">Download</a>
+                <a class="btn" href="${LINK_DOWN_EXTENSION}">Download Zip</a>
                 <div class="footer">    
                   <div class="compatibilities">
-                    <i yes title="Google Chrome">${icons.chrome}</i>
-                    <i yes title="Opera">${icons.opera}</i>
-                    <i yes title="Microsoft Edge">${icons.edge}</i>
-                    <i not title="Mozilla Firefox">${icons.firefox}</i>
-                    <i not title="Safari">${icons.safari}</i>
+                    <i success title="Google Chrome">${icons.chrome}</i>
+                    <i success title="Opera">${icons.opera}</i>
+                    <i success title="Microsoft Edge">${icons.edge}</i>
+                    <i warn title="Mozilla Firefox">${icons.firefox}</i>
+                    <i warn title="Safari">${icons.safari}</i>
                   </div>      
                 </div>
               </div>
@@ -230,12 +230,15 @@
                   <h3>Astronaut Library.js </h3>
                   <h5>Full Version ${V_LIBRARY_COMPLETE} </h5>
                 </div>
-                <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn" >Download Zip</a>
+                <a href="${LINK_DOWN_LIBRARY}" class="btn" >Download Zip</a>
                 <div class="footer">
                   <!--<div class="links">
                     <div data-copy="${DOMINIO_MAIN}/cdnjs">${icons.link} ${langText.copy} Link</div>
                     <div data-copy="<script src='${DOMINIO_MAIN}/cdnjs'></script>">${icons.slash} ${langText.copy} Script Tag</div>
                   </div>-->
+                  <div class="compatibilities">
+                    <i title="Javascript">${icons.language.js2}</i>
+                  </div>  
                 </div>
               </div>
             
@@ -330,20 +333,24 @@
               position: relative;
               font-style: normal;
             } 
-            .${namePage}-container .compatibilities i[not]::before {
+            .${namePage}-container .compatibilities i[error]::before {
               content: '✖';
               color: var(--btn-third-border);
             } 
-            .${namePage}-container .compatibilities i[yes]::before {
+            .${namePage}-container .compatibilities i[success]::before {
               content: '✔';
               color: var(--btn-second-border-hover);
             } 
-            .${namePage}-container .compatibilities i[not]::before,
-            .${namePage}-container .compatibilities i[yes]::before  {
+            .${namePage}-container .compatibilities i[warn]::before {
+              content: '⚠';
+              color: #baaf34;
+            } 
+            .${namePage}-container .compatibilities i[error]::before,
+            .${namePage}-container .compatibilities i[success]::before,
+            .${namePage}-container .compatibilities i[warn]::before  {
               position: absolute;
               width: 100%;
               height: 100%;
-              font-size: 1.3rem;
               font-size: 1rem;
               right: -15px;
               bottom: -5px;
