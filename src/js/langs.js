@@ -113,6 +113,8 @@ const lang = (lang) => {
       p9: `Das outras Ferramentas`,
       ps10: `
         <p><i dot>●</i><a opendoc="notify"> Notify</a> -> Um alerta personalizado para notificações push.</p>
+        <p><i dot>●</i><a opendoc="insert"> Insert</a> -> Insira código html, css e javascript.</p>
+        <p><i dot>●</i><a opendoc="codeviewer"> CodeViewer</a> -> Destaque de código personalizado para html.</p>
       `,
     },
 
@@ -160,8 +162,9 @@ const lang = (lang) => {
     ntAutoCloseDescripOp2: 'Value padrão: false, tempo padrão: 5000 = 5 segundos',
 
     //INSERT
-    insAbout: 'Insira html, css e script dinamicamente via javascript.',
+    insAbout: 'Insira css e script ao DOM via javascript.',
     insCssDescrip: 'Insere código css dentro de <span><</span>head>.',
+    insScriptDescrip: 'Insira o código javascript diretamente no DOM.',
 
     //CodeViewer
     cdvwAbout: 'Torne a visualização de seus códigos mais atraente e bonitos em seus projetos.',
@@ -196,6 +199,27 @@ const lang = (lang) => {
     cdvwButtonsDescripOp3: 'Define a posição dos botões, <t text>"left"</t>, <t text>"right"</t> e <t text>"window"</t>',
     cdvwButtonsDescripOp4: 'Define a cor dos ícones',
     cdvwButtonsDescripOp5: 'Define a cor do background hover',
+
+    //TABLE
+    tabAbout: 'Crie tabelas e insira no html via javascript.',
+    tabSelectorDescrip: 'Define o local onde a tabela será inserida',
+    tabTheadDescrip: 'Define o cabeçalho',
+    tabTbodyDescrip: 'Define o corpo',
+    tabStyleDescrip: 'Define seus estilos',
+    tabStyleDescripOp1: 'Define o tamanho da font',
+    tabStyleDescripOp2: 'Define a cor da fonte do thead',
+    tabStyleDescripOp3: 'Define a cor da fonte do tbody',
+    tabStyleDescripOp4: 'Define a cor do background do thead',
+    tabStyleDescripOp5: 'Define a cor do background do tbody',
+    tabStyleDescripOp6: 'Define a borda arredondada',
+    tabStyleDescripOp7: 'Aplica blur no background',
+    tabStyleDescripOp8: 'Define o efeito hover em cada linha (tr) <br> valores aceito: <t text>\' #color \'</t> or <t text>\' #color timeTransition \'</t>',
+    tabStyleDescripOp9: 'Define uma borda externa na tabela <br> valores aceitos: <t text> \' size #color \' </t> ',
+    tabStyleDescripOp10: 'Define as bordas internas nas colunas e linhas <br> valores aceitos: <t text> \' size #color \' </t>',
+    tabStyleDescripOp11: 'Define um box-shadow',
+    tabStyleBorderInsideWarn1: 'tem um terceiro e um quarto parâmetro booleano, que indica a borda horizontal e vertical! ',
+    tabStyleBorderInsideWarn2: 'Esse exemplo define uma borda vertical como false e mantém uma borda vertical como true'
+    
    }
     
   } else if(lang == 'en-us') {
@@ -310,6 +334,8 @@ const lang = (lang) => {
        p9: `Other Tools`,
        ps10: `
          <p><i dot>●</i><a opendoc="notify"> Notify</a> -> A custom alert for push notifications.</p>
+         <p><i dot>●</i><a opendoc="insert"> Insert</a> -> Insert html, css and javascript code.</p>
+         <p><i dot>●</i><a opendoc="codeviewer"> CodeViewer</a> -> Custom code highlighting for html.</p>
        `,
      },
 
@@ -357,8 +383,9 @@ const lang = (lang) => {
      ntAutoCloseDescripOp2: 'Default value: false, default time: 5000 = 5 seconds',
 
      //INSERT
-     insAbout: 'Insert html, css and script dynamically via javascript. ',
+     insAbout: 'Insert css and script to DOM via javascript.',
      insCssDescrip: 'Insert css code inside <span><</span>head>.',
+     insScriptDescrip: 'Insert javascript code directly into the DOM.',
 
      //CodeViewer
      cdvwAbout: 'Make viewing your codes more attractive and beautiful in your projects.',
@@ -393,6 +420,27 @@ const lang = (lang) => {
      cdvwButtonsDescripOp3: 'Set the position of the buttons, <t text>"left"</t>, <t text>"right"</t> e <t text>"window"</t>',
      cdvwButtonsDescripOp4: 'Sets the color of the icons',
      cdvwButtonsDescripOp5: 'Set hover background color',
+
+     //TABLE
+     tabAbout: 'Create tables and insert into html via javascript.',
+     tabSelectorDescrip: 'Defines the place where the table will be inserted ',
+     tabTheadDescrip: 'Sets the header',
+     tabTbodyDescrip: 'Define the body',
+     tabStyleDescrip: 'Define your styles',
+     tabStyleDescripOp1: 'Set font size',
+     tabStyleDescripOp2: 'Set thead font color',
+     tabStyleDescripOp3: 'Set tbody font color',
+     tabStyleDescripOp4: 'Set thead background color',
+     tabStyleDescripOp5: 'Set tbody background color',
+     tabStyleDescripOp6: 'Defines the rounded edge',
+     tabStyleDescripOp7: 'Apply blur in the background',
+     tabStyleDescripOp8: 'Defines the hover effect on each line (tr) <br> accepted values: <t text>\' #color \'</t> or <t text>\' #color timeTransition \'</t> ',
+     tabStyleDescripOp9: 'Defines an outer border on the table <br> accepted values: <t text> \' size #color \' </t> ',
+     tabStyleDescripOp10: 'Sets the inner borders on columns and rows <br> accepted values: <t text> \' size #color \' </t> ',
+     tabStyleDescripOp11: 'Define a box-shadow',
+     tabStyleBorderInsideWarn1: 'has a third and fourth boolean parameter, which indicates the horizontal and vertical edge!',
+     tabStyleBorderInsideWarn2: 'This example sets a vertical edge to false and keeps a vertical edge to true'
+     
    }
     
   }

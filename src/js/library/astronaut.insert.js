@@ -30,6 +30,24 @@ let __insert = {
       } else {
         console.error(`💔 ${astronaut.name}.insert.css()! Error when inserting css because you did not inform the ${((id == undefined || id == '') ? `second parameter was not defined id! Ex: ${astronaut.name}.insert.css('css', 'id')` : (css == undefined || css == '') ? `the first parameter was not defined or the first parameter is empty css! Ex: ${astronaut.name}.insert.css('css', 'id')` : '')}`)
       }
+    },
+    script(script, id){
+      newDiv = document.createElement('div'), 
+      newScript = document.createElement('script');
+      newScript.id = id
+      newDiv.id ="scripts_inserted"
+      newScript.textContent = script
+
+      if(document.querySelector('#scripts_inserted')){
+        var scriptag = scripts_inserted.querySelector(`script#${id}`)
+        if(!scriptag || scriptag.textContent != script){
+          if(scriptag) scriptag.remove()
+          scripts_inserted.appendChild(newScript)
+        }
+      } else {
+        document.body.appendChild(newDiv)
+        scripts_inserted.appendChild(newScript)
+      }
     }
   }
 }

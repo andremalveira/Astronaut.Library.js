@@ -11,20 +11,20 @@ const docs = {
       //<div class=""></div>
       var pageContentHTML = `
 
-          <div class="page ${namePage}-body space">
+          <div class="navigation page ${namePage}-body space">
               <div class="bg-overlay p-h100">
                 <div class="p-container">
                   <section id="intro">
                     <div class="about grid-rows">
-                      <div>
+                      <div class="first-row">
                         <h1>Notify</h1>
                         <p>${langText.ntAbout}</p>
                         <div class="btns-container">
                           <div class="btn-download">
-                            <a href="/src/download/only/" class="btn-2" title="Notify Version ${V_NOTIFY.split('v')[1]}" >Download Notify ${V_NOTIFY}</a>
+                            <a href="/src/download/only/astronaut.notify.${V_NOTIFY}.zip" class="btn-2" title="Notify Version ${V_NOTIFY.split('v')[1]}" >Download Notify ${V_NOTIFY}</a>
                           </div>
                           <div class="btn-download">
-                            <a href="/src/download/complete/" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                          <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                           </div>
                         </div>
                       </div>
@@ -50,7 +50,7 @@ const docs = {
 
                     </div>
                     <div class="tab grid-rows">
-                      <div></div>
+                      <div class="first-row"></div>
                       <div class="install">
                         <h3>Opções:</h3>
                         <div class="${namePage}-table"></div>
@@ -58,10 +58,10 @@ const docs = {
                     </div>
                   </section>
 
-                  <div class="arrow-bottom-next-page"><a smooth href="#message"><div class="chevron"></div></a></div>
+                  <div class="arrow-bottom-next-page"><a smooth href=""><div class="chevron"></div></a></div>
                 </div>
               </div>
-              <div class="bg-color">
+              <div id="start_documentation" class="bg-color">
                 <div class="p-container-hauto">
                   <div class="column-1-center">
                     <section id="message">
@@ -305,9 +305,6 @@ const docs = {
 
       //CodeViewer
       astronaut.codeviewer({
-        style: {
-          width: '100%'
-        },
         options: {
           hyperlink: false,
           copy: true,
@@ -329,7 +326,7 @@ const docs = {
         ],
         style: {
           blur: '2rem',
-          border: false
+          fontSize: '0.9rem'
         }
       })
       astronaut.table({
@@ -340,6 +337,9 @@ const docs = {
           ['icon: -> attr:attr',	"String -> attr:obj",	"url -> attr:text",	`${langText.netLinkDescripOp2}`],
           ['target: -> attr:attr',	"String -> attr:obj",	"_blank -> attr:text",	`${langText.netLinkDescripOp3}`],
         ],
+        style: {
+          fontSize: '0.9rem'
+        }
       })
       astronaut.table({
         selector: `#new-page .${namePage}-table-style`,
@@ -359,10 +359,14 @@ const docs = {
           ['filter: -> attr:attr',	"String -> attr:obj",	"'none' -> attr:text fira",	`${langText.ntStyleDescripOp12}`],
           ['timeout: -> attr:attr',	"String -> attr:obj",	"'0.5s' -> attr:text fira",	`${langText.ntStyleDescripOp13}`],
         ],
+        style: {
+          fontSize: '0.9rem'
+        }
       })
       scrooll.smooth(selector.firstElementChild)
+      scrooll.onStart()
       hyperlink()
-
+      viewColor()
       //===================== FUNCTIONS ======================//
 
 
@@ -380,11 +384,6 @@ const docs = {
           arrow.firstElementChild.classList.remove('ret')
         }
       });
-
-      document.querySelectorAll('[viewcolor]').forEach(viewcolor => {
-        viewcolor.style.background=viewcolor.textContent
-        viewcolor.style.color='#000'
-      })
   },
   insert(params){
     var theme = (params.theme) ? params.theme : '', 
@@ -398,20 +397,20 @@ const docs = {
         //<div class=""></div>
         var pageContentHTML = `
   
-            <div class="page ${namePage}-body space">
+            <div class="navigation page ${namePage}-body space">
                 <div class="bg-overlay p-h100">
                   <div class="p-container">
                     <section id="intro">
                       <div class="about grid-rows">
-                        <div>
+                        <div class="first-row">
                           <h1>Insert</h1>
                           <p>${langText.insAbout}</p>
                           <div class="btns-container">
                             <div class="btn-download">
-                              <a href="/src/download/only/" class="btn-2" title="Insert Version ${V_INSERT.split('v')[1]}" >Download Insert ${V_INSERT}</a>
+                              <a href="/src/download/only/astronaut.insert.${V_INSERT}.zip" class="btn-2" title="Insert Version ${V_INSERT.split('v')[1]}" >Download Insert ${V_INSERT}</a>
                             </div>
                             <div class="btn-download">
-                              <a href="/src/download/complete/" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                            <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                             </div>
                           </div>
                         </div>
@@ -430,7 +429,7 @@ const docs = {
   
                       </div>
                       <div class="tab grid-rows">
-                        <div></div>
+                        <div class="first-row"></div>
                         <div class="install">
                           <h3>Opções:</h3>
                           <div class="${namePage}-table"></div>
@@ -438,19 +437,19 @@ const docs = {
                       </div>
                     </section>
   
-                    <div class="arrow-bottom-next-page"><a smooth href="#message"><div class="chevron"></div></a></div>
+                    <div class="arrow-bottom-next-page"><a smooth href=""><div class="chevron"></div></a></div>
                   </div>
                 </div>
-                <div class="bg-color">
+                <div id="start_documentation" class="bg-color">
                   <div class="p-container-hauto">
                     <div class="column-1-center">
                       <section id="css">
-                        <h2 hyperlink="css"> CSS:</h2>
+                        <h2 hyperlink="css"> Css:</h2>
                         <div tab>
                           <p>${langText.insCssDescrip}</p>
                           <div data-run="true" class="ast-codeviewer" data-lang="js" data-title="script.js">
                             astronaut.insert.css(\`
-
+                            
                               section#css {
                                 background: #000;
                                 box-shadow: 0px 0px 25px #00000090;
@@ -458,6 +457,21 @@ const docs = {
                               }
 
                             \`, 'inserted-style')
+                          </div>
+                        </div>                      
+                      </section>
+                    </div>
+                    <div class="column-1-center">
+                      <section id="script">
+                        <h2 hyperlink="script"> Script:</h2>
+                        <div tab>
+                          <p>${langText.insScriptDescrip}</p>
+                          <div data-run="true" class="ast-codeviewer" data-lang="js" data-title="script.js">
+                            astronaut.insert.script(\`
+
+                              alert('Script via insert.script inserted!')
+
+                            \`, 'inserted-script')
                           </div>
                         </div>                      
                       </section>
@@ -471,7 +485,7 @@ const docs = {
         //======================== CSS =======================//
         var css = `
           .${namePage}-body {
-            background: url(src/img/bg/4851071.jpg);
+            background: url(src/img/bg/44881471.jpg);
             background-size: cover;
           }
         `;
@@ -488,9 +502,6 @@ const docs = {
   
         //CodeView
         astronaut.codeviewer({
-          style: {
-            width: '100%'
-          },
           options: {
             hyperlink: false,
             copy: true,
@@ -503,16 +514,18 @@ const docs = {
           thead:['Func','Type',	'Params',	'Description'],
           tbody:[ 
             ['<a smooth attr href="#css">css</a>',	"Function -> attr:boolean",	"( 'css' ,  'id' ) -> attr:text",	`${langText.insCssDescrip}`],
+            ['<a smooth attr href="#script">script</a>',	"Function -> attr:boolean",	"( 'script' ,  'id' ) -> attr:text",	`${langText.insScriptDescrip}`],
           ],
           style: {
             blur: '2rem',
-            border: false
+            fontSize: '0.9rem'
           }
         })
 
         scrooll.smooth(selector.firstElementChild)
+        scrooll.onStart()
         hyperlink()
-  
+        viewColor()
         //===================== FUNCTIONS ======================//
   
         //===================== SCRIPTS ======================//
@@ -527,11 +540,6 @@ const docs = {
             arrow.firstElementChild.classList.remove('ret')
           }
         });
-  
-        document.querySelectorAll('[viewcolor]').forEach(viewcolor => {
-          viewcolor.style.background=viewcolor.textContent
-          viewcolor.style.color='#000'
-        })
   },
   codeviewer(params){
     var theme = (params.theme) ? params.theme : '', 
@@ -539,25 +547,25 @@ const docs = {
         selector = params.selector ?? false,
         head = document.head,
         style = document.createElement('style'),
-        namePage = 'CodeViewer';
+        namePage = 'codeviewer';
   
         //======================= HTML ========================// 
         //<div class=""></div>
         var pageContentHTML = `
-            <div class="page ${namePage}-body space">
+            <div class="navigation page ${namePage}-body space">
                 <div class="bg-overlay p-h100">
                   <div class="p-container">
                     <section id="intro">
                       <div class="about grid-rows">
-                        <div>
+                        <div class="first-row">
                           <h1>CodeViewer</h1>
                           <p>${langText.cdvwAbout}</p>
                           <div class="btns-container">
                             <div class="btn-download">
-                              <a href="/src/download/only/" class="btn-2" title="CodeViewer Version ${V_CODEVIEWER.split('v')[1]}" >Download CodeViewer ${V_CODEVIEWER}</a>
+                              <a href="/src/download/only/astronaut.codeviewer.${V_CODEVIEWER}.zip" class="btn-2" title="CodeViewer Version ${V_CODEVIEWER.split('v')[1]}" >Download CodeViewer ${V_CODEVIEWER}</a>
                             </div>
                             <div class="btn-download">
-                              <a href="/src/download/complete/" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                              <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
                             </div>
                           </div>
                         </div>
@@ -598,10 +606,10 @@ const docs = {
                       </div>
                     </section>
   
-                    <div class="arrow-bottom-next-page"><a smooth href="#message"><div class="chevron"></div></a></div>
+                    <div class="arrow-bottom-next-page"><a smooth href=""><div class="chevron"></div></a></div>
                   </div>
                 </div>
-                <div class="bg-color">
+                <div id="start_documentation" class="bg-color">
                   <div class="p-container-hauto">
                     <div class="column-1-center">
                       <section id="data-lang">
@@ -822,14 +830,14 @@ const docs = {
           ],
           style: {
             blur: '2rem',
-            border: false
+            fontSize: '0.9rem'
           }
         })
 
         //Options
         astronaut.table({
           selector: `#new-page .${namePage}-table`,
-          thead:['Func','Type',	'Params',	'Description'],
+          thead:['Option','Type',	'Value',	'Description'],
           tbody:[ 
             ['<a smooth attr href="#lineNumber">lineNumber:</a>',	"Boolean/Object -> attr:obj",	"<span boolean>true</span>/{object}",	`${langText.cdvwLineNumberDescrip}`],
             ['<a smooth attr href="#style">style:</a>',	"Object -> attr:obj",	"{object}",	`${langText.cdvwStyleDescrip}`],
@@ -837,11 +845,12 @@ const docs = {
           ],
           style: {
             blur: '2rem',
-            border: false
+            fontSize: '0.9rem'
           }
         })
 
         //lineNumber
+        var tableStyle = { fontSize: '0.9rem'}
         astronaut.table({
           selector: `#new-page .${namePage}-table-linenumber`,
           thead:['Option','Type',	'Default',	'Description'],
@@ -850,9 +859,7 @@ const docs = {
             ['separator -> attr:attr',	"Boolean -> attr:obj",	"true -> attr:boolean",	`Show or hide separator`],
             ['opacity -> attr:attr',	"Number -> attr:obj",	"1 -> attr:number",	`Apply opacity`],
           ],
-          style: {
-            border: false
-          }
+          style: tableStyle
         })
         //style
         astronaut.table({
@@ -871,9 +878,7 @@ const docs = {
             ['borderRadius: -> attr:attr',	"String -> attr:obj",	"0.6rem -> attr:text",	`${langText.cdvwStyleDescripOp10}`],
             ['theme: -> attr:attr',	"String -> attr:obj",	"copilot -> attr:text",	`${langText.cdvwStyleDescripOp11}`],
           ],
-          style: {
-            border: false
-          }
+          style: tableStyle
         })
         //buttons
         astronaut.table({
@@ -886,13 +891,12 @@ const docs = {
             ['color -> attr:attr',	"String -> attr:obj",	"<t viewcolor>#939da5</t>",	`${langText.cdvwButtonsDescripOp4}`],
             ['backgroundHover -> attr:attr',	"String -> attr:obj",	"<t viewcolor='#cfcfcf'>#adbac74a</t>",	`${langText.cdvwButtonsDescripOp5}`],
           ],
-          style: {
-            border: false
-          }
+          style: tableStyle
         })
         scrooll.smooth(selector.firstElementChild)
+        scrooll.onStart()
         hyperlink()
-  
+        viewColor()
         //===================== FUNCTIONS ======================//
   
         //===================== SCRIPTS ======================//
@@ -908,13 +912,283 @@ const docs = {
           }
         });
   
-        document.querySelectorAll('[viewcolor]').forEach(viewcolor => {
-          viewcolorValue = viewcolor.getAttribute('viewcolor')
 
-          viewcolor.style.background=viewcolor.textContent
-          viewcolor.style.color=(viewcolorValue != '') ? viewcolorValue : '#000'
+  },
+  table(params){
+    var theme = (params.theme) ? params.theme : '', 
+        langText = (params.lang) ? params.lang : '', 
+        selector = params.selector ?? false,
+        head = document.head,
+        style = document.createElement('style'),
+        namePage = 'table';
+  
+        //======================= HTML ========================// 
+        //<div class=""></div>
+        var pageContentHTML = `
+  
+            <div class="navigation page ${namePage}-body space">
+                <div class="bg-overlay p-h100">
+                  <div class="p-container">
+                    <section id="intro">
+                      <div class="about grid-rows">
+                        <div class="first-row">
+                          <h1>Table</h1>
+                          <p>${langText.tabAbout}</p>
+                          <div class="btns-container">
+                            <div class="btn-download">
+                              <a href="/src/download/only/astronaut.table.${V_INSERT}.zip" class="btn-2" title="Table Version ${V_INSERT.split('v')[1]}" >Download Table ${V_INSERT}</a>
+                            </div>
+                            <div class="btn-download">
+                            <a href="/src/download/complete/astronaut.library.${V_LIBRARY_COMPLETE}.zip" class="btn-2" title="Astronaut Library Full Version ${V_LIBRARY_COMPLETE.split('v')[1]}" >Download Library Complete ${V_LIBRARY_COMPLETE}</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="install">
+                          <h3>${langText.howto}:</h3>
+                          <div class="ast-codeviewer" data-blur="1.5rem" data-lang="html" data-title="index.html">
+                            <script src="src/js/astronaut.table.js"></script>
+                          </div>
+                          <div class="ast-codeviewer" data-run="true" data-blur="1.5rem" data-lang="js" data-title="script.js" data-copy="true">
+                            //${langText.astronautVariableWarn}
+
+                            astronaut.table({
+                              selector: '#tab_run',
+                              thead:['Name','Last Name'],
+                              tbody:[
+                                ['John','Doe'],
+                                ['Peter','Stanbridge'],
+                              ]
+                            })
+                          </div>
+  
+                        </div>
+  
+                      </div>
+                      <div class="tab grid-rows">
+                        <div class="first-row" id="tab_run"></div>
+                        <div class="install">
+                          <h3>Opções:</h3>
+                          <div class="${namePage}-table"></div>
+                        </div>
+                      </div>
+                    </section>
+  
+                    <div class="arrow-bottom-next-page"><a smooth href=""><div class="chevron"></div></a></div>
+                  </div>
+                </div>
+                <div id="start_documentation" class="bg-color">
+                  <div class="p-container-hauto">
+                    <div class="column-1-center">
+                      <section id="selector">
+                        <h2 hyperlink="selector"> Selector:</h2>
+                        <div tab>
+                          <p>${langText.tabSelectorDescrip}</p>
+                          <div class="ast-codeviewer" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tab_run'
+                            })
+                          </div>
+                          or
+                          <div class="ast-codeviewer" data-lang="js" data-title="script.js">
+                            var tabRun = document.querySelector('#tab_run')
+
+                            astronaut.table({
+                              selector: tabRun
+                            })
+                          </div>
+                        </div>                      
+                      </section>
+                    </div>
+                    <div class="column-1-center">
+                      <section id="thead">
+                        <h2 hyperlink="thead"> Thead:</h2>
+                        <div tab>
+                          <p>${langText.tabTheadDescrip}</p>
+                          <div class="ast-codeviewer" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tab_run',
+                              thead: ['id', 'Name']
+                            })
+                          </div>
+                        </div>                      
+                      </section>
+                    </div>
+                    <div class="column-1-center">
+                      <section id="tbody">
+                        <h2 hyperlink="tbody"> Tbody:</h2>
+                        <div tab>
+                          <p>${langText.tabTbodyDescrip}</p>
+                          <div class="ast-codeviewer" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tab_run',
+                              thead: ['id', 'Name'],
+                              tbody: [
+                                ['001', 'Jhon']
+                              ]
+                            })
+                          </div>
+                        </div>                      
+                      </section>
+                    </div>
+                    <div class="column-1-center">
+                      <section id="style">
+                        <h2 hyperlink="style"> Style:</h2>
+                        <div tab>
+                          <p>${langText.tabStyleDescrip}</p>
+                          <h3>Opções:</h3>
+                          <div class="${namePage}-table-style"></div>
+                        </div>                      
+                      </section>
+                      <section id="style_trowHover">
+                        <div tab>
+                          <p hyperlink="style_trowHover">Example: <t attr>trowHover:</t></p>
+                          <div class="ast-codeviewer" data-run="true" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tabTesttrowHover',
+                              thead: ['id', 'Name'],
+                              tbody: [
+                                ['001', 'Jhon'],
+                                ['002', 'Peter']
+                              ],
+                              style: {
+                                trowHover: '#eee 0.5s',
+                              }
+                            })
+                          </div>
+                          <div id="tabTesttrowHover"></div>
+                        </div>                      
+                      </section>
+                      <section id="style_borderInside">
+                        <div tab>
+                          <p hyperlink="style_borderInside">Example: <t attr>borderInside:</t></p>
+                          <div class="ast-codeviewer" data-run="true" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tabTestborderInside',
+                              thead: ['id', 'Name'],
+                              tbody: [
+                                ['001', 'Jhon'],
+                                ['002', 'Peter']
+                              ],
+                              style: {
+                                borderInside: '2px #eee',
+                              }
+                            })
+                          </div>
+                          <div id="tabTestborderInside"></div>
+                          <p color="warn"><t attr>borderInside:</t> ${langText.tabStyleBorderInsideWarn1}</p>
+                          <div class="ast-codeviewer" data-run="true" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tabTestborderInsidexy',
+                              thead: ['id', 'Name'],
+                              tbody: [
+                                ['001', 'Jhon'],
+                                ['002', 'Peter']
+                              ],
+                              style: {
+                                borderInside: '2px #eee true false'
+                              }
+                            })
+                          </div>
+                          <p color="warn">${langText.tabStyleBorderInsideWarn2}</p>
+                          <div id="tabTestborderInsidexy"></div>
+                        </div>                      
+                      </section>
+                      <section id="style_borderOutside">
+                        <div tab>
+                          <p hyperlink="style_borderOutside">Example: <t attr>borderOutside:</t></p>
+                          <div class="ast-codeviewer" data-run="true" data-lang="js" data-title="script.js">
+                            astronaut.table({
+                              selector: '#tabTestborderOutside',
+                              thead: ['id', 'Name'],
+                              tbody: [
+                                ['001', 'Jhon'],
+                                ['002', 'Peter']
+                              ],
+                              style: {
+                                borderOutside: '2px #eee',
+                              }
+                            })
+                          </div>
+                          <div id="tabTestborderOutside"></div>
+                        </div>                      
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        `;
+  
+        //======================== CSS =======================//
+        var css = `
+          .${namePage}-body {
+            background: url(src/img/bg/4111471.jpg);
+            background-size: cover;
+          }
+        `;
+  
+        //=============== INITIAL EXECUTABLES ===============//
+        style.id=`page-${namePage}-css`
+        style.textContent = css;
+        if(!head.get(`style#${namePage}-css`)){
+          head.appendChild(style) //INSERT CSS
+        }
+        titleTab.change(namePage)
+        selector.innerHTML=pageContentHTML //INSERT HTML
+        var sHeight = selector.offsetHeight
+  
+        //CodeView
+        astronaut.codeviewer({
+          options: {
+            hyperlink: false,
+            copy: true,
+          },
         })
-  }
+  
+        //Table
+        astronaut.table({
+          selector: `#new-page .${namePage}-table`,
+          thead:['Option','Type',	'Value',	'Description'],
+          tbody:[ 
+            ['<a smooth attr href="#selector">selector</a>',	"String/HTMLElement -> attr:obj",	"\'#id\' -> attr:text",	`${langText.tabSelectorDescrip}`],
+            ['<a smooth attr href="#thead">thead</a>',	"Array -> attr:obj",	"[' ', ' ']",	`${langText.tabTheadDescrip}`],
+            ['<a smooth attr href="#tbody">tbody</a>',	"Array -> attr:obj",	"[' ', ' ']",	`${langText.tabTbodyDescrip}`],
+            ['<a smooth attr href="#style">style</a>',	"Object -> attr:obj",	"{object}",	`${langText.tabStyleDescrip}`],
+          ],
+          style: {
+            blur: '2rem',
+            borderInside: false,
+            fontSize: '0.9rem'
+          }
+        })
+
+        astronaut.table({
+          selector: `#new-page .${namePage}-table-style`,
+          thead:['Option -> width:10rem','Type',	'Default  -> width:8rem', 'Description'],
+          tbody:[ 
+            ['fontSize -> attr:attr',	"String -> attr:obj",	"auto -> attr:text",	`${langText.tabStyleDescripOp1}`],
+            ['theadColor -> attr:attr',	"String -> attr:obj",	"<t viewcolor>#939da5</t>",	`${langText.tabStyleDescripOp2}`],
+            ['tbodyColor -> attr:attr',	"String -> attr:obj",	"<t viewcolor>#939da5</t>",	`${langText.tabStyleDescripOp3}`],
+            ['theadBackground -> attr:attr',	"String -> attr:obj",	"<t viewcolor='#cfcfcf'>#1a202363</t>",	`${langText.tabStyleDescripOp4}`],
+            ['tbodyBackground -> attr:attr',	"String -> attr:obj",	"<t viewcolor='#cfcfcf'>#232A2F</t>",	`${langText.tabStyleDescripOp5}`],
+            ['borderRadius -> attr:attr',	"String -> attr:obj",	"0.6rem -> attr:text",	`${langText.tabStyleDescripOp6}`],
+            ['blur -> attr:attr',	"String -> attr:obj",	"not defined!",	`${langText.tabStyleDescripOp7}`],
+            ['trowHover -> attr:attr',	"String -> attr:obj",	"not defined!",	`${langText.tabStyleDescripOp8}`],
+            ['<a smooth attr href="#style_borderInside">borderInside</a>',	"String -> attr:obj",	"not defined!",	`${langText.tabStyleDescripOp9}`],
+            ['<a smooth attr href="#style_borderOutside">borderOutside</a>',	"String -> attr:obj",	"not defined!",	`${langText.tabStyleDescripOp10}`],            
+            ['boxShadow -> attr:attr',	"String -> attr:obj",	"not defined!",	`${langText.tabStyleDescripOp11}`],
+          ],
+          style: {
+           fontSize: '0.9rem'
+          }
+        })
+
+        scrooll.smooth(selector.firstElementChild)
+        scrooll.onStart()
+        hyperlink()
+        viewColor()
+
+  },
 
 }
 

@@ -208,6 +208,20 @@
           }
         })
       })
+    },
+    onStart(){
+      var arrow = document.querySelector('.arrow-bottom-next-page'),
+        page = document.querySelector('#new-page .page');
+        var start = document.querySelector('#start_documentation section'),
+        a = arrow.firstElementChild;
+        a.href = '#'+start.id
+        document.querySelector('#new-page .page').addEventListener("scroll", function (event) {
+          if(page.scrollTop + 200 >= arrow.offsetTop){
+            arrow.firstElementChild.classList.add('ret')
+          } else {
+            arrow.firstElementChild.classList.remove('ret')
+          }
+        });
     }
   }
 
@@ -236,3 +250,10 @@
     })
   }
   
+  const viewColor = () => {
+    document.querySelectorAll('[viewcolor]').forEach(viewcolor => {
+      viewcolorValue = viewcolor.getAttribute('viewcolor')
+      viewcolor.style.background=viewcolor.textContent
+      viewcolor.style.color=(viewcolorValue != '') ? viewcolorValue : '#000'
+    })
+  }

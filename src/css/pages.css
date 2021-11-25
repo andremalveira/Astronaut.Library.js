@@ -102,6 +102,9 @@
   grid-template-rows: max-content auto;
   padding: 0 0.5rem;
 }
+#new-page .page section .grid-rows .first-row  {
+  min-height: 12rem;
+}
 #new-page .page :is(h1, h2, h3) {
   font-weight: normal;
 }

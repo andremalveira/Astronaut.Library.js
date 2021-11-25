@@ -901,6 +901,7 @@ window.addEventListener('load', () => {
       }
       const newPage = (params) => {
         var id = params.id ?? false, selector = params.selector ?? false, 
+            resetHash = (params.resetHash === true) ? params.resetHash : false,
             changeUrl = params.changeUrl ?? true,
             ok = true, newPageCheck = false, 
             plistItems = params.listItems ?? false, 
@@ -955,7 +956,7 @@ window.addEventListener('load', () => {
 
 
             if(changeUrl){
-              routes.change(nameParam, id)
+              routes.change(nameParam, id, resetHash)
             } else {
               routes.clear()
             }
@@ -985,7 +986,6 @@ window.addEventListener('load', () => {
             _HOME()
           }
           this.popstate()
-
         },
         popstate() {
           window.addEventListener('popstate', (event) => {
@@ -994,16 +994,17 @@ window.addEventListener('load', () => {
           });
         },
         hash(params){
-          var scrollTo = (params && params.scrollTo == false) ? params.scrollTo : true;
+          var scrollTo = (params && params.scrollTo == false) ? params.scrollTo : true,
+          resetHash = (params && params.resetHash ) ? params.resetHash : false
 
-          if(location.hash.length > 0) {
+          if(location.hash.length > 0 && !resetHash) {
             var hash = location.hash, hashSelector = document.querySelector(`${hash}`);
 
             if(hashSelector){
             
               if(scrollTo){
                 setTimeout(() => {
-                  var hashTo = hashSelector.offsetTop, hashParent = hashSelector.offsetParent;
+                  var hashTo = hashSelector.offsetTop, hashParent = hashSelector.closest('.navigation');
                   hashParent.scroll( 0, hashTo );
                 }, 300);
               }
@@ -1013,9 +1014,8 @@ window.addEventListener('load', () => {
             }
           }
         },
-        change(name, value) {
-
-          if(this.hash()) {
+        change(name, value, resetHash) {
+          if(this.hash({resetHash})) {
               value += location.hash
           }
           window.history.pushState(null, null, `?${name}=` + value);
@@ -1097,7 +1097,7 @@ window.addEventListener('load', () => {
       menuDocs.forEach(a => {
         a.addEventListener('click', e => {
           e.preventDefault()
-          newPage({listItems, id:a.dataset.id, selector: preview, varParam:docs, nameParam:'docs'})
+          newPage({listItems, id:a.dataset.id, selector: preview, varParam:docs, nameParam:'docs', resetHash: true})
         })
       })
       menuLibrary.forEach(a => {

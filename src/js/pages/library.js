@@ -143,6 +143,9 @@
             .${namePage}-container [tab] {
               margin-left: 1rem;
             }   
+            .${namePage}-container [tab] p {
+              margin: 0.3rem 0;
+            }  
             .${namePage}-container [break] {
               height: 1px;
               background: var(--bg-primary);
@@ -153,7 +156,6 @@
             }  
             .${namePage}-container h3 {
               font-weight: normal;
-              color: var(--link-primary);
             } 
             
           `;

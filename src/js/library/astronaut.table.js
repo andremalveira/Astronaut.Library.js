@@ -3,20 +3,8 @@
 // License: MIT                                                              //
 // Author: André Malveira.                                                   //
 // Github: https://github.com/andremalveira                                  //
-// Docs:   https://astlibjs.ga/?docs=notify                                  //
+// Docs:   https://astlibjs.ga/?docs=table                                   //
 //---------------------------------------------------------------------------//
-
-/*
-
-  astronaut.table({
-    selector: selector.querySelector(`.${namePage}-table`),
-    thead:['Option','Type',	'Values',	'Default',	'Description'],
-    tbody:[ 
-      ['message -> attr:attr',	"'string' -> attr:text",	'You Text',	'Empty',	'Mensagem que deseja mostrar']
-    ]
-  })
-*/
-
 
 let table = {
   name: 'astronaut',
@@ -49,20 +37,33 @@ let table = {
         tbody     = (params.tbody)      ? params.tbody      : false,
         s         = (params.style)      ? params.style      : false,
 
-        fontColor     = (s && s.fontColor)      ? s.fontColor     : false,
-        theadColor    = (s && s.theadColor)     ? s.theadColor    : false,
-        tbodyColor    = (s && s.tbodyColor)     ? s.tbodyColor    : false,
-        blur          = (s && s.blur)           ? s.blur          : false,
-        border        = (s && s.border == false)? s.border        : true,
-        borderRight   = (s && s.borderRight == false) ? s.borderRight        : true,
-        borderBottom  = (s && s.borderBottom == false)? s.borderBottom       : true,
-        blur          = (s && s.blur)           ? s.blur          : false,
-        borderColor   = (s && s.borderColor && border) ? `style="
-        ${(borderRight) ? `border-right: solid 1px ${s.borderColor};` : ''} 
-        ${(borderBottom) ? `border-bottom: solid 1px ${s.borderColor};` : ''}"` : '',
-        borderNone = (!border) ? 'style="border:none;"' : '',
-        theadHTML = '', 
-        tbodyHTML = '' ;
+        fontSize      = (s && s.fontSize)             ? s.fontSize           : false,
+        theadColor    = (s && s.theadColor)           ? s.theadColor         : false,
+        tbodyColor    = (s && s.tbodyColor)           ? s.tbodyColor         : false,
+        theadBg       = (s && s.theadBackground)      ? s.theadBackground    : false,
+        tbodyBg       = (s && s.tbodyBackground)      ? s.tbodyBackground    : false,
+        blur          = (s && s.blur)                 ? s.blur               : false,
+        borderInside  = (s && s.borderInside)         ? s.borderInside       : false,
+        borderOutside = (s && s.borderOutside)        ? s.borderOutside      : false,
+        borderRadius  = (s && s.borderRadius)         ? s.borderRadius       : false,
+        boxShadow     = (s && s.boxShadow)            ? s.boxShadow          : false,
+        trowHover     = (s && s.trowHover)            ? s.trowHover          : false,
+        theadHTML     = '', tbodyHTML = '',
+        borderInSize    = '1px',borderInX = true, borderInY = true, borderInColor = '#1f262b';
+
+      if(borderInside){
+       var borderray = s.borderInside.split(' ');
+           borderInSize = (borderray[0] && borderray[0] != 'default') ? borderray[0] : borderInSize;
+           borderInColor = (borderray[1] && borderray[1] != 'default') ? borderray[1] : borderInColor;
+           borderInX = (borderray[2] && borderray[2] === 'false' && borderray[2] != 'true') ? false : borderInX
+           borderInY = (borderray[3] && borderray[3] === 'false' && borderray[3] != 'true') ? false : borderInY
+      }
+      if(borderOutside){
+        var borderOutrray = s.borderOutside.split(' '),
+            borderOutSize = (borderOutrray[0]) ? borderOutrray[0] : '',
+            borderOutColor = (borderOutrray[1]) ? borderOutrray[1] : 'currentColor';
+       }
+
 
     this.insert.css(`
 /*Astronaut Library.js - Table*/
@@ -70,7 +71,6 @@ let table = {
   margin: 0.5rem 0;
   overflow: hidden;
   border-radius: 0.6rem;
-  font-size: 0.9rem;
   color: #939da5;
 }
 .ast-table table {
@@ -86,15 +86,28 @@ let table = {
   padding: 0.4rem 0.8rem;
   height: 1.5rem;
   font-weight: normal;
-  ${(border && borderRight) ? 'border-right: solid 1px #1f262b;' : ''}
-  ${(border && borderBottom) ? 'border-bottom: solid 1px #1f262b;' : ''}
 }
 .ast-table :is(th, td):last-child {
   border-right: none!important;
 }
-.ast-table tr:last-child :is(th, td) {
+.ast-table tr:last-child :is(td) {
   border-bottom: none!important;
 }
+.ast-table :is(td) a {
+  position: relative;
+  color: #539bf5;
+}
+.ast-table :is(td) a:hover {
+  text-decoration: underline;
+}
+.ast-table :is(td) a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .ast-table tr {
   height: 2rem;
 }
@@ -125,12 +138,20 @@ let table = {
       var thead = (params.thead) ? params.thead : false,
           tbody = (params.tbody) ? params.tbody : false;
       return `
-        <div class="ast-table" style="${(fontColor) ? `color:${fontColor};` : ''} ${(blur) ? `backdrop-filter:blur(${blur});` : ''}" >
+        <div class="ast-table" 
+        ${(borderRadius || blur || borderOutside || fontSize || boxShadow) ? `style="
+        ${(blur) ? `backdrop-filter:blur(${blur});` : ''} 
+        ${(borderOutside) ? `border: solid ${borderOutSize} ${borderOutColor};`: ''}
+        ${(borderRadius) ? `border-radius: ${borderRadius};` : ''}
+        ${(fontSize) ? `font-size: ${fontSize};` : ''}
+        ${(boxShadow) ? `box-shadow: ${boxShadow};` : ''}
+        "`: ''}
+        >
           <table ${(blur) ? `style="background:#232a2f73;"` : ''}>
-            <thead ${(theadColor) ? `style="background:${theadColor};"` : ''}>
+            <thead ${(theadBg || theadColor) ? `style="${(theadBg) ? `background:${theadBg};` : ''} ${(theadColor) ? `color:${theadColor}` : ''} "` : ''}>
               ${thead}
             </thead>
-            <tbody ${(tbodyColor) ? `style="background:${tbodyColor};"` : ''}>
+            <tbody ${(tbodyBg || tbodyColor) ? `style="${(tbodyBg) ? `background:${tbodyBg};` : ''} ${(tbodyColor) ? `color:${tbodyColor}` : ''} "` : ''}>
               ${tbody}
             </tbody>
           </table>
@@ -164,11 +185,18 @@ let table = {
         th = th.split('->')[0].trim()
 
       }
-      theadHTML += `<th ${borderColor} ${borderNone} ${prop} >${th}</th>\n`
+      theadHTML += `<th 
+      ${
+        (borderInside) ? `style="
+        ${(borderInX) ? `border-bottom: solid ${borderInSize} ${borderInColor};` : ''} 
+        ${(borderInY) ? `border-right: solid ${borderInSize} ${borderInColor};` : ''}"` : ''
+      }
+      ${prop} >${th}</th>\n`
     });
 
     tbody.forEach(tr => {
       var tdHTML = '';
+
       tr.forEach(td => {
         var prop = '';
 
@@ -196,7 +224,13 @@ let table = {
 
         }
 
-        tdHTML += `<td ${borderColor} ${borderNone} ${prop}>${td}</td>\n`
+        tdHTML += `<td
+        ${
+          (borderInside) ? `style="
+          ${(borderInX) ? `border-bottom: solid ${borderInSize} ${borderInColor};` : ''} 
+          ${(borderInY) ? `border-right: solid ${borderInSize} ${borderInColor};` : ''}"` : ''
+        }
+        ${prop}>${td}</td>\n`
       });
       tbodyHTML += `<tr>\n${tdHTML}</tr>\n`
     });
@@ -209,8 +243,24 @@ let table = {
     
     if(selector){
       if(selector.constructor.name == 'String') {selector = document.querySelector(selector)}
-               
       selector.innerHTML = newTable;
+    } else {console.error('Astronaut.table(), selector: not defined!')}
+    
+    if(trowHover){
+      var trowHoverArray = trowHover.split(' '),
+          trowHoverColor = trowHoverArray[0],
+          trowHoverTime = trowHoverArray[1];
+
+      selector.querySelectorAll('.ast-table table tbody tr').forEach(e => {
+        e.addEventListener('mouseover', () => {
+          e.style.transition=`ease ${(trowHoverTime) ? trowHoverTime : '0.2s'}`
+          e.style.background=`${(trowHoverColor) ? trowHoverColor : ''}`
+        })
+        e.addEventListener('mouseout', () => {
+          e.style.transition=``
+          e.style.background=``
+        })
+      })
     }
   }
 }
