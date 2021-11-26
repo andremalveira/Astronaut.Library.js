@@ -1,5 +1,5 @@
 function messageStartedInConsole(){console.log("%c 👨🏿‍🚀 Astronaut - Custom Localhost Started! 👨🏿‍🚀"," color: #adbac7; \n      background-size: contain;\n      background-position: right; \n      padding: 0.3rem 1.8rem 0.3rem 0.3rem;\n      font-size:1rem;\n    ")}
-var isAstExt = storageLocal.get('isAstExt') ;
+var isAstExt = storageLocal.get()[isAstExt]
 isAstExt = (isAstExt == undefined || isAstExt == true) 
 ? true  : false
 
@@ -18,7 +18,7 @@ if(!DOCUMENT_MAIN){
   })
   
 }
-
+if(DOCUMENT_MAIN) if(storageLocal.get('isAstExt') === undefined) storageLocal.set('isAstExt', true)
 
 window.addEventListener('load', () => {
   if(isAstExt) enableRefreshWindows()

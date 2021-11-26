@@ -29,6 +29,10 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
+  height: 100vh;
+}
+[astronaut][notsupport] body[main]::before{
+  background: none;
 }
 [astronaut] body[main]::before {
   content: '';

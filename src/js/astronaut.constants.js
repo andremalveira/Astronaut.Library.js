@@ -449,6 +449,7 @@
   animation: background 0.5s;
   background: var(--bg-primary) ${(url)? `url(${url})` : ''} no-repeat center;
   background-size: cover; 
+  z-index: -1;
   ${(blurValue) ? `filter:blur(${blurValue}px);` : ''}
 }
 @keyframes background {

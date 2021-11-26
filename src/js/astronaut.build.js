@@ -73,9 +73,10 @@ const ASTRONAUT_LOCALHOST = {
         layoutMode.appearanceMoblie('add', layout.get(`.preview-mobile`))
 
       },
-      for(modevalue, isLMFS) {
-        var isLMFS = (isLMFS === false) ? isLMFS : true;
-        (layout.attributes['layout'].value == `${modevalue}`) ? null : layoutMode[modevalue](modevalue)
+      for(modevalue, isLMFS, resize) {
+        var isLMFS = (isLMFS === false) ? isLMFS : true,resize = (resize === true) ? resize : false;
+
+        (resize && layout.attributes['layout'].value == `${modevalue}`) ? null : layoutMode[modevalue](modevalue)
         layoutMode.iconLayout(modevalue)
         if(isLMFS) storageLocal.set('layoutModeFullScreen', modevalue)
         storageLocal.update()
@@ -121,37 +122,38 @@ const ASTRONAUT_LOCALHOST = {
       },
       check() {
         chrome.storage.local.get('layoutMode', (result) => {
-          if (result.layoutMode != undefined) {
-            if (result.layoutMode != 'desktop') {
+          if (result.layoutMode != undefined || result.layoutMode != 'desktop') {
               layoutMode.for((result.layoutMode))
-            }
           }
         });
-        function checkMinimunResolution() {
+        function checkMinimunResolution(p) {
+          resize = (p.resize === false) ? p.resize : true;
           const warnR = {
             open() {
+              document.documentElement.setAttribute('notsupport','')
               document.querySelector('.container').style.display='none'
               if(document.querySelector('#warnResolution')) warnResolution.remove()
               document.body.insertAdjacentHTML('beforeend', '<div id="warnResolution"><h1>Resolution no Suported!</h1><h2>Minimum resolution 490x825 </h2></div>')
             },
             close() {
+              document.documentElement.removeAttribute('notsupport')
               document.querySelector('.container').style.display=''
               if(document.querySelector('#warnResolution')) warnResolution.remove()
             }
           }
           if(window.innerWidth < 1280 && window.innerWidth > 980 || window.innerHeight < 825){
-            layoutMode.for('desktop', false)
+            layoutMode.for('desktop', false, resize)
           } else if(window.innerWidth < 980 || window.innerHeight < 825){
-            layoutMode.for('mobile', false)
-            if(window.innerWidth < 760) listProjects.close()
+            layoutMode.for('mobile', false, resize)
+            if(window.innerWidth < 760) if(listItems) listProjects.close()
             if(window.innerWidth < 490) warnR.open() 
             else warnR.close()
           } else {
-            layoutMode.for(storageLocal.get('layoutModeFullScreen'), false)
+            if(storageLocal.get('layoutModeFullScreen')) layoutMode.for(storageLocal.get('layoutModeFullScreen'), false, resize)
             warnR.close()
           }
         }
-        checkMinimunResolution()
+    
         window.addEventListener('resize', () => {
           //1280x825 
           var heightBody = content.offsetHeight;
@@ -160,7 +162,8 @@ const ASTRONAUT_LOCALHOST = {
             GET_ALL('#layout:not([layout="desktop"]) [window]:not([model])').forEach(window => {
               window.style.height = heightBody + 'rem'
             })  
-            checkMinimunResolution()
+            checkMinimunResolution({resize:true})
+
         })
       }
     }
