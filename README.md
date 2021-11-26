@@ -56,8 +56,9 @@ The extension would just change the default parsing of localhost, but as the pro
 - Useful Color Palettes.
 - Font Typography.
 
-``` 
-⚠ Warning: The extension is not yet available in browser stores, so the way to use it at the moment is to download the .zip, extract and load the extension in developer mode.
+``` html
+⚠ Warning: The extension is not yet available in browser stores, so the way to use it at the moment 
+is to download the .zip, extract and load the extension in developer mode.
 
 ✔ Browser -> Extension -> Enable Developer mode -> Load without compression and select Extension folder 
 ```
