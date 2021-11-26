@@ -40,7 +40,11 @@ Resources to websites or applications that use javascript.
 <p align="center">
   <a href="#extension-preview"><img src="https://gist.github.com/andremalveira/02747c5b01eddab19a11f6513d0418ef/raw/89f20aac7ef6e64649b7c78625fb092999640fd7/extension-preview.png" alt="Astronaut Library.js"/></a>
 </p>
-
+<p align="center">
+<a href="#details">
+<img src="https://img.shields.io/badge/Version-v1.0.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Extension-319046" alt="Branche Extension"/></a>&nbsp;&nbsp;</a><a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.0.zip" target="_blank"><img src="https://img.shields.io/badge/Download%20Zip-319046" alt="Release"/></a>
+</p>
+<br>
 ## Localhost in a different way for your development environment!
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
@@ -56,17 +60,13 @@ The extension would just change the default parsing of localhost, but as the pro
 - Useful Color Palettes.
 - Font Typography.
 
-``` diff
-!⚠ Warning: The extension is not yet available in browser stores, so the way to use it at the moment 
-!is to download the .zip, extract and load the extension in developer mode.
+``` 
+⚠ Warning: The extension is not yet available in browser stores, so the way
+to use it at the moment is to download the .zip, extract and load the extension in developer mode.
 
-!✔ Browser -> Extension -> Enable Developer mode -> Load without compression and select Extension folder 
+✔ Browser -> Extension -> Enable Developer mode -> Load without compression and select Extension folder 
 ```
 
-## Version/Branche/Download
-<a href="#version">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
-<a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
-<a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.0.zip" target="_blank"><img src="https://img.shields.io/badge/Download%20Zip-319046?&logo=docuSign&logoColor=FFFFFF"/></a>
 ## Browsers Compatibility
 <a href="#browsers-compatibility">
 
