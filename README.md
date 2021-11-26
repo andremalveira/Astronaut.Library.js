@@ -45,6 +45,7 @@ Resources to websites or applications that use javascript.
 <img src="https://img.shields.io/badge/Version-v1.0.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Extension-319046" alt="Branche Extension"/></a>&nbsp;&nbsp;</a><a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.0.zip" target="_blank"><img src="https://img.shields.io/badge/Download%20Zip-319046" alt="Release"/></a>
 </p>
 <br>
+
 ## Localhost in a different way for your development environment!
 
 Developed entirely in Pure Javascript, the library was primarily created as a browser extension to customize the default "localhost" environment of Apache, Wamp and Xampp servers.
@@ -60,13 +61,13 @@ The extension would just change the default parsing of localhost, but as the pro
 - Useful Color Palettes.
 - Font Typography.
 
+<br>
 ``` 
 ⚠ Warning: The extension is not yet available in browser stores, so the way
 to use it at the moment is to download the .zip, extract and load the extension in developer mode.
 
 ✔ Browser -> Extension -> Enable Developer mode -> Load without compression and select Extension folder 
 ```
-
 ## Browsers Compatibility
 <a href="#browsers-compatibility">
 
