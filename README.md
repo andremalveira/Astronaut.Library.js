@@ -56,6 +56,12 @@ The extension would just change the default parsing of localhost, but as the pro
 - Useful Color Palettes.
 - Font Typography.
 
+``` 
+⚠ Warning: The extension is not yet available in browser stores, so the way to use it at the moment is to download the .zip, extract and load the extension in developer mode.
+
+✔ Browser -> Extension -> Enable Developer mode -> Load without compression and select Extension folder 
+```
+
 ## Version/Branche/Download
 <a href="#version">![Version](https://img.shields.io/badge/Version-v1.0-319046)</a>&nbsp;&nbsp; 
 <a href="https://github.com/andremalveira/Astronaut.Library.js/tree/extension">![Branche](https://img.shields.io/badge/Branche-Extension-319046)</a>&nbsp;&nbsp; 
