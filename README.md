@@ -60,6 +60,7 @@ The extension would just change the default parsing of localhost, but as the pro
 - Access database without leaving localhost, configuration is required to access phpmyadmin.
 - Useful Color Palettes.
 - Font Typography.
+<br>
 
 ``` 
 ⚠ Warning: The extension is not yet available in browser stores, so the way
