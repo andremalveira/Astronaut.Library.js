@@ -42,7 +42,7 @@ Resources to websites or applications that use javascript.
 </p>
 <p align="center">
 <a href="#details">
-<img src="https://img.shields.io/badge/Version-v1.0.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Extension-319046" alt="Branche Extension"/></a>&nbsp;&nbsp;</a><a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.0.zip" target="_blank"><img src="https://img.shields.io/badge/Download%20Zip-319046" alt="Release"/></a>
+<img src="https://img.shields.io/badge/Version-v1.0.0-319046?" alt="Version"/>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Branche-Extension-319046" alt="Branche Extension"/></a>&nbsp;&nbsp;</a><a href="https://github.com/andremalveira/Astronaut.Library.js/archive/refs/tags/Ast.E_v1.0.1.zip" target="_blank"><img src="https://img.shields.io/badge/Download%20Zip-319046" alt="Release"/></a>
 </p>
 <br>
 
