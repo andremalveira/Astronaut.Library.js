@@ -59,7 +59,7 @@ const liveReload = {
                 }
     
                 socket = new WebSocket(address);
-            
+          
                 socket.onerror = function (event) {
                     astronaut.notify({
                         message: `${langText.liveServerFailed} -> ${langText.accessConsole}`,
@@ -84,8 +84,8 @@ const liveReload = {
                 socket.onmessage = (msg) => {
                     reloadWindow(msg, data)
                 };
-    
-    
+          
+       
             }
     
             function reloadWindow(msg, data) {
@@ -102,20 +102,20 @@ const liveReload = {
             function logMsgForASingleTime() {
                 const key = 'oneTimeLog-live-server-web-extesion';
                 if (!sessionStorage.getItem(key)) {
-                  /*   konsole.success(`${langText.liveServerEnabled}`); */
+                    if(viewMessage){
+                        viewMessage = false
+                        astronaut.notify({
+                            message: `${langText.liveServerEnabled}`,
+                            icon: icons.broadcast,
+                            style: ASTRONAUT_NOTIFY_SETTINGS_DEFAULT,
+                            autoClose: 3000
+                        })
+                        liveServer.isEnabled.check()
+        
+                    }
                     sessionStorage.setItem(key, 1);
                 }
-                if(viewMessage){
-                    viewMessage = false
-                    astronaut.notify({
-                        message: `${langText.liveServerEnabled}`,
-                        icon: icons.broadcast,
-                        style: ASTRONAUT_NOTIFY_SETTINGS_DEFAULT,
-                        autoClose: 3000
-                    })
-                    liveServer.isEnabled.check()
-    
-                }
+               
 
             }
     

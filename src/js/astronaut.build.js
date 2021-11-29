@@ -506,7 +506,7 @@ const ASTRONAUT_LOCALHOST = {
           btnliveserver.get('.icon-liveServer').addEventListener('click', e => {
             var parentLayout = btnliveserver.closest('#layout'), iconLiveServer = btnliveserver.get('.icon-liveServer')
             iframehref = parentLayout.get('[window] iframe').contentWindow.location.href,
-              liveServerIndex = `${popupLiveServerHTML({ url: iframehref, langText: langText, storageLocal: storageLocal.get() })}`,
+              liveServerIndex = `${popupLiveServerHTML({ url: iframehref, langText: langText, storageLocal: storageLocal.noShared.get() })}`,
               popupHTML = contextMenu(liveServerIndex)
 
             btnliveserver.insertAdjacentHTML('beforeend', popupHTML)
@@ -516,7 +516,7 @@ const ASTRONAUT_LOCALHOST = {
             let liveServerAddress = btnliveserver.get('#liveServer');
             let submitBtn = btnliveserver.get('#submitBtn');
 
-            var sl = storageLocal.get()
+            var sl = storageLocal.noShared.get()
             var slls = (sl && sl.liveServer) ? sl.liveServer : false;
 
             liveReloadCheck.checked = (slls) ? slls.isEnable : false;
@@ -531,7 +531,7 @@ const ASTRONAUT_LOCALHOST = {
                 actualUrl: actualServerAddress.value || '',
                 liveServerUrl: liveServerAddress.value || ''
               }
-              storageLocal.set('liveServer', formData)
+              storageLocal.noShared.set('liveServer', formData)
               chrome.runtime.sendMessage({
                 req: 'set-live-server-config',
                 data: formData
@@ -736,7 +736,8 @@ const ASTRONAUT_LOCALHOST = {
       }
     }
     const windowUrl = {
-      open(url, elem, focus) {
+      open(url, elem, focus, isLiveServer) {
+        var isLiveServer = (isLiveServer === false) ? false : true
         var host = (url == location.host) ? location.protocol + '//' + location.host + '/' : false
         url = (url == undefined) ? '' : (url == location.host) ? host : url
 
@@ -796,16 +797,18 @@ const ASTRONAUT_LOCALHOST = {
         if(SERVER_APACHE){
           storageLocal.noShared.set('lastWindowUrl', url)
         }
-      
-        if (storageLocal.get('liveServer')) {
-          var SLliveServer = storageLocal.get('liveServer')
-          if(SLliveServer && SLliveServer.isEnable && SLliveServer.liveServerUrl != ''){
-            SLliveServer.actualUrl = url
-            storageLocal.set('liveServer', SLliveServer)
-            liveReload.apache(SLliveServer, 'windowUrl')
+        if(isLiveServer) {
+          if (storageLocal.get('liveServer')) {
+            var SLliveServer = storageLocal.get('liveServer')
+            if(SLliveServer && SLliveServer.isEnable && SLliveServer.liveServerUrl != ''){
+              SLliveServer.actualUrl = url
+              storageLocal.set('liveServer', SLliveServer)
+              liveReload.apache(SLliveServer, 'windowUrl')
+            }
+  
           }
-
         }
+    
         //active item-list
         if(listItems){
           if (listItems.get('.item.active')) { listItems.get('.item.active').classList.remove('active') }
@@ -850,7 +853,7 @@ const ASTRONAUT_LOCALHOST = {
             if (e.keyCode == 13) {
               e.preventDefault()
               var focus = true
-              windowUrl.open(barSearchURL.value, layout, focus)
+              windowUrl.open(barSearchURL.value, layout, focus, false)
             }
           })
           barSearchURL.addEventListener('focus', e => {
