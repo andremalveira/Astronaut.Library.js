@@ -1,6 +1,6 @@
 {
   "manifest_version":3,
-  "version":"1.0.0",
+  "version":"1.0.1",
   "name": "Astronaut Extension - Custom Localhost",
   "description":"Localhost in a different way for your development environment!",
   "author":"github.com/andremalveira",
