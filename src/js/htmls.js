@@ -9,7 +9,7 @@ const htmls = {
   </div>
     <img 
       style="width: 100%; margin: auto 0; " 
-      src="https://andremalveira.github.io/astronaut/src/img/gif-information-palettecolor.gif"
+      src="${DOMINIO_MAIN}/src/img/gif-information-palettecolor.gif"
     >
   `,
   typography:`
@@ -20,7 +20,7 @@ const htmls = {
   </div>
     <img 
       style="width: 100%; margin: auto 0; " 
-      src="https://andremalveira.github.io/astronaut/src/img/gif-information-typegraphy.gif"
+      src="${DOMINIO_MAIN}/src/img/gif-information-typegraphy.gif"
     >
   `,
   author() { return`
