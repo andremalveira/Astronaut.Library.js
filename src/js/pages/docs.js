@@ -91,7 +91,7 @@ const docs = {
                         <div data-run="true" class="ast-codeviewer" data-lang="js" data-title="script.js">
                           astronaut.notify({
                             message: 'Main message -> Secondary message',
-                            icon: 'https://andremalveira.github.io/astronaut/src/img/icon/128x128.png'
+                            icon: 'https://astlibjs.ga/src/img/icon/128x128.png'
                           })
                         </div>
                         <p>${langText.ntIconDescripDot2}</p>
@@ -121,7 +121,7 @@ const docs = {
                         <div data-run="true" class="ast-codeviewer" data-lang="js" data-title="script.js">
                           astronaut.notify({
                             message: 'Main message -> Secondary message',
-                            icon: 'https://andremalveira.github.io/astronaut/src/img/icon/128x128.png',
+                            icon: 'https://astlibjs.ga/src/img/icon/128x128.png',
                             link: {
                               message: '#url', 
                               icon: '#url', 
