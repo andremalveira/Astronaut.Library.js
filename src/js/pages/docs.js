@@ -924,7 +924,7 @@ const docs = {
   
         //======================= HTML ========================// 
         //<div class=""></div>
-        var pageContentHTML = `
+        var pageContentHTML = /*html*/`
   
             <div class="navigation page ${namePage}-body space">
                 <div class="bg-overlay p-h100">
