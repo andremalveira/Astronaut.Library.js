@@ -574,7 +574,7 @@ const astronaut = {
   height: 2rem;
 }
 .ast-table [fira] {
-  font-family: Fira Code, 'system-ui';
+  font-family: Fira Code, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .ast-table [attr] {
   color: #9cdcfe;

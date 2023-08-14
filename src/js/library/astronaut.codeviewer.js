@@ -113,7 +113,7 @@ let __codeviewer = {
     var e = params,s = e.style,
         lineNumber   = (e && e.lineNumber)        ? e.lineNumber         : false,
         fontSize     = (s && s.fontSize)          ? s.fontSize           : '0.9rem',
-        fontFamily   = (s && s.fontFamily)        ? s.fontFamily         : 'Fira Code, "system-ui"',
+        fontFamily   = (s && s.fontFamily)        ? s.fontFamily         : "Fira Code, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
         theme        = (s && s.theme)             ? s.theme              : 'copilot',
         background   = (s && s.background)        ? s.background         : false,
         color        = (s && s.color)             ? s.color              : false,
